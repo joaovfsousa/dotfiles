@@ -8,5 +8,6 @@
     ~/.alacritty.yml: .alacritty.yml
     ~/.dracula.alacritty.yml: .dracula.alacritty.yml
     ~/.gitconfig: .gitconfig
+    ~/.config/nvim/autoload/plug.vim: autoload/plug.vim
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -1,3 +1,6 @@
+call plug#begin()
+call plug#end()
+
 set nocompatible
 
 syntax on
