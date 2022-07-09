@@ -1,0 +1,35 @@
+[core]
+	editor = nvim
+[user]
+	name = João Vitor Sousa
+	email = joaovfsousa@gmail.com
+[diff]
+	guitool = code
+	tool = vimdiff
+[alias]
+  aa = add *
+  ci = commit
+  co = checkout
+  cm = checkout main
+  cb = checkout -b
+  st = status -sb
+  cp = cherry-pick
+  sf = show --name-only
+  lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+  incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+  unstage = reset HEAD --
+  undo = checkout --
+  rollback = reset --soft HEAD~1
+  pom = push origin main -u
+  ps = push
+  cim = "!f() { git commit -m \"$*\"; }; f"
+  r = "!r() { git rebase -i HEAD~$* ; }; r"
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[pull]
+  rebase = true
+[include]
+  path = ~/.workgitconfig
