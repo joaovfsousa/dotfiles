@@ -2,8 +2,6 @@
     link:
       relink: true
 
-- clean: false
-
 - link:
     ~/.zshrc: .zshrc
     ~/.config/nvim/init.vim: init.vim

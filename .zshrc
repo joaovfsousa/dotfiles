@@ -6,7 +6,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
-export TEVORA_BASE_DIR=~/Projects/tevora
 
 ZSH_THEME="spaceship"
 
@@ -81,10 +80,6 @@ len(){
   ls ${1:$place} | wc -l
 }
 
-t() {
-  ~/Projects/tevora/scripts/$1 ${@:2}
-}
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -118,6 +113,8 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 export PATH="$PATH:`yarn global bin`"
+
+source ~/.workzshrc
 
 clear
 unsetopt PROMPT_SP
