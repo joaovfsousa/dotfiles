@@ -1,0 +1,55 @@
+import:
+  - ~/.dracula.alacritty.yml
+
+window:
+  dimensions:
+    columns: 132
+    lines: 36
+  padding:
+    x: 10
+    y: 5
+  opacity: 0.95
+
+scrolling:
+  history: 10000
+  multiplier: 5
+
+font:
+  normal:
+    family: JetBrains Mono
+    style: Medium
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  bold_italic:
+    family: JetBrains Mono
+    style: BoldItalic
+  Italic:
+    family: JetBrains Mono
+    style: MediumItalic
+  size: 14
+  offset:
+    x: 1
+    y: 1
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+
+selection:
+  save_to_clipboard: true
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,         mods: Control,       action: Paste                       }
+  - { key: C,         mods: Control,       action: Copy                        }
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: N,         mods: Control,       action: SpawnNewInstance            }
+  - { key: W,         mods: Control,       action: Quit                        }
+

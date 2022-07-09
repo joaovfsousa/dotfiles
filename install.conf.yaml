@@ -7,6 +7,6 @@
 - link:
     ~/.zshrc: .zshrc
     ~/.vimrc: .vimrc
-
+    ~/.alacritty.yml: .alacritty.yml
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
