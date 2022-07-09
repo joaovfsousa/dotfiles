@@ -2,11 +2,11 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: false
 
 - link:
     ~/.zshrc: .zshrc
-    ~/.vimrc: .vimrc
+    ~/.config/nvim/init.vim: init.vim
     ~/.alacritty.yml: .alacritty.yml
     ~/.dracula.alacritty.yml: .dracula.alacritty.yml
 - shell:
