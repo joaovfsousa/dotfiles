@@ -74,6 +74,7 @@ alias cat='bat --paging=never'
 alias d='docker'
 alias dc='docker-compose'
 alias g='git'
+alias v='nvim'
 
 len(){
   place=cwd
