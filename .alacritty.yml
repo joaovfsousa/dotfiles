@@ -16,16 +16,16 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono
+    family: JetBrains Mono Nerd Font
     style: Medium
   bold:
-    family: JetBrains Mono
+    family: JetBrains Mono Nerd Font
     style: Bold
   bold_italic:
-    family: JetBrains Mono
+    family: JetBrains Mono Nerd Font
     style: BoldItalic
   Italic:
-    family: JetBrains Mono
+    family: JetBrains Mono Nerd Font
     style: MediumItalic
   size: 14
   offset:
@@ -50,8 +50,8 @@ key_bindings:
   - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
   - { key: L,         mods: Control,       action: ClearLogNotice              }
   - { key: L,         mods: Control,       chars: "\x0c"                       }
-  - { key: N,         mods: Control,       action: SpawnNewInstance            }
   - { key: T,         mods: Control,       action: SpawnNewInstance            }
   - { key: W,         mods: Control,       action: Quit                        }
-  - { key: C,        mods: Control|Shift, chars: "\x03"                        }
+  - { key: C,         mods: Control|Shift, chars: "\x03"                       }
+  - { key: F,         mods: Control|Shift, action: ReceiveChar                 }
 

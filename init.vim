@@ -1,4 +1,14 @@
 call plug#begin()
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'chun-yang/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 set nocompatible
@@ -44,25 +54,45 @@ nmap q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
 let mapleader="\<space>"
 
-nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+nnoremap <leader>pi :PlugInstall<cr>
 
+" Misc
+nnoremap ; :
+vnoremap ; :
+
+" Scroll 2 lines
 noremap <C-k> 2<C-y>
 noremap <C-j> 2<C-e>
 
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
-
-nnoremap ; :
-vnoremap ; :
+" Move to end of line
 nnoremap q $
 vnoremap q $
 
+" Fzf
+nnoremap <c-p> :Files<cr>
+nnoremap <c-f> :Ag<space>
 
+" NerdTree
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <c-b> :NERDTreeFocus<CR>
+
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" Add to end of line
+nnoremap <leader>; A;<esc>
+nnoremap <leader>: A:<esc>
+nnoremap <leader>, A,<esc>
+nnoremap <leader>. A.<esc>
+nnoremap <leader>) A)<esc>
+nnoremap <leader>} A}<esc>
+nnoremap <leader>] A]<esc>
+
+nnoremap <a-h> <c-w>h
+nnoremap <a-l> <c-w>l
+nnoremap <a-j> <c-w>j
+nnoremap <a-k> <c-w>k
+nnoremap <a-w> <c-w>w

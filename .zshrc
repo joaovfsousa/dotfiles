@@ -118,3 +118,5 @@ source ~/.workzshrc
 
 clear
 unsetopt PROMPT_SP
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
