@@ -74,6 +74,7 @@ alias d='docker'
 alias dc='docker-compose'
 alias g='git'
 alias v='nvim'
+alias dockly='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --name dockly lirantal/dockly'
 
 len(){
   place=cwd
