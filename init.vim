@@ -16,6 +16,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'voldikss/vim-floaterm'
 Plug 'ervandew/supertab'
+Plug 'frazrepo/vim-rainbow'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 set nocompatible
@@ -106,5 +108,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gb :e#<enter>
 
+nmap <c-_> gcc
+vmap <c-_> gc
+
 let g:airline_theme='night_owl'
 let g:floaterm_keymap_toggle = '<leader>T'
+
