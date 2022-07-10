@@ -9,6 +9,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
+Plug 'yggdroot/indentline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'voldikss/vim-floaterm'
+Plug 'ervandew/supertab'
 call plug#end()
 
 set nocompatible
@@ -62,10 +69,6 @@ nnoremap <leader>pi :PlugInstall<cr>
 nnoremap ; :
 vnoremap ; :
 
-" Scroll 2 lines
-noremap <C-k> 2<C-y>
-noremap <C-j> 2<C-e>
-
 " Move to end of line
 nnoremap q $
 vnoremap q $
@@ -79,7 +82,6 @@ nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <c-b> :NERDTreeFocus<CR>
 
 autocmd VimEnter * NERDTree | wincmd p
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " Add to end of line
@@ -96,3 +98,13 @@ nnoremap <a-l> <c-w>l
 nnoremap <a-j> <c-w>j
 nnoremap <a-k> <c-w>k
 nnoremap <a-w> <c-w>w
+
+" COC
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gb :e#<enter>
+
+let g:airline_theme='night_owl'
+let g:floaterm_keymap_toggle = '<leader>T'
