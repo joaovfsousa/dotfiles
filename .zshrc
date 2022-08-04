@@ -108,8 +108,6 @@ load-nvmrc() {
   fi
 }
 
-cd Projects
-
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
