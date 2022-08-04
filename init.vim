@@ -18,6 +18,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'ervandew/supertab'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-commentary'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 set nocompatible
@@ -32,8 +33,17 @@ set noerrorbells visualbell t_vb=
 set wrap
 set mouse=a
 set wildmenu                " Opção de autocompletar com o tab as opções do vim em comand-line
-set directory=~/.vim/tmp,   " Salva os arquivos de sessão do vim em um diretório à parte
-set backupdir=~/.vim/tmp,   " Salva os arquivos de sessão do vim em um diretório à parte
+set nobackup         " No backup files
+set nowritebackup    " No backup files
+set splitright       " Create the vertical splits to the right
+set splitbelow       " Create the horizontal splits below
+set autoread         " Update vim after file update from outside
+set signcolumn=yes
+set scrolloff=8      " Minimum number of lines to keep above and below the cursor
+set colorcolumn=0  " Draws a line at the given line to keep aware of the line size
+filetype on          " Detect and set the filetype option and trigger the FileType Event
+filetype plugin on   " Load the plugin file for the file type, if any
+filetype indent on   " Load the indent file for the file type, if any
 
 " Search options
 set incsearch           " Incremental search
@@ -78,12 +88,14 @@ vnoremap q $
 " Fzf
 nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ag<space>
+nnoremap f /
 
 " NerdTree
 nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <c-b> :NERDTreeFocus<CR>
 
-autocmd VimEnter * NERDTree | wincmd p
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | only | endif
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " Add to end of line
@@ -111,6 +123,36 @@ nmap <silent> gb :e#<enter>
 nmap <c-_> gcc
 vmap <c-_> gc
 
-let g:airline_theme='night_owl'
+nmap op o<Esc>k
+nmap oi O<Esc>j
+nmap oo A<CR>
+
+" Buffer nativation
+nmap ty :bn<CR>
+nmap tr :bp<CR>
+
+" Delete a buffer
+nmap td :bd<CR>
+
+" Create splits
+nmap th :split<CR>
+nmap tv :vsplit<CR>
+
+" Close splits and others
+nmap tt :q<CR>
+
 let g:floaterm_keymap_toggle = '<leader>T'
 
+let g:airline_theme='night_owl'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+let g:ale_linters = {
+\  'typescript': ['eslint'],
+\}
+
+let g:ale_fixers = {
+\   '*': ['trim_whitespace'],
+\}
+
+let g:ale_fix_on_save = 1
