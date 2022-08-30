@@ -11,8 +11,9 @@
   aa = add *
   ci = commit
   cim = "!f() { git commit -m \"$*\"; }; f"
-  pl = pull
+  pl = pull -f
   ps = push
+  psf = push -f
   co = checkout
   cb = checkout -b
   st = status -sb

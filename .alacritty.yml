@@ -1,6 +1,8 @@
 import:
   - ~/.dracula.alacritty.yml
 
+working_directory: /home/joaovfsousa/Projects
+
 window:
   dimensions:
     columns: 132
@@ -41,17 +43,16 @@ selection:
   save_to_clipboard: true
 
 key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,         mods: Control,       action: Paste                       }
-  - { key: C,         mods: Control,       action: Copy                        }
-  - { key: F11,       mods: None,          action: ToggleFullscreen            }
-  - { key: Key0,      mods: Control,       action: ResetFontSize               }
-  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
-  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
-  - { key: L,         mods: Control,       action: ClearLogNotice              }
-  - { key: L,         mods: Control,       chars: "\x0c"                       }
-  - { key: T,         mods: Control,       action: SpawnNewInstance            }
-  - { key: W,         mods: Control,       action: Quit                        }
-  - { key: C,         mods: Control|Shift, chars: "\x03"                       }
-  - { key: F,         mods: Control|Shift, action: ReceiveChar                 }
-
+  # (Windows, Linux, and BSD only)
+  - { key: V, mods: Control, action: Paste }
+  - { key: C, mods: Control, action: Copy }
+  - { key: F11, mods: None, action: ToggleFullscreen }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: L, mods: Control, chars: "\x0c" }
+  - { key: T, mods: Control, action: SpawnNewInstance }
+  - { key: W, mods: Control, action: Quit }
+  - { key: C, mods: Control|Shift, chars: "\x03" }
+  - { key: F, mods: Control|Shift, action: ReceiveChar }
