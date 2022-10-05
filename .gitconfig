@@ -37,3 +37,5 @@
   rebase = true
 [include]
   path = ~/.workgitconfig
+[push]
+	autoSetupRemote = true

@@ -6,6 +6,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
+export QT_AUTO_SCREEN_SCALE_FACTOR=0 
+export QT_SCREEN_SCALE_FACTORS="1;1.25"
 
 ZSH_THEME="spaceship"
 
