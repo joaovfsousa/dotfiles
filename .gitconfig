@@ -29,6 +29,7 @@
   pom = push origin main -u
   rbi = "!r() { git rebase -i HEAD~$* ; }; r"
   rb = rebase
+  wt = worktree
 [init]
 	defaultBranch = main
 [credential]
