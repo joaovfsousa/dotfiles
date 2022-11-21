@@ -9,8 +9,11 @@ export PATH=$PATH:~/android-studio/bin
 export QT_AUTO_SCREEN_SCALE_FACTOR=0 
 export QT_SCREEN_SCALE_FACTORS="1;1.25"
 export PROJECTS_DIR="/home/joaovfsousa/Files/Projects"
+export LC_CTYPE=en_US.UTF-8
 
 ZSH_THEME="spaceship"
+
+source $ZSH/oh-my-zsh.sh
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
@@ -23,7 +26,6 @@ SPACESHIP_PROMPT_ORDER=(
   docker        # Docker section
   exec_time     # Execution time
   line_sep      # Line break
-  vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   exit_code     # Exit code section
   char          # Prompt character
@@ -32,17 +34,16 @@ SPACESHIP_PROMPT_ORDER=(
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="➜"
-SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_CHAR_SUFFIX=""
 SPACESHIP_VENV_PREFIX="via  "
 SPACESHIP_VENV_SUFFIX=" "
 SPACESHIP_VENV_COLOR="green"
 SPACESHIP_EXEC_TIME_ELAPSED=1
 SPACESHIP_USER_COLOR="cyan"
 SPACESHIP_DIR_COLOR="green"
+SPACESHIP_PROMPT_SEPARATE_LINE=true
 
 plugins=(git node npm python pip command-not-found docker docker-compose extract git-prompt gitignore jsontools web-search asdf)
-
-source $ZSH/oh-my-zsh.sh
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -119,7 +120,7 @@ export PATH="$PATH:`yarn global bin`"
 
 source ~/.workzshrc
 
-clear
 unsetopt PROMPT_SP
+clear
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
