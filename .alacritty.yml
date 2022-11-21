@@ -1,7 +1,7 @@
 import:
   - ~/.dracula.alacritty.yml
 
-working_directory: /media/joaovfsousa/Files/Projects
+working_directory: /home/joaovfsousa/Files/Projects
 
 window:
   dimensions:
