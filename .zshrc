@@ -8,6 +8,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 export QT_AUTO_SCREEN_SCALE_FACTOR=0 
 export QT_SCREEN_SCALE_FACTORS="1;1.25"
+export PROJECTS_DIR="/media/joaovfsousa/Files/Projects"
 
 ZSH_THEME="spaceship"
 
@@ -77,6 +78,7 @@ alias dc='docker-compose'
 alias g='git'
 alias v='nvim'
 alias dockly='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --name dockly lirantal/dockly'
+alias p='cd $PROJECTS_DIR'
 
 len(){
   place=cwd
