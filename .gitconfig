@@ -1,5 +1,6 @@
 [core]
 	editor = nvim
+	autocrlf = input
 [user]
 	name = João Vitor Sousa
 	email = joaovfsousa@gmail.com

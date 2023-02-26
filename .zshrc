@@ -10,6 +10,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCREEN_SCALE_FACTORS="1;1.25"
 export PROJECTS_DIR="/home/joaovfsousa/Projects"
 export LC_CTYPE=en_US.UTF-8
+export PATH=/home/joaovfsousa/.config/nvm/versions/node/v16.18.1/bin:/home/joaovfsousa/.nvm/versions/node/v14.21.1/bin:/home/joaovfsousa/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/joaovfsousa/Android/Sdk/emulator:/home/joaovfsousa/Android/Sdk/tools:/home/joaovfsousa/Android/Sdk/tools/bin:/home/joaovfsousa/Android/Sdk/platform-tools:/home/joaovfsousa/android-studio/bin::/home/joaovfsousa/Android/Sdk/emulator:/home/joaovfsousa/Android/Sdk/tools:/home/joaovfsousa/Android/Sdk/tools/bin:/home/joaovfsousa/Android/Sdk/platform-tools:/home/joaovfsousa/android-studio/bin::/home/joaovfsousa/.local/bin
 
 ZSH_THEME="spaceship"
 
@@ -124,3 +125,4 @@ unsetopt PROMPT_SP
 clear
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. "$HOME/.cargo/env"
