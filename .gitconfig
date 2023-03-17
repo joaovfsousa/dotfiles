@@ -1,6 +1,7 @@
 [core]
 	editor = nvim
 	autocrlf = input
+	ignorecase = false
 [user]
 	name = João Vitor Sousa
 	email = joaovfsousa@gmail.com
@@ -31,6 +32,8 @@
   rbi = "!r() { git rebase -i HEAD~$* ; }; r"
   rb = rebase
   wt = worktree
+  sm = switch -
+  s = switch
 [init]
 	defaultBranch = main
 [credential]
