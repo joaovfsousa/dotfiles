@@ -1,4 +1,4 @@
-export ZSH="/home/joaovfsousa/.oh-my-zsh"
+export ZSH="/Users/joaovfsousa/.oh-my-zsh"
 export ANDROID_HOME=~/Android/Sdk
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -8,10 +8,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 export QT_AUTO_SCREEN_SCALE_FACTOR=0 
 export QT_SCREEN_SCALE_FACTORS="1;1.25"
-export PROJECTS_DIR="/home/joaovfsousa/Projects"
+export PROJECTS_DIR="/Users/joaovfsousa/Projects"
 export LC_CTYPE=en_US.UTF-8
-export PATH=/home/joaovfsousa/.config/nvm/versions/node/v16.18.1/bin:/home/joaovfsousa/.nvm/versions/node/v14.21.1/bin:/home/joaovfsousa/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/joaovfsousa/Android/Sdk/emulator:/home/joaovfsousa/Android/Sdk/tools:/home/joaovfsousa/Android/Sdk/tools/bin:/home/joaovfsousa/Android/Sdk/platform-tools:/home/joaovfsousa/android-studio/bin::/home/joaovfsousa/Android/Sdk/emulator:/home/joaovfsousa/Android/Sdk/tools:/home/joaovfsousa/Android/Sdk/tools/bin:/home/joaovfsousa/Android/Sdk/platform-tools:/home/joaovfsousa/android-studio/bin::/home/joaovfsousa/.local/bin
 
+SPACESHIP_PROMPT_ASYNC=false
 ZSH_THEME="spaceship"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,6 +81,8 @@ alias g='git'
 alias v='nvim'
 alias dockly='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --name dockly lirantal/dockly'
 alias p='cd $PROJECTS_DIR'
+alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
+alias k='kill -9'
 
 len(){
   place=cwd
@@ -121,8 +123,10 @@ export PATH="$PATH:`yarn global bin`"
 
 source ~/.workzshrc
 
-unsetopt PROMPT_SP
-clear
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . "$HOME/.cargo/env"
+
+[[ -s "/Users/joaovfsousa/.gvm/scripts/gvm" ]] && source "/Users/joaovfsousa/.gvm/scripts/gvm"
+
+unsetopt PROMPT_SP
+clear

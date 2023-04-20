@@ -1,8 +1,6 @@
 import:
   - ~/.dracula.alacritty.yml
 
-working_directory: /home/joaovfsousa/Projects
-
 window:
   dimensions:
     columns: 132
@@ -18,16 +16,16 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Medium
   bold:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
   bold_italic:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: BoldItalic
   Italic:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: MediumItalic
   size: 14
   offset:
