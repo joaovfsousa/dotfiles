@@ -7,5 +7,27 @@
     ~/.alacritty.yml: .alacritty.yml
     ~/.dracula.alacritty.yml: .dracula.alacritty.yml
     ~/.gitconfig: .gitconfig
+    ~/.config/lvim: 
+      path: .config/lvim
+      relink: true
+      create: true
+      force: true
+    ~/.config/skhd: 
+      path: .config/skhd
+      relink: true
+      create: true
+      force: true
+    ~/.config/yabai: 
+      path: .config/yabai
+      relink: true
+      create: true
+      force: true
+
+    ~/.config/lazygit/config.yml:  
+      path: .config/lazygit/config.yml
+      relink: true
+      create: true
+      force: true
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

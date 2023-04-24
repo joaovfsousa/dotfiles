@@ -2,13 +2,16 @@ import:
   - ~/.dracula.alacritty.yml
 
 window:
-  dimensions:
-    columns: 132
-    lines: 36
+  # dimensions:
+  #   columns: 148
+  #   lines: 36
   padding:
-    x: 10
-    y: 5
-  opacity: 0.98
+    x: 8
+    y: 4
+  opacity: 0.85
+  startup_mode: Maximized
+  decorations: full
+  option_as_alt: Both
 
 scrolling:
   history: 10000
@@ -24,9 +27,6 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: BoldItalic
-  Italic:
-    family: JetBrainsMono Nerd Font
-    style: MediumItalic
   size: 14
   offset:
     x: 1
@@ -42,15 +42,13 @@ selection:
 
 key_bindings:
   # (Windows, Linux, and BSD only)
-  - { key: V, mods: Control, action: Paste }
-  - { key: C, mods: Control, action: Copy }
+  - { key: V, mods: Command, action: Paste }
+  - { key: C, mods: Command, action: Copy }
   - { key: F11, mods: None, action: ToggleFullscreen }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: L, mods: Control, action: ClearLogNotice }
-  - { key: L, mods: Control, chars: "\x0c" }
-  - { key: T, mods: Control, action: SpawnNewInstance }
-  - { key: W, mods: Control, action: Quit }
-  - { key: C, mods: Control|Shift, chars: "\x03" }
-  - { key: F, mods: Control|Shift, action: ReceiveChar }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
+  - { key: L, mods: Command, action: ClearLogNotice }
+  - { key: L, mods: Command, chars: "\x0c" }
+  - { key: T, mods: Command, action: SpawnNewInstance }
+  - { key: C, mods: Command|Shift, chars: "\x03" }
+  - { key: F, mods: Command|Shift, action: ReceiveChar }
