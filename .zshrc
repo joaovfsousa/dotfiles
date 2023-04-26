@@ -87,6 +87,7 @@ alias dockly='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -
 alias p='cd $PROJECTS_DIR'
 alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
 alias k='kill -9'
+alias omt='cd ~/Projects/Tevora/omt'
 
 len(){
   place=cwd

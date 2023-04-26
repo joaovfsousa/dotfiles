@@ -9,10 +9,12 @@ lvim.keys.visual_mode["m"] = "q"
 
 lvim.keys.normal_mode["q"] = "^"
 lvim.keys.visual_mode["q"] = "^"
-lvim.keys.normal_mode["t"] = "$"
-lvim.keys.visual_mode["t"] = "$"
+lvim.keys.normal_mode["t"] = "g_"
+lvim.keys.visual_mode["t"] = "g_"
 
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+lvim.keys.normal_mode["mm"] = "<cmd>BufferLinePick<CR>"
 
 lvim.builtin.which_key.mappings["f"] = {
   require("telescope.builtin").git_files,
