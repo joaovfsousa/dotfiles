@@ -4,5 +4,8 @@ lvim.plugins = {
     dependencies = {
       { "MunifTanjim/nui.nvim" }
     }
+  },
+  {
+    "David-Kunz/jester"
   }
 }

@@ -1,9 +1,21 @@
 yabai -m config layout bsp
 yabai -m config window_placement second_child
 
-yabai -m config --space 4 layout float
-
 yabai -m config mouse_follows_focus on
+yabai -m config top_padding 40
 
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Raycast" manage=off
+
+yabai -m space 1 --label "1:Personal"
+yabai -m space 2 --label "2:Calendar"
+yabai -m space 3 --label 3
+yabai -m space 4 --label "4:W Com"
+yabai -m space 5 --label "5:W Browser"
+yabai -m space 6 --label "6:Main Editor"
+yabai -m space 7 --label "7:2nd Editor"
+yabai -m space 8 --label "8:DB Tool/API" 
+yabai -m space 9 --label 9
+yabai -m space 10 --label 0
+
