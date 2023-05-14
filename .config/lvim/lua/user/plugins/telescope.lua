@@ -2,6 +2,10 @@ lvim.builtin.telescope.defaults.path_display = {
   "truncate"
 }
 
+lvim.builtin.telescope.defaults.file_ignore_patterns = {
+  "^.git/"
+}
+
 lvim.builtin.telescope.defaults.layout_strategy = "vertical"
 
 lvim.builtin.telescope.defaults.layout_config = {

@@ -26,3 +26,10 @@ dap.adapters.node = {
   name = "node-debug",
   args = { mason_path .. "packages/node-debug2-adapter/out/src/nodeDebug.js" }
 }
+
+dap.adapters.node2 = {
+  type = "executable",
+  command = "node",
+  name = "node-debug",
+  args = { mason_path .. "packages/node-debug2-adapter/out/src/nodeDebug.js" }
+}

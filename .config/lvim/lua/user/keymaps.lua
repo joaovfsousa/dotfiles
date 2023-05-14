@@ -1,5 +1,5 @@
-lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
-lvim.keys.visual_mode[":"] = "<cmd>FineCmdline '<'><CR>"
+-- lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
+-- lvim.keys.visual_mode[":"] = "<cmd>FineCmdline '<'><CR>"
 lvim.keys.normal_mode[";"] = "<cmd>FineCmdline<CR>"
 lvim.keys.visual_mode[";"] = "<cmd>FineCmdline '<'><CR>"
 
@@ -23,16 +23,8 @@ lvim.keys.visual_mode["n"] = 'nzz'
 lvim.keys.normal_mode["mm"] = "<cmd>BufferLinePick<CR>"
 lvim.keys.visual_mode["mm"] = "<cmd>BufferLinePick<CR>"
 
-
-lvim.keys.normal_mode["dd"] = '\"_dd'
-lvim.keys.visual_mode["dd"] = '\"_dd'
-lvim.keys.normal_mode["d"] = '\"_d'
-lvim.keys.visual_mode["d"] = '\"_d'
-
-lvim.keys.normal_mode["x"] = 'd'
-lvim.keys.visual_mode["x"] = 'd'
-lvim.keys.normal_mode["xx"] = 'dd'
-lvim.keys.visual_mode["xx"] = 'dd'
+lvim.keys.normal_mode["|"] = '\"_'
+lvim.keys.visual_mode["|"] = '\"_'
 
 lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
 lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
@@ -44,9 +36,14 @@ lvim.builtin.which_key.mappings["f"] = {
 
 local telescope = require("telescope.builtin")
 
+local openFindFiles = function()
+  telescope.find_files({ hidden = true })
+end
+
 lvim.builtin.which_key.mappings["F"] = {
+  name = "Find",
   f = {
-    telescope.find_files,
+    openFindFiles,
     "Find File"
   },
   g = {
@@ -61,4 +58,85 @@ lvim.builtin.which_key.mappings["F"] = {
     "<cmd>Telescope buffers<CR>",
     "Buffers"
   },
+  p = {
+    "<cmd>Telescope projects<CR>",
+    "Projects"
+  },
 }
+
+local jester = require("jester")
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Jester",
+  r = {
+    jester.run,
+    "Run nearest"
+  },
+  f = {
+    jester.run_file,
+    "Run file"
+  },
+  R = {
+    jester.debug,
+    "Debug nearest"
+  },
+  F = {
+    jester.debug_file,
+    "Debug file"
+  },
+  l = {
+    jester.run_last,
+    "Run last"
+  },
+  L = {
+    jester.debug_last,
+    "Debug last"
+  }
+}
+
+local refactoring = require('refactoring')
+
+lvim.builtin.which_key.mappings["r"] = {
+  name = "Refactor",
+  r = {
+    refactoring.select_refactor,
+    "Select"
+  },
+  v = {
+    "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
+    "Extract Variable"
+  },
+  f = {
+    "<cmd>lua require('refactoring').refactor('Extract Function')<CR>",
+    "Extract function"
+  }
+}
+
+lvim.builtin.which_key.vmappings["r"] = {
+  name = "Refactor",
+  r = {
+    refactoring.select_refactor,
+    "Select"
+  },
+  v = {
+    "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
+    "Extract Variable"
+  },
+  f = {
+    "<cmd>lua require('refactoring').refactor('Extract Function')<CR>",
+    "Extract function"
+  }
+}
+
+local fn = function()
+  local utils = require "lvim.utils"
+  local paths = {}
+  local user_snippets = utils.join_paths(get_config_dir(), "snippets")
+  if utils.is_directory(user_snippets) then
+    paths[#paths + 1] = user_snippets
+  end
+  print(paths)
+  print(get_runtime_dir())
+end
+
+lvim.keys.normal_mode['P'] = fn

@@ -83,11 +83,12 @@ alias g='git'
 alias v='lvim'
 alias v.='lvim .'
 alias gg='lazygit -ucd ~/.config/lazygit'
-alias dockly='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --name dockly lirantal/dockly'
+alias ddockly='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --name dockly lirantal/dockly'
 alias p='cd $PROJECTS_DIR'
 alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
 alias k='kill -9'
 alias omt='cd ~/Projects/Tevora/omt'
+alias da='f() { docker exec -it $1 /bin/bash }; f'
 
 len(){
   place=cwd

@@ -2,11 +2,8 @@ reload('user.plugins.fine-cmdline')
 reload('user.plugins.telescope')
 reload('user.plugins.nvimtree')
 reload('user.plugins.dap')
-
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup {
-  {
-    name = "prettier",
-    filetypes = { "typescript", "typescriptreact" },
-  },
-}
+reload('user.plugins.refactoring')
+reload('user.plugins.null-ls')
+reload('user.plugins.jester')
+reload('user.plugins.gitsigns')
+reload('user.plugins.template-string')
