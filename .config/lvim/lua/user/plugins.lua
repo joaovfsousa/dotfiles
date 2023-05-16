@@ -20,5 +20,8 @@ lvim.plugins = {
   },
   {
     "axelvc/template-string.nvim"
+  },
+  {
+    "norcalli/nvim-colorizer.lua"
   }
 }
