@@ -1,8 +1,3 @@
--- lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
--- lvim.keys.visual_mode[":"] = "<cmd>FineCmdline '<'><CR>"
-lvim.keys.normal_mode[";"] = "<cmd>FineCmdline<CR>"
-lvim.keys.visual_mode[";"] = "<cmd>FineCmdline '<'><CR>"
-
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["m"] = "q"
@@ -128,15 +123,24 @@ lvim.builtin.which_key.vmappings["r"] = {
   }
 }
 
-local fn = function()
-  local utils = require "lvim.utils"
-  local paths = {}
-  local user_snippets = utils.join_paths(get_config_dir(), "snippets")
-  if utils.is_directory(user_snippets) then
-    paths[#paths + 1] = user_snippets
-  end
-  print(paths)
-  print(get_runtime_dir())
-end
+lvim.builtin.which_key.mappings[","] = {
+  "<cmd>lua require('chartoggle').toggle(',')<CR>",
+  "Toggle comma"
+}
 
-lvim.keys.normal_mode['P'] = fn
+lvim.builtin.which_key.vmappings[","] = {
+  "<cmd>lua require('chartoggle').toggle(',')<CR>",
+  "Toggle comma"
+}
+
+lvim.builtin.which_key.mappings[";"] = {
+  "<cmd>lua require('chartoggle').toggle(';')<CR>",
+  "Toggle semicolon"
+}
+
+lvim.builtin.which_key.vmappings[";"] = {
+  "<cmd>lua require('chartoggle').toggle(';')<CR>",
+  "Toggle semicolon"
+}
+
+lvim.keys.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Goto definition" }

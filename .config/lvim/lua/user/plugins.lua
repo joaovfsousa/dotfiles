@@ -1,11 +1,5 @@
 lvim.plugins = {
   {
-    "VonHeikemen/fine-cmdline.nvim",
-    dependencies = {
-      { "MunifTanjim/nui.nvim" }
-    }
-  },
-  {
     "David-Kunz/jester"
   },
   {
@@ -15,19 +9,19 @@ lvim.plugins = {
       { "nvim-treesitter/nvim-treesitter" }
     },
     config = function()
-      require('refactoring').setup({})
+      require("refactoring").setup({})
     end
   },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
-      require('gitsigns').setup()
+      require("gitsigns").setup()
     end
   },
   {
     "axelvc/template-string.nvim",
     config = function()
-      require('template-string').setup({
+      require("template-string").setup({
         remove_template_string = true
       })
     end
@@ -35,7 +29,7 @@ lvim.plugins = {
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require('colorizer').setup()
+      require("colorizer").setup()
     end
   },
   {
@@ -53,6 +47,34 @@ lvim.plugins = {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup()
+    end
+  },
+  {
+    "HiPhish/nvim-ts-rainbow2",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        rainbow = {
+          enable = true,
+          query = "rainbow-parens",
+          strategy = require("ts-rainbow").strategy.global,
+        }
+      }
+    end
+  },
+  {
+    "alanfortlink/blackjack.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  {
+    "saifulapm/chartoggle.nvim",
+  },
+  {
+    "rmagatti/goto-preview",
+    config = function()
+      require("goto-preview").setup({
+        default_mappings = false,
+        dismiss_on_move = true
+      })
     end
   }
 }
