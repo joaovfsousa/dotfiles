@@ -17,6 +17,8 @@ lvim.keys.visual_mode["n"] = 'nzz'
 
 lvim.keys.normal_mode["mm"] = "<cmd>BufferLinePick<CR>"
 lvim.keys.visual_mode["mm"] = "<cmd>BufferLinePick<CR>"
+lvim.keys.normal_mode[",,"] = "<cmd>Telescope buffers<CR>"
+lvim.keys.visual_mode[",,"] = "<cmd>Telescope buffers<CR>"
 
 lvim.keys.normal_mode["|"] = '\"_'
 lvim.keys.visual_mode["|"] = '\"_'
@@ -57,6 +59,14 @@ lvim.builtin.which_key.mappings["F"] = {
     "<cmd>Telescope projects<CR>",
     "Projects"
   },
+  s = {
+    require("yaml-companion").open_ui_select,
+    "Select schema"
+  },
+  r = {
+    ":MurenToggle<CR>",
+    "Replace"
+  }
 }
 
 local jester = require("jester")
@@ -143,4 +153,45 @@ lvim.builtin.which_key.vmappings[";"] = {
   "Toggle semicolon"
 }
 
-lvim.keys.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Goto definition" }
+lvim.keys.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", name = "Goto type definition" }
+
+lvim.keys.normal_mode["gpd"] = {
+  "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+  name = "Preview definition"
+}
+lvim.keys.normal_mode["gpt"] = {
+  "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+  name = "Preview type definition"
+}
+lvim.keys.normal_mode["gpi"] = {
+  "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+  name = "Preview implementation"
+}
+lvim.keys.normal_mode["gpr"] = {
+  "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
+  name = "Preview references"
+}
+lvim.keys.normal_mode["gP"] = {
+  "<cmd>lua require('goto-preview').close_all_win()<CR>",
+  name = "Close preview"
+}
+
+lvim.builtin.which_key.mappings["l"]["r"] = {
+  ":IncRename ",
+  "Rename"
+}
+
+lvim.builtin.which_key.mappings["d"]["t"] = {
+  ":PBToggleBreakpoint<CR>",
+  name = "Toggle breakpoint"
+}
+
+lvim.builtin.which_key.mappings["m"] = {
+  ":Telescope buffers<CR>",
+  name = "Navigate buffers"
+}
+
+lvim.builtin.which_key.vmappings["m"] = {
+  ":Telescope buffers<CR>",
+  name = "Navigate buffers"
+}
