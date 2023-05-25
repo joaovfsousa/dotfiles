@@ -1,4 +1,3 @@
-reload('user.plugins.fine-cmdline')
 reload('user.plugins.telescope')
 reload('user.plugins.nvimtree')
 reload('user.plugins.dap')

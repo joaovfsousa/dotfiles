@@ -15,7 +15,16 @@ lvim.plugins = {
   {
     "lewis6991/gitsigns.nvim",
     config = function()
-      require("gitsigns").setup()
+      require("gitsigns").setup({
+        signs = {
+          add          = { text = '++' },
+          change       = { text = 'MM' },
+          delete       = { text = '__' },
+          topdelete    = { text = '--' },
+          changedelete = { text = '--' },
+          untracked    = { text = '~~' },
+        }
+      })
     end
   },
   {

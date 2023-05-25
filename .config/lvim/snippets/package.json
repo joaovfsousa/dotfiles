@@ -1,5 +1,5 @@
 {
-  "name": "friendly-snippets",
+  "name": "joao-snippets",
   "engines": {
     "vscode": "^1.11.0"
   },
@@ -10,6 +10,13 @@
           "typescript"
         ],
         "path": "./custom/typescript.json"
+      },
+      {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "./custom/gitcommit.json"
       }
     ]
   }

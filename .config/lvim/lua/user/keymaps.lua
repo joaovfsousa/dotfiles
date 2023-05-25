@@ -1,4 +1,5 @@
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode[";"] = ":"
+lvim.keys.visual_mode[";"] = ":"
 
 lvim.keys.normal_mode["m"] = "q"
 lvim.keys.visual_mode["m"] = "q"
