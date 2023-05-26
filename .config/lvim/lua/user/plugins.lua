@@ -17,12 +17,12 @@ lvim.plugins = {
     config = function()
       require("gitsigns").setup({
         signs = {
-          add          = { text = '++' },
-          change       = { text = 'MM' },
-          delete       = { text = '__' },
-          topdelete    = { text = '--' },
-          changedelete = { text = '--' },
-          untracked    = { text = '~~' },
+          add          = { text = '+' },
+          change       = { text = 'M' },
+          delete       = { text = '_' },
+          topdelete    = { text = '-' },
+          changedelete = { text = '-' },
+          untracked    = { text = 'U' },
         }
       })
     end
