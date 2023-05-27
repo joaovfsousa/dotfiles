@@ -182,17 +182,17 @@ lvim.builtin.which_key.mappings["l"]["r"] = {
   "Rename"
 }
 
-lvim.builtin.which_key.mappings["d"]["t"] = {
-  ":PBToggleBreakpoint<CR>",
-  name = "Toggle breakpoint"
+lvim.builtin.which_key.mappings["dt"] = {
+  "<cmd>PBToggleBreakpoint<CR>",
+  "Toggle breakpoint"
 }
 
 lvim.builtin.which_key.mappings["m"] = {
   ":Telescope buffers<CR>",
-  name = "Navigate buffers"
+  "Navigate buffers"
 }
 
 lvim.builtin.which_key.vmappings["m"] = {
   ":Telescope buffers<CR>",
-  name = "Navigate buffers"
+  "Navigate buffers"
 }
