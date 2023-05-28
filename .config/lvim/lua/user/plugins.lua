@@ -141,5 +141,19 @@ lvim.plugins = {
     config = function()
       require('auto-session').setup()
     end
+  },
+  {
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    dependencies = {
+      { "neovim/nvim-lspconfig" },
+    },
+    config = function()
+      local on_attach = function(client, bufnr)
+        require("tailwindcss-colors").buf_attach(bufnr)
+      end
+      require("lspconfig")["tailwindcss"].setup({
+        on_attach = on_attach,
+      })
+    end
   }
 }
