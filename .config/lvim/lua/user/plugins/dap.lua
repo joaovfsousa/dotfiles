@@ -17,7 +17,6 @@ dap.configurations.typescript = {
   }
 }
 
-
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 
 dap.adapters.node = {

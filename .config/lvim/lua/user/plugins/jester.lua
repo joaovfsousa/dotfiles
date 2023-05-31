@@ -10,7 +10,6 @@ require("jester").setup({
     sourceMaps = true,
     protocol = 'inspector',
     skipFiles = { '<node_internals>/**/*.js' },
-    console = 'externalTerminal',
     port = 9229,
     disableOptimisticBPs = true
   }
