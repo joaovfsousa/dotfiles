@@ -89,7 +89,9 @@ lvim.plugins = {
       require("lsp_signature").setup({
         toggle_key = "<C-s>",
         hint_enable = true,
+        floating_window = false,
         toggle_key_flip_floatwin_setting = true,
+        floating_window_off_y = -1,
       })
     end
   },
