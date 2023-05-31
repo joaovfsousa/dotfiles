@@ -4,8 +4,6 @@ require("jester").setup({
     type = 'node2',
     request = 'launch',
     cwd = vim.fn.getcwd(),
-    runtimeArgs = { '--inspect-brk', '$path_to_jest', '--testTimeout=120000', '--no-coverage', '-t', '$result', '--',
-      '$file' },
     args = { '--no-cache' },
     sourceMaps = true,
     protocol = 'inspector',
