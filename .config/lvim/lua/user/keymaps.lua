@@ -27,7 +27,8 @@ lvim.keys.visual_mode["|"] = '\"_'
 lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
 lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
 
-lvim.keys.normal_mode["J"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
+lvim.keys.normal_mode["L"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
+lvim.keys.normal_mode["H"] = "<cmd>lua require('dapui').eval()<cr>"
 
 lvim.builtin.which_key.mappings["f"] = {
   require("telescope.builtin").git_files,
