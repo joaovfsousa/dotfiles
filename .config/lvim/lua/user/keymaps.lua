@@ -190,6 +190,18 @@ lvim.builtin.which_key.mappings["dt"] = {
   "Toggle breakpoint"
 }
 
+lvim.builtin.which_key.mappings["dl"] = {
+  "<cmd>lua require('dap').list_breakpoints(true)<cr>",
+  "List breakpoints"
+}
+
+lvim.builtin.which_key.mappings["dL"] = {
+  "<cmd>lua require('dap').clear_breakpoints()<cr>",
+  "Clear breakpoints"
+}
+
+
+
 lvim.builtin.which_key.mappings["m"] = {
   ":Telescope buffers<CR>",
   "Navigate buffers"
