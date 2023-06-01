@@ -36,7 +36,7 @@ lvim.keys.normal_mode["E"] = "<cmd>lua require('dapui').eval()<cr>"
 lvim.keys.normal_mode["<leader>zz"] = "<cmd>TZAtaraxis<cr><cr>"
 lvim.keys.normal_mode["<leader>zt"] = "<cmd>Twilight<cr>"
 
-vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
+vim.keymap.set('t', 'jj', [[<C-\><C-n>]])
 
 lvim.builtin.which_key.mappings["f"] = {
   require("telescope.builtin").git_files,
