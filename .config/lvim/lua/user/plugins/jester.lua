@@ -9,6 +9,7 @@ require("jester").setup({
     protocol = 'inspector',
     skipFiles = { '<node_internals>/**/*.js' },
     port = 9229,
-    disableOptimisticBPs = true
+    disableOptimisticBPs = true,
+    testTimeout = 30000
   }
 })
