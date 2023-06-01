@@ -6,10 +6,10 @@ lvim.keys.visual_mode["m"] = "q"
 lvim.keys.normal_mode["M"] = "Q"
 lvim.keys.visual_mode["M"] = "Q"
 
-lvim.keys.normal_mode["q"] = "^"
-lvim.keys.visual_mode["q"] = "^"
-lvim.keys.normal_mode["t"] = "g_"
-lvim.keys.visual_mode["t"] = "g_"
+lvim.keys.normal_mode["H"] = "^"
+lvim.keys.visual_mode["H"] = "^"
+lvim.keys.normal_mode["L"] = "g_"
+lvim.keys.visual_mode["L"] = "g_"
 
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
@@ -26,9 +26,14 @@ lvim.keys.visual_mode["|"] = '\"_'
 
 lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
 lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
+lvim.keys.visual_mode["<"] = "<gv"
+lvim.keys.visual_mode[">"] = ">gv"
 
-lvim.keys.normal_mode["L"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
-lvim.keys.normal_mode["H"] = "<cmd>lua require('dapui').eval()<cr>"
+
+lvim.keys.normal_mode["J"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
+lvim.keys.normal_mode["E"] = "<cmd>lua require('dapui').eval()<cr>"
+
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
 
 lvim.builtin.which_key.mappings["f"] = {
   require("telescope.builtin").git_files,
@@ -41,11 +46,15 @@ local openFindFiles = function()
   telescope.find_files({ hidden = true })
 end
 
-lvim.builtin.which_key.mappings["F"] = {
+lvim.builtin.which_key.mappings["f"] = {
   name = "Find",
   f = {
+    "<cmd>Telescope git_files<CR>",
+    "Git files"
+  },
+  a = {
     openFindFiles,
-    "Find File"
+    "Find Any File"
   },
   g = {
     telescope.live_grep,
