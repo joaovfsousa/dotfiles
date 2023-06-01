@@ -33,6 +33,9 @@ lvim.keys.visual_mode[">"] = ">gv"
 lvim.keys.normal_mode["J"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
 lvim.keys.normal_mode["E"] = "<cmd>lua require('dapui').eval()<cr>"
 
+lvim.keys.normal_mode["<leader>zz"] = "<cmd>TZAtaraxis<cr><cr>"
+lvim.keys.normal_mode["<leader>zt"] = "<cmd>Twilight<cr>"
+
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
 
 lvim.builtin.which_key.mappings["f"] = {

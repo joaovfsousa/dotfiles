@@ -157,5 +157,33 @@ lvim.plugins = {
         on_attach = on_attach,
       })
     end
+  },
+  {
+    "Pocco81/true-zen.nvim",
+    config = function()
+      require("true-zen").setup({
+        modes = {
+          ataraxis = {
+            padding = {
+              left = 90,
+              right = 90
+            }
+          }
+        },
+        integrations = {
+          twilight = true
+        }
+      })
+    end
+  },
+  {
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup({
+        dimming = {
+          alpha = 0.5,
+        },
+      })
+    end
   }
 }
