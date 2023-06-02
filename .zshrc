@@ -24,5 +24,10 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.workzshrc ] && source ~/.workzshrc
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(zoxide init zsh)"
+
 unsetopt PROMPT_SP
 clear
+

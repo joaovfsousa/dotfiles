@@ -28,5 +28,25 @@ SPACESHIP_DIR_COLOR="green"
 SPACESHIP_PROMPT_SEPARATE_LINE=true
 ZSH_THEME="spaceship"
 
-plugins=(git node npm python pip command-not-found docker docker-compose extract git-prompt gitignore jsontools web-search asdf)
+plugins=(
+  asdf
+  command-not-found
+  docker
+  docker-compose
+  extract
+  fzf
+  git
+  git-prompt
+  gitignore
+  jsontools
+  node
+  npm
+  pip
+  python
+  sudo
+  vi-mode
+  web-search
+  zoxide
+)
 
+bindkey -v
