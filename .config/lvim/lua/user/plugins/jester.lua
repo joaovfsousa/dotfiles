@@ -1,5 +1,5 @@
 require("jester").setup({
-  path_to_jest_run = "npm test",
+  path_to_jest_run = "npm test --",
   dap = {
     type = 'node2',
     request = 'launch',
