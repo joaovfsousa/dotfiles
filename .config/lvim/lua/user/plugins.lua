@@ -197,5 +197,16 @@ lvim.plugins = {
     config = function()
       require("nomodoro").setup({})
     end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      require("treesitter-context").setup({
+        min_window_height = 34,
+        max_lines = 3,
+        mode = 'cursor',
+        line_numbers = true,
+      })
+    end
   }
 }
