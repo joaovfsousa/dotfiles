@@ -8,9 +8,7 @@ lvim.plugins = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-treesitter/nvim-treesitter" }
     },
-    config = function()
-      require("refactoring").setup({})
-    end
+    config = true
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -37,9 +35,7 @@ lvim.plugins = {
   },
   {
     "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end
+    config = true
   },
   {
     "zbirenbaum/copilot.lua",
@@ -54,9 +50,7 @@ lvim.plugins = {
   },
   {
     "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
+    config = true
   },
   {
     "HiPhish/nvim-ts-rainbow2",
@@ -79,9 +73,7 @@ lvim.plugins = {
   },
   {
     "rmagatti/goto-preview",
-    config = function()
-      require("goto-preview").setup()
-    end
+    config = true
   },
   {
     "ray-x/lsp_signature.nvim",
@@ -97,15 +89,11 @@ lvim.plugins = {
   },
   {
     "smjonas/inc-rename.nvim",
-    config = function()
-      require("inc_rename").setup()
-    end
+    config = true
   },
   {
     "jose-elias-alvarez/typescript.nvim",
-    config = function()
-      require("typescript").setup({})
-    end
+    config = true
   },
   {
     "someone-stole-my-name/yaml-companion.nvim",
@@ -122,9 +110,7 @@ lvim.plugins = {
   },
   {
     "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end
+    config = true
   },
   {
     "Weissle/persistent-breakpoints.nvim",
@@ -140,9 +126,7 @@ lvim.plugins = {
   },
   {
     "rmagatti/auto-session",
-    config = function()
-      require('auto-session').setup()
-    end
+    config = true
   },
   {
     "themaxmarchuk/tailwindcss-colors.nvim",
@@ -194,9 +178,7 @@ lvim.plugins = {
   },
   {
     "dbinagi/nomodoro",
-    config = function()
-      require("nomodoro").setup({})
-    end
+    config = true
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
