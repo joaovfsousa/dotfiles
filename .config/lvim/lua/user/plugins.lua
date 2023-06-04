@@ -191,5 +191,11 @@ lvim.plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
     }
+  },
+  {
+    "dbinagi/nomodoro",
+    config = function()
+      require("nomodoro").setup({})
+    end
   }
 }
