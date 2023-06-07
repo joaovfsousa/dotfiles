@@ -19,3 +19,5 @@ alias nt='npm test'
 alias nr='npm run'
 
 alias cd='z'
+
+alias img='wezterm imgcat'
