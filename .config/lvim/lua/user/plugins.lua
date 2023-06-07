@@ -190,5 +190,11 @@ lvim.plugins = {
         line_numbers = true,
       })
     end
+  },
+  {
+    'numToStr/Navigator.nvim',
+    config = function()
+        require('Navigator').setup()
+    end
   }
 }

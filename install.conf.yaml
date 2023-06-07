@@ -4,26 +4,27 @@
 
 - link:
     ~/.zshrc: .zshrc
+    ~/.wezterm.lua: .wezterm.lua
     ~/.alacritty.yml: .alacritty.yml
     ~/.dracula.alacritty.yml: .dracula.alacritty.yml
     ~/.gitconfig: .gitconfig
-    ~/.config/lvim: 
+    ~/.config/lvim:
       path: .config/lvim
       relink: true
       create: true
       force: true
-    ~/.config/skhd: 
+    ~/.config/skhd:
       path: .config/skhd
       relink: true
       create: true
       force: true
-    ~/.config/yabai: 
+    ~/.config/yabai:
       path: .config/yabai
       relink: true
       create: true
       force: true
 
-    ~/.config/lazygit/config.yml:  
+    ~/.config/lazygit/config.yml:
       path: .config/lazygit/config.yml
       relink: true
       create: true

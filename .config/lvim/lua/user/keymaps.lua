@@ -36,6 +36,11 @@ lvim.keys.normal_mode["E"] = "<cmd>lua require('dapui').eval()<cr>"
 lvim.keys.normal_mode["<leader>zz"] = "<cmd>TZAtaraxis<cr><cr>"
 lvim.keys.normal_mode["<leader>zt"] = "<cmd>Twilight<cr>"
 
+lvim.keys.normal_mode["<c-h>"] = "<cmd>NavigatorLeft<cr>"
+lvim.keys.normal_mode["<c-j>"] = "<cmd>NavigatorDown<cr>"
+lvim.keys.normal_mode["<c-k>"] = "<cmd>NavigatorUp<cr>"
+lvim.keys.normal_mode["<c-l>"] = "<cmd>NavigatorRight<cr>"
+
 vim.keymap.set('t', '<C-a>', [[<C-\><C-n>]])
 
 lvim.builtin.which_key.mappings["f"] = {
