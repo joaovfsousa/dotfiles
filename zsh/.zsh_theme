@@ -35,7 +35,6 @@ plugins=(
   docker-compose
   extract
   fzf
-  git
   git-prompt
   gitignore
   jsontools
