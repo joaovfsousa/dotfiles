@@ -5,6 +5,6 @@ len(){
 
 da() { docker exec -it $1 /bin/bash }
 
-dl() { docker logs --follow $1 }
+dl() { docker logs -n 100 --follow $1 }
 
 rnet() {sudo ifconfig en0 down; sudo ifconfig en0 up;}
