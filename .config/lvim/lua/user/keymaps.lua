@@ -42,7 +42,7 @@ lvim.keys.normal_mode["<c-k>"] = "<cmd>NavigatorUp<cr>"
 lvim.keys.normal_mode["<c-l>"] = "<cmd>NavigatorRight<cr>"
 lvim.keys.normal_mode["<c-a>"] = "Nop"
 
-vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
+vim.keymap.set('t', '<c-s>', [[<C-\><C-n>]])
 
 lvim.builtin.which_key.mappings["f"] = {
   require("telescope.builtin").git_files,

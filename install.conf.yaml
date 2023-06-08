@@ -3,8 +3,37 @@
       relink: true
 
 - link:
-    ~/.zshrc: .zshrc
     ~/.wezterm.lua: .wezterm.lua
+    ~/.zsh_aliases:
+      path: ./zsh/.zsh_aliases
+      relink: true
+      create: true
+      force: true
+    ~/.zsh_functions:
+      path: ./zsh/.zsh_functions
+      relink: true
+      create: true
+      force: true
+    ~/.zsh_package_managers:
+      path: ./zsh/.zsh_package_managers
+      relink: true
+      create: true
+      force: true
+    ~/.zsh_theme:
+      path: ./zsh/.zsh_theme
+      relink: true
+      create: true
+      force: true
+    ~/.zsh_zinit:
+      path: ./zsh/.zsh_zinit
+      relink: true
+      create: true
+      force: true
+    ~/.zshrc:
+      path: ./zsh/.zshrc
+      relink: true
+      create: true
+      force: true
     ~/.alacritty.yml: .alacritty.yml
     ~/.dracula.alacritty.yml: .dracula.alacritty.yml
     ~/.gitconfig: .gitconfig
@@ -23,7 +52,6 @@
       relink: true
       create: true
       force: true
-
     ~/.config/lazygit/config.yml:
       path: .config/lazygit/config.yml
       relink: true
