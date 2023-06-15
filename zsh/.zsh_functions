@@ -8,3 +8,12 @@ da() { docker exec -it $1 /bin/bash }
 dl() { docker logs -n 100 --follow $1 }
 
 rnet() {sudo ifconfig en0 down; sudo ifconfig en0 up;}
+
+td () {
+  local location=~/Projects/notes/todo.md
+  if [[ "$1" == "e" ]]; then
+    v "$location"
+  else
+    glow "$location"
+  fi
+}
