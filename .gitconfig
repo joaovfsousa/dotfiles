@@ -28,6 +28,7 @@
   unstage = reset HEAD --
   undo = checkout --
   rollback = reset --soft HEAD~1
+  ct = reset --hard HEAD
   pom = push origin main -u
   rbi = "!r() { git rebase -i HEAD~$* ; }; r"
   rb = rebase
