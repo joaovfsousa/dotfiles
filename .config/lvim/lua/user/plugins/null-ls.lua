@@ -1,4 +1,5 @@
 local formatters = require("lvim.lsp.null-ls.formatters")
+local linters = require("lvim.lsp.null-ls.linters")
 
 lvim.lsp.null_ls.setup = {
   sources = require("typescript.extensions.null-ls.code-actions")
@@ -10,3 +11,11 @@ formatters.setup {
     filetypes = { "typescript", "typescriptreact" },
   },
 }
+
+linters.setup {
+  {
+    name = "eslint",
+    filetypes = { "typescript", "typescriptreact" },
+  },
+}
+
