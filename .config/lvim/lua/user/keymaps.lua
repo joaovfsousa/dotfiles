@@ -18,8 +18,6 @@ lvim.keys.visual_mode["n"] = "nzz"
 
 lvim.keys.normal_mode["mm"] = "<cmd>BufferLinePick<CR>"
 lvim.keys.visual_mode["mm"] = "<cmd>BufferLinePick<CR>"
-lvim.keys.normal_mode[",,"] = "<cmd>Telescope buffers<CR>"
-lvim.keys.visual_mode[",,"] = "<cmd>Telescope buffers<CR>"
 
 lvim.keys.normal_mode["|"] = '"_'
 lvim.keys.visual_mode["|"] = '"_'

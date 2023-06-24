@@ -199,7 +199,8 @@ lvim.plugins = {
 	{
 		dir = "~/Projects/nvim-plugins/docker.nvim",
 		dependencies = {
-			"nvim-lua/popup.nvim",
+			{ "nvim-lua/popup.nvim" },
+			{ "nvim-lua/plenary.nvim" },
 		},
 		config = true,
 	},
