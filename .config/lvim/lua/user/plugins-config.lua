@@ -6,3 +6,4 @@ reload("user.plugins.jester")
 reload("user.plugins.lualine")
 
 lvim.builtin.alpha.active = false
+require("neodev").setup()
