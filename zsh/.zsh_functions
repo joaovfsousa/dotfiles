@@ -17,9 +17,38 @@ td () {
     glow "$location"
   fi
 }
+
+function run {
+  if [ -f package.json ]; then
+    if ! jq -e '.scripts' package.json >/dev/null; then
+      echo "No scripts found in package.json"
+      return
+    fi
+
+    local script=$(jq -r '.scripts' package.json | sed '1d;$d' | fzf --height 40% --reverse --query="$1")
+
+    local script_name=$(echo $script | awk -F'"' '{print $2}')
+    local script_value=$(echo $script | awk -F'"' '{print $4}')
+
+    if [ -n "$script" ]; then
+      echo "Running: $script_name"
+      echo "Script: $script_value"
+      if [ -f yarn.lock ]; then
+        yarn run "$script_name"
+      else
+        npm run "$script_name"
+      fi
+    fi
+  elif [[ -f Cargo.toml ]]; then
+    cargo run
+  else
+    echo "No package.json or Cargo.toml found"
+  fi
+}
+
 function brew {
   /opt/homebrew/bin/brew $@
-  if ([ $1 = "install" ] || [$1 = "uninstall"]) && [ $2 != "-h" ] ; then
+  if ([ $1 = "install" ] || [ $1 = "uninstall" ]) && [ $2 != "-h" ] ; then
     local current_dir=$(pwd)
 
     cd /Users/joaovfsousa/Projects/dotfiles
