@@ -15,7 +15,7 @@ formatters.setup {
 linters.setup {
   {
     name = "eslint",
-    filetypes = { "typescript", "typescriptreact" },
+    filetypes = { "typescriptreact" },
   },
 }
 
