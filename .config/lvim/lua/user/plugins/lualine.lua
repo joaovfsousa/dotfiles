@@ -1,4 +1,4 @@
 lvim.builtin.lualine.sections.lualine_y = {
-  "location",
-  require('nomodoro').status
+	"location",
+	require("nomodoro").status,
 }
