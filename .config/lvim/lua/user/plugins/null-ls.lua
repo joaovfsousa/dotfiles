@@ -10,12 +10,20 @@ formatters.setup {
     name = "prettier",
     filetypes = { "typescript", "typescriptreact" },
   },
+  {
+    name = "stylua",
+    filetypes = { "lua" },
+  },
 }
 
 linters.setup {
   {
     name = "eslint",
     filetypes = { "typescriptreact" },
+  },
+  {
+    name = "selene",
+    filetypes = { "lua" },
   },
 }
 
