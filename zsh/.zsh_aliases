@@ -1,5 +1,6 @@
 alias v='lvim'
 alias v.='lvim .'
+alias n='nvim'
 alias editp="v ~/.zshrc; szsh"
 alias szsh="source ~/.zshrc; clear"
 alias diskusage="df -H /"

@@ -14,6 +14,48 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
+    "neovim/nvim-lspconfig",
+  },
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+    build = ":MasonUpdate",
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      local mason_lspconfig = require("mason-lspconfig")
+      mason_lspconfig.setup({
+        automatic_installation = true,
+        ensure_installed = {
+          "bashls",
+          "cssls",
+          "emmet_ls",
+          "jsonls",
+          "lua_ls",
+          "prismals",
+          "rust_analyzer",
+          "tailwindcss",
+          "tsserver",
+          "vimls",
+          "yamlls",
+        },
+      })
+
+      mason_lspconfig.setup_handlers({
+        function(server_name)
+          require("lspconfig")[server_name].setup({})
+        end,
+        -- custom example
+        -- ["rust_analyzer"] = function()
+        --   require("rust-tools").setup({})
+        -- end,
+      })
+    end,
+  },
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     init = function()
@@ -27,4 +69,10 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   { "folke/neodev.nvim", opts = {} },
+  {
+    "LunarVim/lunar.nvim",
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+  },
 })
