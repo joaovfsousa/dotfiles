@@ -1,0 +1,5 @@
+{
+  "globals": ["vim", "require", "P", "RELOAD", "R", "describe", "it"],
+  "Lua.diagnostics.globals": ["vim", "require", "P", "RELOAD", "R", "describe", "it"],
+  "Lua.workspace.checkThirdParty": false
+}
