@@ -1,23 +1,20 @@
 local wk = require("which-key")
+local wk_maps = require("joaovfsousa.keymaps.wk")
 
-wk.register({
-  q = {
-    "<cmd>q<cr>",
-    "Quit",
-  },
-  f = {
-    name = "Find",
-    f = {
-      "<cmd>Telescope git_files<cr>",
-      "Git Files",
-    },
-    t = {
-      require("joaovfsousa.plugins.telescope").toggle_layout_strategy,
-      "Toggle layout",
-    },
-  },
-  e = {
-    "<cmd>NvimTreeToggle<cr>",
-    "File Explorer",
-  },
-}, { prefix = "<leader>" })
+wk.register(wk_maps.nmaps, {
+  prefix = "<leader>",
+  mode = "n",
+  buffer = nil,
+  silent = true,
+  noremap = true,
+  nowait = true,
+})
+
+wk.register(wk_maps.vmaps, {
+  prefix = "<leader>",
+  mode = "v",
+  buffer = nil,
+  silent = true,
+  noremap = true,
+  nowait = true,
+})

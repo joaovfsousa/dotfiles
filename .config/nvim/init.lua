@@ -1,9 +1,7 @@
-vim.g.mapleader = " "
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 require("joaovfsousa.lazy")
+require("joaovfsousa.lsp")
 require("joaovfsousa.options")
-require("joaovfsousa.plugins.config")
-require("joaovfsousa.keymaps")
 require("joaovfsousa.theme")
+require("joaovfsousa.plugins")
+require("joaovfsousa.keymaps")
+require("joaovfsousa.commands")

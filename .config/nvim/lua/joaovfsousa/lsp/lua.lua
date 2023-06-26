@@ -68,3 +68,4 @@ local opts = {
 }
 
 require("lspconfig")["lua_ls"].setup(opts)
+print("asdf")

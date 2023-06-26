@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
+    lazy = true,
+    dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim" },
   },
   {
     "williamboman/mason.nvim",
@@ -22,9 +24,14 @@ require("lazy").setup({
       require("mason").setup()
     end,
     build = ":MasonUpdate",
+    event = "User FileOpened",
+    lazy = true,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    lazy = true,
+    event = "User FileOpened",
+    dependencies = "mason.nvim",
     config = function()
       local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup({
@@ -55,6 +62,7 @@ require("lazy").setup({
       })
     end,
   },
+  { "jose-elias-alvarez/null-ls.nvim", lazy = true },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -62,17 +70,82 @@ require("lazy").setup({
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {},
+    config = true,
   },
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "telescope-fzf-native.nvim" },
+    lazy = true
   },
-  { "folke/neodev.nvim", opts = {} },
+  { "folke/neodev.nvim", opts = {}, lazy = true },
   {
     "LunarVim/lunar.nvim",
   },
   {
     "nvim-tree/nvim-tree.lua",
+    event = "User DirOpened",
+  },
+  {
+    "numToStr/Navigator.nvim",
+    config = function()
+      require("Navigator").setup()
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "User FileOpened",
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "akinsho/bufferline.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    event = "User FileOpened",
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VimEnter",
+  },
+  {
+    "dbinagi/nomodoro",
+    config = true,
+    event = "VimEnter",
+  },
+  {
+    "rmagatti/auto-session",
+    config = true,
+  },
+  {
+    "David-Kunz/jester",
+    event = "User FileOpened",
+  },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+    config = true,
+    event = "User FileOpened",
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "User FileOpened",
+  },
+  {
+    "saifulapm/chartoggle.nvim",
+    event = "User FileOpened",
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    setup = true,
   },
 })

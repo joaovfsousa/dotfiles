@@ -2,6 +2,7 @@ vim.cmd("syntax enable")
 vim.cmd("syntax on")
 
 local options = {
+  showtabline = 2,
   -- Search Settings
   smartcase = true, -- smart case
   ignorecase = true, -- ignore case in search patterns
@@ -58,6 +59,8 @@ vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 for key, value in pairs(options) do
   vim.opt[key] = value
