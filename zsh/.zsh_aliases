@@ -17,6 +17,8 @@ alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
 alias k='kill -9'
 alias lg='lazygit -ucd ~/.config/lazygit'
 alias gg='lazygit -ucd ~/.config/lazygit'
+alias wt='jump_to_worktree'
+alias lc='last_commit'
 
 alias nt='npm test'
 alias nr='npm run'

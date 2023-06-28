@@ -1,4 +1,4 @@
-local telescope = require('telescope')
+local telescope = require("telescope")
 local previewers = require("telescope.previewers")
 local sorters = require("telescope.sorters")
 
@@ -9,36 +9,52 @@ local cfg = {
         height = 0.8,
         width = 0.8,
         mirror = true,
-        prompt_position = "top"
+        prompt_position = "top",
       },
       vertical = {
         height = 0.8,
         width = 0.8,
         mirror = true,
-        prompt_position = "top"
+        prompt_position = "top",
       },
     },
     layout_strategy = "vertical",
+    sorting_strategy = "ascending",
     file_ignore_patterns = {
-      "^.git/"
+      "^.git/",
     },
     path_display = {
-      "truncate"
+      "truncate",
     },
     file_previewer = previewers.vim_buffer_cat.new,
     grep_previewer = previewers.vim_buffer_vimgrep.new,
     qflist_previewer = previewers.vim_buffer_qflist.new,
     file_sorter = sorters.get_fuzzy_file,
     generic_sorter = sorters.get_generic_fuzzy_sorter,
-
-  }
+  },
+  pickers = {
+    git_files = {
+      hidden = true,
+      show_untracked = true,
+    },
+    grep_string = {
+      only_sort_text = true,
+    },
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
+  },
 }
 
 local toggle_layout_strategy = function()
   local config = require("telescope.config")
 
-  if (cfg.defaults.layout_strategy == "vertical")
-  then
+  if cfg.defaults.layout_strategy == "vertical" then
     cfg.defaults.layout_strategy = "horizontal"
   else
     cfg.defaults.layout_strategy = "vertical"
@@ -51,9 +67,7 @@ local setup = function()
   telescope.setup(cfg)
 end
 
-
-
 return {
   toggle_layout_strategy = toggle_layout_strategy,
-  setup = setup
+  setup = setup,
 }

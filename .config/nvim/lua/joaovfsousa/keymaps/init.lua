@@ -19,5 +19,6 @@ vim.keymap.set("t", "<c-s>", [[<C-\><C-n>]])
 vim.keymap.set("n", "<c-a>", "Nop")
 
 vim.keymap.set("v", "/", 'y<ESC>/<c-r>"<CR><ESC>')
+
 require("joaovfsousa.keymaps.lsp")
 require("joaovfsousa.keymaps.navigation")

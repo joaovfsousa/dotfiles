@@ -101,7 +101,6 @@ require("lazy").setup({
     config = function()
       require("Comment").setup()
     end,
-    event = "User FileOpened",
   },
   {
     "akinsho/bufferline.nvim",
@@ -362,5 +361,12 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+  },
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension("frecency")
+    end,
+    dependencies = { "kkharji/sqlite.lua" },
   },
 })
