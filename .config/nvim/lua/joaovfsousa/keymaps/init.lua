@@ -14,8 +14,10 @@ vim.keymap.set("n", "E", "<cmd>lua require('dapui').eval()<cr>")
 vim.keymap.set("n", "<leader>zz", "<cmd>TZAtaraxis<cr><cr>")
 vim.keymap.set("n", "<leader>zt", "<cmd>Twilight<cr>")
 
+-- Enter normal mode in terminal
 vim.keymap.set("t", "<c-s>", [[<C-\><C-n>]])
 vim.keymap.set("n", "<c-a>", "Nop")
 
+vim.keymap.set("v", "/", 'y<ESC>/<c-r>"<CR><ESC>')
 require("joaovfsousa.keymaps.lsp")
 require("joaovfsousa.keymaps.navigation")
