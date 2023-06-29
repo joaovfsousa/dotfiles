@@ -9,13 +9,11 @@ local setup = function()
     sources = {
       formatting.prettierd,
       formatting.stylua,
-      diagnostics.eslint_d,
       diagnostics.shellcheck,
       diagnostics.yamllint,
-      diagnostics.eslint_d,
       formatting.yamlfix,
       code_actions.shellcheck,
-      code_actions.eslint_d,
+      require("typescript.extensions.null-ls.code-actions"),
     },
   })
 

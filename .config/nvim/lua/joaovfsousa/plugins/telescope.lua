@@ -18,6 +18,17 @@ local cfg = {
         prompt_position = "top",
       },
     },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden",
+      "--glob=!.git/",
+    },
     layout_strategy = "vertical",
     sorting_strategy = "ascending",
     file_ignore_patterns = {
@@ -38,6 +49,11 @@ local cfg = {
       show_untracked = true,
     },
     grep_string = {
+      only_sort_text = true,
+      hidden = true,
+    },
+    live_grep = {
+      --@usage don't include the filename in the search results
       only_sort_text = true,
     },
   },
