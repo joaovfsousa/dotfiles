@@ -20,5 +20,7 @@ vim.keymap.set("n", "<c-a>", "Nop")
 
 vim.keymap.set("v", "/", 'y<ESC>/<c-r>"<CR><ESC>')
 
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
 require("joaovfsousa.keymaps.lsp")
 require("joaovfsousa.keymaps.navigation")

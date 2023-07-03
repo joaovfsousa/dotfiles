@@ -20,6 +20,7 @@
   cb = checkout -b
   st = status -sb
   lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+  lgg = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
   cm = checkout main
   cp = cherry-pick
   sf = show --name-only

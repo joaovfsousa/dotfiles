@@ -1,10 +1,10 @@
 local default_workspace = {
   library = {
     vim.fn.expand("$VIMRUNTIME"),
-    require("neodev.config").types(),
     "${3rd}/busted/library",
     "${3rd}/luassert/library",
     "${3rd}/luv/library",
+    "/Users/joaovfsousa/.local/share/nvim/lazy",
   },
 
   maxPreload = 5000,
@@ -63,6 +63,9 @@ local opts = {
         globals = { "vim", "lvim", "reload" },
       },
       workspace = default_workspace,
+      completion = {
+        callSnippet = "Replace",
+      },
     },
   },
 }

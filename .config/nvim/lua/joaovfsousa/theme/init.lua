@@ -23,3 +23,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 vim.opt.fillchars = "eob: "
 
 vim.cmd([[colorscheme lunar]])
+
+-- Makes telescope background transparent
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })

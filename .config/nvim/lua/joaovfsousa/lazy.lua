@@ -70,14 +70,33 @@ require("lazy").setup({
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    config = true,
+    config = function()
+      local wk = require("which-key")
+      wk.setup({
+        plugins = {
+          presets = {
+            operators = false,
+            motions = false,
+            text_objects = false,
+            windows = false,
+            nav = false,
+            z = false,
+          },
+        },
+      })
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     lazy = true,
   },
-  { "folke/neodev.nvim", opts = {}, lazy = true },
+  {
+    "folke/neodev.nvim",
+    config = function()
+      require("neodev").setup()
+    end,
+  },
   {
     "LunarVim/lunar.nvim",
   },
@@ -336,6 +355,7 @@ require("lazy").setup({
       { "nvim-lua/plenary.nvim" },
     },
     config = true,
+    lazy = false,
   },
   {
     "mfussenegger/nvim-dap",
@@ -368,5 +388,16 @@ require("lazy").setup({
       require("telescope").load_extension("frecency")
     end,
     dependencies = { "kkharji/sqlite.lua" },
+  },
+  {
+    "anuvyklack/fold-preview.nvim",
+    dependencies = "anuvyklack/keymap-amend.nvim",
+    config = function()
+      require("fold-preview").setup({})
+    end,
+  },
+  {
+    "chentoast/marks.nvim",
+    config = true,
   },
 })
