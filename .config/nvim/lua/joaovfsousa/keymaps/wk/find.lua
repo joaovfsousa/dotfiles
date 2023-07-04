@@ -10,7 +10,7 @@ return {
     "<cmd>Telescope frecency<cr>",
     "Files",
   },
-  v = {
+  a = {
     "<cmd>Telescope git_files<cr>",
     "Git Files",
   },
@@ -51,5 +51,9 @@ return {
       })
     end,
     "Commit",
+  },
+  h = {
+    "<cmd>CheatList<cr>",
+    "Cheatsheet",
   },
 }

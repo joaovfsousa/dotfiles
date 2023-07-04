@@ -162,7 +162,6 @@ require("lazy").setup({
   },
   {
     "folke/neodev.nvim",
-    lazy = true,
     config = function()
       require("neodev").setup()
     end,
@@ -182,8 +181,6 @@ require("lazy").setup({
   },
   {
     "numToStr/Comment.nvim",
-    event = "User FileOpened",
-    lazy = true,
     config = function()
       require("Comment").setup()
     end,
@@ -286,7 +283,6 @@ require("lazy").setup({
   },
   {
     "axelvc/template-string.nvim",
-    event = "User FileOpened",
     config = function()
       require("template-string").setup({
         remove_template_string = true,
@@ -295,7 +291,6 @@ require("lazy").setup({
   },
   {
     "norcalli/nvim-colorizer.lua",
-    event = "User FileOpened",
     config = true,
   },
   {
@@ -304,7 +299,6 @@ require("lazy").setup({
   },
   {
     "ray-x/lsp_signature.nvim",
-    event = "User FileOpened",
     config = function()
       require("lsp_signature").setup({
         toggle_key = "<C-s>",
@@ -339,12 +333,10 @@ require("lazy").setup({
   },
   {
     "windwp/nvim-ts-autotag",
-    event = "User FileOpened",
     config = true,
   },
   {
     "themaxmarchuk/tailwindcss-colors.nvim",
-    event = "User FileOpened",
     dependencies = {
       { "neovim/nvim-lspconfig" },
     },
@@ -387,13 +379,11 @@ require("lazy").setup({
   },
   {
     "folke/todo-comments.nvim",
-    event = "User FileOpened",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
-    event = "User FileOpened",
     config = function()
       require("treesitter-context").setup({
         min_window_height = 34,
@@ -434,7 +424,6 @@ require("lazy").setup({
   },
   {
     "anuvyklack/fold-preview.nvim",
-    event = "User FileOpened",
     dependencies = "anuvyklack/keymap-amend.nvim",
     config = function()
       require("fold-preview").setup({})
@@ -442,8 +431,13 @@ require("lazy").setup({
   },
   {
     "chentoast/marks.nvim",
-    event = "User FileOpened",
     config = true,
+  },
+  {
+    "RishabhRD/nvim-cheat.sh",
+    dependencies = {
+      "RishabhRD/popfix",
+    },
   },
   {
     dir = "~/Projects/nvim-plugins/docker.nvim",

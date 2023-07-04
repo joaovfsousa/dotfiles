@@ -24,6 +24,17 @@ local definitions = {
       end,
     },
   },
+  {
+    "FileType",
+    {
+      group = "_filetype colorizer",
+      pattern = "*",
+      desc = "Start colorizer",
+      callback = function()
+        vim.cmd([[ColorizerAttachToBuffer]])
+      end,
+    },
+  },
 }
 
 local function define_autocmds(definitions)
