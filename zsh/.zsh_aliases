@@ -19,6 +19,7 @@ alias lg='lazygit -ucd ~/.config/lazygit'
 alias gg='lazygit -ucd ~/.config/lazygit'
 alias wt='jump_to_worktree'
 alias lc='last_commit'
+alias lcm='last_commit_msg'
 
 alias nt='npm test'
 alias nr='npm run'

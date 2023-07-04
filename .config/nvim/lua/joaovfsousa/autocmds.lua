@@ -14,21 +14,7 @@ local definitions = {
     "FileType",
     {
       group = "_filetype keymaps",
-      pattern = "typescript",
-      desc = "Go to Typescript definition keymap",
-      callback = function()
-        vim.keymap.set("n", "gd", "<cmd>TypescriptGoToSourceDefinition<cr>", {
-          buffer = true,
-          desc = "Go to definition",
-        })
-      end,
-    },
-  },
-  {
-    "FileType",
-    {
-      group = "_filetype keymaps",
-      pattern = "typescriptreact",
+      pattern = "typescript,typescriptreact",
       desc = "Go to Typescript definition keymap",
       callback = function()
         vim.keymap.set("n", "gd", "<cmd>TypescriptGoToSourceDefinition<cr>", {
@@ -40,7 +26,7 @@ local definitions = {
   },
 }
 
-function define_autocmds(definitions)
+local function define_autocmds(definitions)
   for _, entry in ipairs(definitions) do
     local event = entry[1]
     local opts = entry[2]

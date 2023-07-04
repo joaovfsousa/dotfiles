@@ -7,6 +7,10 @@ end
 return {
   name = "Find",
   f = {
+    "<cmd>Telescope frecency<cr>",
+    "Files",
+  },
+  v = {
     "<cmd>Telescope git_files<cr>",
     "Git Files",
   },
@@ -21,5 +25,31 @@ return {
   t = {
     require("joaovfsousa.plugins.telescope").toggle_layout_strategy,
     "Toggle layout",
+  },
+  d = {
+    telescope.diagnostics,
+    "Diagnostics",
+  },
+  l = {
+    function()
+      telescope.resume({
+        initial_mode = "normal",
+      })
+    end,
+    "Resume last search",
+  },
+  c = {
+    function()
+      local actions =
+        require("telescope._extensions.conventional_commits.actions")
+      local picker =
+        require("telescope._extensions.conventional_commits.picker")
+
+      picker({
+        action = actions.prompt,
+        include_body_and_footer = true,
+      })
+    end,
+    "Commit",
   },
 }

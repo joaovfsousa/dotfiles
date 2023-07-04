@@ -14,6 +14,75 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "hiphish/rainbow-delimiters.nvim",
+    },
+    config = function()
+      local ts_config = require("nvim-treesitter.configs")
+      ts_config.setup({
+        ensure_installed = "all",
+        sync_install = false,
+        auto_install = true,
+        ignore_install = { "phpdoc" },
+        highlight = {
+          enable = true,
+          disable = { "css" },
+          additional_vim_regex_highlighting = false,
+        },
+        autopairs = {
+          enable = false,
+        },
+        context_commentstring = {
+          enable = true,
+          enable_autocmd = false,
+          config = {
+            -- Languages that have a single comment style
+            typescript = "// %s",
+            css = "/* %s */",
+            scss = "/* %s */",
+            html = "<!-- %s -->",
+            svelte = "<!-- %s -->",
+            vue = "<!-- %s -->",
+            json = "",
+          },
+        },
+        indent = { enable = true, disable = { "yaml", "python" } },
+        autotag = { enable = false },
+        textobjects = {
+          swap = {
+            enable = false,
+          },
+          select = {
+            enable = false,
+          },
+        },
+        textsubjects = {
+          enable = false,
+          keymaps = { ["."] = "textsubjects-smart", [";"] = "textsubjects-big" },
+        },
+        playground = {
+          enable = false,
+          disable = {},
+          updatetime = 25,
+          persist_queries = false,
+          keybindings = {
+            toggle_query_editor = "o",
+            toggle_hl_groups = "i",
+            toggle_injected_languages = "t",
+            toggle_anonymous_nodes = "a",
+            toggle_language_display = "I",
+            focus_language = "f",
+            unfocus_language = "F",
+            update = "R",
+            goto_node = "<cr>",
+            show_help = "?",
+          },
+        },
+      })
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     lazy = true,
     dependencies = { "mason-lspconfig.nvim" },
@@ -93,6 +162,7 @@ require("lazy").setup({
   },
   {
     "folke/neodev.nvim",
+    lazy = true,
     config = function()
       require("neodev").setup()
     end,
@@ -111,12 +181,9 @@ require("lazy").setup({
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = "User FileOpened",
-  },
-  {
     "numToStr/Comment.nvim",
+    event = "User FileOpened",
+    lazy = true,
     config = function()
       require("Comment").setup()
     end,
@@ -141,10 +208,6 @@ require("lazy").setup({
     config = true,
   },
   {
-    "David-Kunz/jester",
-    event = "User FileOpened",
-  },
-  {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
@@ -167,10 +230,7 @@ require("lazy").setup({
   },
   {
     "hrsh7th/nvim-cmp",
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "VeryLazy",
+    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
@@ -198,16 +258,19 @@ require("lazy").setup({
   },
   {
     "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
     config = function()
       require("copilot_cmp").setup()
     end,
   },
   {
     "rmagatti/goto-preview",
+    event = "User FileOpened",
     config = true,
   },
   {
     "lewis6991/gitsigns.nvim",
+    event = "User FileOpened",
     config = function()
       require("gitsigns").setup({
         signs = {
@@ -223,6 +286,7 @@ require("lazy").setup({
   },
   {
     "axelvc/template-string.nvim",
+    event = "User FileOpened",
     config = function()
       require("template-string").setup({
         remove_template_string = true,
@@ -231,19 +295,8 @@ require("lazy").setup({
   },
   {
     "norcalli/nvim-colorizer.lua",
+    event = "User FileOpened",
     config = true,
-  },
-  {
-    "HiPhish/nvim-ts-rainbow2",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        rainbow = {
-          enable = true,
-          query = "rainbow-parens",
-          strategy = require("ts-rainbow").strategy.global,
-        },
-      })
-    end,
   },
   {
     "alanfortlink/blackjack.nvim",
@@ -251,6 +304,7 @@ require("lazy").setup({
   },
   {
     "ray-x/lsp_signature.nvim",
+    event = "User FileOpened",
     config = function()
       require("lsp_signature").setup({
         toggle_key = "<C-s>",
@@ -267,6 +321,7 @@ require("lazy").setup({
   },
   {
     "jose-elias-alvarez/typescript.nvim",
+    event = "User FileOpened",
     config = true,
   },
   {
@@ -284,10 +339,12 @@ require("lazy").setup({
   },
   {
     "windwp/nvim-ts-autotag",
+    event = "User FileOpened",
     config = true,
   },
   {
     "themaxmarchuk/tailwindcss-colors.nvim",
+    event = "User FileOpened",
     dependencies = {
       { "neovim/nvim-lspconfig" },
     },
@@ -330,15 +387,13 @@ require("lazy").setup({
   },
   {
     "folke/todo-comments.nvim",
+    event = "User FileOpened",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
   {
-    "dbinagi/nomodoro",
-    config = true,
-  },
-  {
     "nvim-treesitter/nvim-treesitter-context",
+    event = "User FileOpened",
     config = function()
       require("treesitter-context").setup({
         min_window_height = 34,
@@ -349,15 +404,6 @@ require("lazy").setup({
     end,
   },
   {
-    dir = "~/Projects/nvim-plugins/docker.nvim",
-    dependencies = {
-      { "nvim-lua/popup.nvim" },
-      { "nvim-lua/plenary.nvim" },
-    },
-    config = true,
-    lazy = false,
-  },
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
       "David-Kunz/jester",
@@ -365,9 +411,6 @@ require("lazy").setup({
       "rcarriga/nvim-dap-ui",
       "theHamsta/nvim-dap-virtual-text",
     },
-    config = function()
-      require("joaovfsousa.plugins.dap.config")
-    end,
   },
   {
     "RRethy/vim-illuminate",
@@ -391,6 +434,7 @@ require("lazy").setup({
   },
   {
     "anuvyklack/fold-preview.nvim",
+    event = "User FileOpened",
     dependencies = "anuvyklack/keymap-amend.nvim",
     config = function()
       require("fold-preview").setup({})
@@ -398,6 +442,24 @@ require("lazy").setup({
   },
   {
     "chentoast/marks.nvim",
+    event = "User FileOpened",
     config = true,
+  },
+  {
+    dir = "~/Projects/nvim-plugins/docker.nvim",
+    dependencies = {
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+    },
+    config = true,
+    lazy = false,
+  },
+  {
+    dir = "~/Projects/nvim-plugins/telescope-cc.nvim",
+    config = function()
+      local telescope = require("telescope")
+      telescope.load_extension("conventional_commits")
+    end,
+    lazy = false,
   },
 })

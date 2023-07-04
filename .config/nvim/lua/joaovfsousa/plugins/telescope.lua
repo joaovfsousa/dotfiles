@@ -64,6 +64,12 @@ local cfg = {
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
+    frecency = {
+      show_scores = false,
+      show_unindexed = false,
+      ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
+      default_workspace = { "CWD" },
+    },
   },
 }
 
