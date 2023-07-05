@@ -6,11 +6,11 @@ end
 
 return {
   name = "Find",
-  f = {
-    "<cmd>Telescope frecency<cr>",
-    "Files",
+  F = {
+    "<cmd>Telescope frecency workpace='CWD'<cr>",
+    "Frequent Files",
   },
-  a = {
+  f = {
     "<cmd>Telescope git_files<cr>",
     "Git Files",
   },
@@ -41,9 +41,9 @@ return {
   c = {
     function()
       local actions =
-        require("telescope._extensions.conventional_commits.actions")
+          require("telescope._extensions.conventional_commits.actions")
       local picker =
-        require("telescope._extensions.conventional_commits.picker")
+          require("telescope._extensions.conventional_commits.picker")
 
       picker({
         action = actions.prompt,
@@ -52,8 +52,12 @@ return {
     end,
     "Commit",
   },
+  C = {
+    "<cmd>TextCaseOpenTelescope<cr>",
+    "Change text case",
+  },
   h = {
-    "<cmd>CheatList<cr>",
+    "<cmd>Cheat<cr>",
     "Cheatsheet",
   },
 }

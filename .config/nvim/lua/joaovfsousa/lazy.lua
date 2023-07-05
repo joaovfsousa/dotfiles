@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -438,6 +439,34 @@ require("lazy").setup({
     dependencies = {
       "RishabhRD/popfix",
     },
+  },
+  {
+    "nvimdev/hlsearch.nvim",
+    event = "BufRead",
+    config = function()
+      require("hlsearch").setup()
+    end,
+  },
+  {
+    "gaelph/logsitter.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+  {
+    "kazhala/close-buffers.nvim",
+  },
+  {
+    "johmsalas/text-case.nvim",
+    config = function()
+      require("textcase").setup({})
+      require("telescope").load_extension("textcase")
+    end,
+  },
+  {
+    "prochri/telescope-all-recent.nvim",
+    config = function()
+      require("telescope-all-recent").setup({})
+    end,
+    dependencies = { "kkharji/sqlite.lua" },
   },
   {
     dir = "~/Projects/nvim-plugins/docker.nvim",
