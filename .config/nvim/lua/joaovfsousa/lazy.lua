@@ -469,6 +469,13 @@ require("lazy").setup({
     dependencies = { "kkharji/sqlite.lua" },
   },
   {
+    "lewis6991/satellite.nvim",
+    config = function()
+      require("satellite").setup()
+    end,
+    enabled = false,
+  },
+  {
     dir = "~/Projects/nvim-plugins/docker.nvim",
     dependencies = {
       { "nvim-lua/popup.nvim" },
