@@ -57,6 +57,11 @@
       relink: true
       create: true
       force: true
+    ~/.tmux.conf:
+      path: ./.tmux.conf
+      relink: true
+      create: true
+      force: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
