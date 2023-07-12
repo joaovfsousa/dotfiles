@@ -55,7 +55,6 @@
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "5a074244a40f9e2e0ba219268c69cb256ce16696" },
   "refactoring.nvim": { "branch": "master", "commit": "859289acc0fda13bf42834dbeef10b8c1148d444" },
-  "satellite.nvim": { "branch": "main", "commit": "5d33376287e384f04b84962a20d90bd10a9dac86" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
   "tailwindcss-colors.nvim": { "branch": "main", "commit": "ccb5be2f84673c1a0ef90a0c0a76733e85e5265b" },
   "telescope-all-recent.nvim": { "branch": "main", "commit": "dee20f810aec14c31287988b3baa8c371900cf06" },
@@ -68,6 +67,7 @@
   "twilight.nvim": { "branch": "main", "commit": "a4843e6e67092a1e6fa9666f02bf0ab59174c1df" },
   "typescript.nvim": { "branch": "main", "commit": "de304087e6e49981fde01af8ccc5b21e8519306f" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
+  "vim-matchtag": { "branch": "master", "commit": "54357c00979e07d86aa12b383ddd1d6a7fbda2c2" },
   "which-key.nvim": { "branch": "main", "commit": "d871f2b664afd5aed3dc1d1573bef2fb24ce0484" },
   "yaml-companion.nvim": { "branch": "main", "commit": "4de1e1546abc461f62dee02fcac6a02debd6eb9e" }
 }

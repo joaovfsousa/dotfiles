@@ -65,3 +65,17 @@ local function define_autocmds(definitions)
 end
 
 define_autocmds(definitions)
+
+if vim.fn.has("nvim-0.10") == 1 then
+  print("asdfasdf")
+  vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("EnableInlayHints", { clear = true }),
+    callback = function(args)
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      if client.server_capabilities.inlayHintProvider then
+        print("server has inlay hints")
+        vim.lsp.inlay_hint(args.buf, true)
+      end
+    end,
+  })
+end

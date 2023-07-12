@@ -1,3 +1,34 @@
+local function find_launch_json()
+  local cwd = vim.fn.getcwd()
+  local path = cwd .. "/.nvim/launch.json"
+
+  local file = io.open(path, "r")
+
+  if file ~= nil then
+    io.close(file)
+    return path
+  end
+
+  path = cwd .. "/.vscode/launch.json"
+
+  file = io.open(path, "r")
+  if file ~= nil then
+    io.close(file)
+    return path
+  end
+
+  return nil
+end
+
+function start()
+  require("dap.ext.vscode").load_launchjs(
+    find_launch_json(),
+    { node = { "typescript", "typescriptreact" } }
+  )
+
+  require("dap").continue()
+end
+
 return {
   name = "Debug",
   C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
@@ -11,7 +42,7 @@ return {
   p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
   q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
   r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-  s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+  s = { start, "Start" },
   u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
   t = {
     "<cmd>PBToggleBreakpoint<CR>",

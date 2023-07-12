@@ -476,6 +476,10 @@ require("lazy").setup({
     enabled = false,
   },
   {
+    "leafOfTree/vim-matchtag",
+    enabled = true,
+  },
+  {
     dir = "~/Projects/nvim-plugins/docker.nvim",
     dependencies = {
       { "nvim-lua/popup.nvim" },
