@@ -41,6 +41,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.default_prog = { "/bin/zsh", "-l", "-c", "tmux attach || tmux" }
+
 config.leader = { key = "b", mods = "CTRL" }
 
 -- config.initial_rows = 36
@@ -52,7 +54,7 @@ config.window_background_opacity = 0.92
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" })
 config.font_size = 14
 config.line_height = 1
-config.cell_width = 1.1
+config.cell_width = 1
 
 config.hide_tab_bar_if_only_one_tab = true
 

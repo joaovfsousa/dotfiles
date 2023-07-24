@@ -1,5 +1,5 @@
-alias v='lvim'
-alias v.='lvim .'
+alias v='nvim'
+alias v.='nvim .'
 alias n='nvim'
 alias editp="v ~/.zshrc; szsh"
 alias szsh="source ~/.zshrc; clear"
@@ -12,16 +12,19 @@ alias g='git'
 alias hg='history | grep -i'
 alias dd='dockly'
 alias p='cd $PROJECTS_DIR'
-alias dot='p; cd dotfiles'
+alias dot='p; cd ~/Projects/dotfiles'
 alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
 alias k='kill -9'
+
+alias cd='z'
+
 alias lg='lazygit -ucd ~/.config/lazygit'
 alias gg='lazygit -ucd ~/.config/lazygit'
 alias wt='jump_to_worktree'
 alias lc='last_commit'
 alias lcm='last_commit_msg'
 
-alias nt='npm test'
-alias nr='npm run'
+alias t='tmux'
+alias ta='tmux a'
 
 alias img='wezterm imgcat'

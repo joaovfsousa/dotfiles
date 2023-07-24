@@ -13,6 +13,7 @@ export PROJECTS_DIR="/Users/joaovfsousa/Projects"
 export LC_CTYPE=en_US.UTF-8
 export XDG_CONFIG_HOME="$HOME/.config"
 export CONFIG_DIR="$HOME/.config"
+export EDITOR="nvim"
 
 source ~/.zsh_aliases
 source ~/.zsh_functions

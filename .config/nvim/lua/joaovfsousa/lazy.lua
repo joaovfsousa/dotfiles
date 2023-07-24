@@ -177,7 +177,10 @@ require("lazy").setup({
   {
     "numToStr/Navigator.nvim",
     config = function()
-      require("Navigator").setup()
+      require("Navigator").setup({
+        auto_save = "all",
+        disable_on_zoom = true,
+      })
     end,
   },
   {
