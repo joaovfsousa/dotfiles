@@ -31,6 +31,25 @@ postpush () {
   fi
 }
 
+mark() {
+  last_wd=$(pwd)
+}
+
+back() {
+  cd $last_wd
+}
+
+cd() {
+  lwd=$(pwd)
+  builtin cd "$@"
+}
+
+b() {
+  temp=$(pwd)
+  cd $lwd
+  lwd="$temp"
+}
+
 function run {
   if [ -f package.json ]; then
     if ! jq -e '.scripts' package.json >/dev/null; then
