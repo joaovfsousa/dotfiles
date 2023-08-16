@@ -14,6 +14,11 @@
       relink: true
       create: true
       force: true
+    ~/.zsh_git_functions:
+      path: ./zsh/.zsh_git_functions
+      relink: true
+      create: true
+      force: true
     ~/.zsh_package_managers:
       path: ./zsh/.zsh_package_managers
       relink: true
@@ -64,6 +69,11 @@
       force: true
     ~/.tmux.conf:
       path: ./.tmux.conf
+      relink: true
+      create: true
+      force: true
+    ~/.scripts:
+      path: ./scripts
       relink: true
       create: true
       force: true

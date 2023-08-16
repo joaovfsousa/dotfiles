@@ -6,6 +6,7 @@ yabai -m config mouse_follows_focus on
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Raycast" manage=off
+yabai -m rule --add app="^Browserosaurus" manage=off
 
 yabai -m space 1 --label "1:Personal"
 yabai -m space 2 --label "2:Calendar"

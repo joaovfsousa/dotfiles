@@ -19,6 +19,7 @@ require("lazy").setup({
     dependencies = {
       "hiphish/rainbow-delimiters.nvim",
     },
+    build = ":TSUpdateSync",
     config = function()
       local ts_config = require("nvim-treesitter.configs")
       ts_config.setup({

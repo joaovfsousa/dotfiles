@@ -73,13 +73,47 @@ end
 -- end
 
 vim.fn.sign_define("DapBreakpoint", {
-  text = icons.ui.Circle,
+  text = icons.ui.Bug,
   texthl = "DiagnosticSignError",
   linehl = "",
   numhl = "",
 })
 
-dapui.setup()
+vim.fn.sign_define("DapBreakpointRejected", {
+  text = icons.ui.Bug,
+  texthl = "DiagnosticSignError",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapStopped", {
+  text = icons.ui.BoldArrowRight,
+  texthl = "DiagnosticSignWarn",
+  linehl = "Visual",
+  numhl = "DiagnosticSignWarn",
+})
+
+dapui.setup({
+  layouts = {
+    {
+      elements = {
+        { id = "scopes", size = 0.33 },
+        { id = "breakpoints", size = 0.17 },
+        { id = "stacks", size = 0.25 },
+        { id = "watches", size = 0.25 },
+      },
+      size = 0.33,
+      position = "right",
+    },
+    {
+      elements = {
+        { id = "console", size = 1 },
+      },
+      size = 0.3,
+      position = "bottom",
+    },
+  },
+})
 
 local function find_launch_json()
   local cwd = vim.fn.getcwd()

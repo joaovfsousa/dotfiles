@@ -1,0 +1,9 @@
+gps() {
+  git push;
+  postpush;
+}
+
+gpsf() {
+  git push -f;
+  postpush;
+}

@@ -1,3 +1,5 @@
+source ~/.zsh_git_functions
+
 len(){
   place=cwd
   ls ${1:$place} | wc -l
@@ -15,6 +17,17 @@ td () {
     v "$location"
   else
     glow "$location"
+  fi
+}
+
+postpush () {
+  local originUrl=$(git remote get-url origin)
+
+  if [[ $originUrl =~ bitbucket ]]
+  then
+    tmux capture-pane -S -900 -p | node /Users/joaovfsousa/.scripts/get-last-url.js | pbcopy
+  else if [[ $originUrl =~ github ]]
+    tmux capture-pane -S -900 -p | node /Users/joaovfsousa/.scripts/get-last-url.js | pbcopy 
   fi
 }
 
