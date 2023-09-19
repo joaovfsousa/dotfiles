@@ -39,7 +39,6 @@ local setup = function()
     sync_root_with_cwd = true,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
-    remove_keymaps = false,
     select_prompts = false,
     view = {
       adaptive_size = false,

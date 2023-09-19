@@ -1,3 +1,5 @@
 os:
   editPreset: "nvim"
+  open: "nvim"
 notARepository: "skip"
+promptToReturnFromSubprocess: false

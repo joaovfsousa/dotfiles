@@ -12,4 +12,5 @@ vim.diagnostic.config({
 })
 
 require("joaovfsousa.lsp.lua")
+require("joaovfsousa.lsp.astro")
 require("joaovfsousa.lsp.javascript")
