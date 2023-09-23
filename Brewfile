@@ -63,6 +63,7 @@ cask "wezterm"
 mas "Developer", id: 640199958
 mas "Hand Mirror", id: 1502839586
 mas "ScreenBrush", id: 1233965871
+mas "Velja", id: 1607635845
 mas "Xcode", id: 497799835
 vscode "42Crunch.vscode-openapi"
 vscode "adpyke.codesnap"
