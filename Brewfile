@@ -8,6 +8,7 @@ brew "awscli"
 brew "bat"
 brew "node"
 brew "bitwarden-cli"
+brew "bottom"
 brew "fzf"
 brew "git"
 brew "glow"
@@ -62,6 +63,7 @@ cask "warp"
 cask "wezterm"
 mas "Developer", id: 640199958
 mas "Hand Mirror", id: 1502839586
+mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "Velja", id: 1607635845
 mas "Xcode", id: 497799835
