@@ -41,9 +41,9 @@ return {
   c = {
     function()
       local actions =
-          require("telescope._extensions.conventional_commits.actions")
+        require("telescope._extensions.conventional_commits.actions")
       local picker =
-          require("telescope._extensions.conventional_commits.picker")
+        require("telescope._extensions.conventional_commits.picker")
 
       picker({
         action = actions.prompt,
@@ -52,12 +52,8 @@ return {
     end,
     "Commit",
   },
-  C = {
-    "<cmd>TextCaseOpenTelescope<cr>",
-    "Change text case",
-  },
-  h = {
-    "<cmd>Cheat<cr>",
-    "Cheatsheet",
+  T = {
+    "<cmd>TodoTelescope<cr>",
+    "Todo comments",
   },
 }

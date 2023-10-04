@@ -412,7 +412,7 @@ require("lazy").setup({
       require("illuminate").configure()
     end,
   },
-  { "lukas-reineke/indent-blankline.nvim" },
+  { "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8" },
   {
     "kdheepak/lazygit.nvim",
     dependencies = {
@@ -438,12 +438,6 @@ require("lazy").setup({
     config = true,
   },
   {
-    "RishabhRD/nvim-cheat.sh",
-    dependencies = {
-      "RishabhRD/popfix",
-    },
-  },
-  {
     "nvimdev/hlsearch.nvim",
     event = "BufRead",
     config = function()
@@ -455,16 +449,6 @@ require("lazy").setup({
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
-    "kazhala/close-buffers.nvim",
-  },
-  {
-    "johmsalas/text-case.nvim",
-    config = function()
-      require("textcase").setup({})
-      require("telescope").load_extension("textcase")
-    end,
-  },
-  {
     "prochri/telescope-all-recent.nvim",
     config = function()
       require("telescope-all-recent").setup({})
@@ -472,15 +456,16 @@ require("lazy").setup({
     dependencies = { "kkharji/sqlite.lua" },
   },
   {
-    "lewis6991/satellite.nvim",
-    config = function()
-      require("satellite").setup()
-    end,
-    enabled = false,
-  },
-  {
     "leafOfTree/vim-matchtag",
     enabled = true,
+  },
+  {
+    "levouh/tint.nvim",
+    config = function()
+      require("tint").setup({
+        tint = -60,
+      })
+    end,
   },
   {
     dir = "~/Projects/nvim-plugins/docker.nvim",
