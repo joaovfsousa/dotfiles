@@ -36,13 +36,13 @@ mark() {
 }
 
 back() {
-  cd $last_wd
+  builtin cd $last_wd
 }
 
 b() {
   temp=$(pwd)
-  cd $lwd
-  lwd="$temp"
+  builtin cd $last_wd
+  last_wd="$temp"
 }
 
 function dll {
