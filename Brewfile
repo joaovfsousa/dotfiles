@@ -42,6 +42,7 @@ cask "eclipse-ide"
 cask "fig"
 cask "figma"
 cask "font-jetbrains-mono-nerd-font"
+cask "hot"
 cask "insomnia"
 cask "loom"
 cask "microsoft-auto-update"
@@ -66,6 +67,7 @@ cask "warp"
 cask "wezterm"
 mas "Developer", id: 640199958
 mas "Hand Mirror", id: 1502839586
+mas "Kindle", id: 302584613
 mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "Velja", id: 1607635845
