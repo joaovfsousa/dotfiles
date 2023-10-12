@@ -48,6 +48,48 @@ local definitions = {
       end,
     },
   },
+  {
+    "TermOpen",
+    {
+      group = "bufcheck",
+      pattern = "*",
+      desc = "Starts terminal in insert mode",
+      command = "startinsert | set winfixheight",
+    },
+  },
+  {
+    "FileType",
+    {
+      group = "bufcheck",
+      pattern = { "gitcommit", "gitrebase" },
+      desc = "Starts git commit and rebase in insert mode",
+      command = "startinsert | 1",
+    },
+  },
+  {
+    "BufReadPost",
+    {
+      group = "bufcheck",
+      pattern = "*",
+      desc = "Return to last edit position when opening files",
+      callback = function()
+        local fn = vim.fn
+        if fn.line("'\"") > 0 and fn.line("'\"") <= fn.line("$") then
+          fn.setpos(".", fn.getpos("'\""))
+          -- vim.cmd('normal zz') -- how do I center the buffer in a sane way??
+          vim.cmd("silent! foldopen")
+        end
+      end,
+    },
+  },
+  {
+    "FocusLost",
+    {
+      pattern = "*",
+      desc = "Write all unsaved buffers on unfocus",
+      command = "silent! wa",
+    },
+  },
 }
 
 local function define_autocmds(definitions)
