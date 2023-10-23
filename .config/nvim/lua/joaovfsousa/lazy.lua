@@ -107,12 +107,16 @@ require("lazy").setup({
       mason_lspconfig.setup({
         automatic_installation = true,
         ensure_installed = {
+          "astro",
           "bashls",
           "cssls",
           "emmet_ls",
           "jsonls",
+          "eslint",
           "lua_ls",
+          "omnisharp",
           "prismals",
+          "pylsp",
           "rust_analyzer",
           "tailwindcss",
           "tsserver",
@@ -328,11 +332,25 @@ require("lazy").setup({
       { "neovim/nvim-lspconfig" },
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope.nvim" },
+      { "b0o/schemastore.nvim" },
     },
     config = function()
       require("telescope").load_extension("yaml_schema")
       local cfg = require("yaml-companion").setup()
-      require("lspconfig")["yamlls"].setup(cfg)
+      require("lspconfig")["yamlls"].setup({
+        settings = {
+          yaml = {
+            hover = true,
+            completion = true,
+            validate = true,
+            schemaStore = {
+              enable = true,
+              url = "https://www.schemastore.org/api/json/catalog.json",
+            },
+            schemas = require("schemastore").yaml.schemas(),
+          },
+        },
+      })
     end,
   },
   {
