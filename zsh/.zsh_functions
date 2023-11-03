@@ -88,6 +88,8 @@ function run {
       echo "Script: $script_value"
       if [ -f yarn.lock ]; then
         yarn run "$script_name"
+      elif [ -f pnpm-lock.yaml ]; then
+        pnpm run "$script_name"
       else
         npm run "$script_name"
       fi
