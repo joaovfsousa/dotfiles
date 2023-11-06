@@ -30,4 +30,4 @@ alias ta='tmux a'
 alias img='wezterm imgcat'
 
 alias cd='z'
-
+alias lsd="lsd -la"

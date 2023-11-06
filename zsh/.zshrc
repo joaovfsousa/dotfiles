@@ -15,11 +15,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export CONFIG_DIR="$HOME/.config"
 export EDITOR="nvim"
 
-source ~/.zsh_aliases
-source ~/.zsh_functions
 source ~/.zsh_package_managers
 source ~/.zsh_theme
 source ~/.zsh_zinit
+source ~/.zsh_aliases
+source ~/.zsh_functions
 
 source $ZSH/oh-my-zsh.sh
 
