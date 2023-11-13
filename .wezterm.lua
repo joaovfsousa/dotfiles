@@ -52,7 +52,9 @@ config.color_scheme = "Dracula (Official)"
 config.window_background_opacity = 0.92
 
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" })
-config.font_size = 14
+-- Disabled while they dont fix ligatures
+-- config.font = wezterm.font("Monaspace Argon", { weight = 700 })
+config.font_size = 15
 config.line_height = 1
 config.cell_width = 1
 

@@ -54,6 +54,7 @@
   "refactoring.nvim": { "branch": "master", "commit": "5831194debd23920a32abd9fefd5dddba44e34fc" },
   "schemastore.nvim": { "branch": "main", "commit": "58b68beab54b872b6da8305f6a18c50a83a95132" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
+  "ssr.nvim": { "branch": "main", "commit": "bb323ba621ac647b4ac5638b47666e3ef3c279e1" },
   "tailwindcss-colors.nvim": { "branch": "main", "commit": "ccb5be2f84673c1a0ef90a0c0a76733e85e5265b" },
   "telescope-all-recent.nvim": { "branch": "main", "commit": "766d79bedf8dd59c2d0a944a7cf3c98795ab5f07" },
   "telescope-frecency.nvim": { "branch": "master", "commit": "daf59744f60e34cbb48a40a092e9e735553b6f21" },

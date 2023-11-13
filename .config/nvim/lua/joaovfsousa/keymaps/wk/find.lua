@@ -56,4 +56,8 @@ return {
     "<cmd>TodoTelescope<cr>",
     "Todo comments",
   },
+  r = {
+    "<cmd>lua require 'ssr'.open()<cr>",
+    "Find and Replace",
+  },
 }
