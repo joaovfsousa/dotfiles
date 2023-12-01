@@ -75,6 +75,7 @@ cask "vlc"
 cask "warp"
 cask "wezterm"
 mas "Developer", id: 640199958
+mas "GeoGebra Calculator Suite", id: 1504416652
 mas "Hand Mirror", id: 1502839586
 mas "Kindle", id: 302584613
 mas "MyWallpaper", id: 1552826194
