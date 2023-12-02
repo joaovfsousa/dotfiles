@@ -506,6 +506,14 @@ require("lazy").setup({
     end,
   },
   {
+    "Wansmer/symbol-usage.nvim",
+    event = "BufReadPre",
+    enabled = false,
+    config = function()
+      require("symbol-usage").setup()
+    end,
+  },
+  {
     dir = "~/Projects/nvim-plugins/docker.nvim",
     dependencies = {
       { "nvim-lua/popup.nvim" },

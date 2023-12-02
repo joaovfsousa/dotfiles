@@ -92,5 +92,11 @@
     "body": [
       "BREAKING CHANGE: $0"
     ]
+  },
+  "coauthored": {
+    "prefix": "coauthored",
+    "body": [
+      "Co-authored-by: $1 <$0>"
+    ]
   }
 }
