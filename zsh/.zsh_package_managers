@@ -6,6 +6,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 load-nvmrc() {
+  if [ ! -f '.nvmrc' ]; then
+    return
+  fi
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
 
@@ -28,9 +31,16 @@ add-zsh-hook chpwd load-nvmrc
 
 load-nvmrc
 
-export PATH="$PATH:`yarn global bin`"
-
+(( $+commands[yarn] )) && export PATH="$PATH:`yarn global bin`"
 
 . "$HOME/.cargo/env"
 
 [[ -s "/Users/joaovfsousa/.gvm/scripts/gvm" ]] && source "/Users/joaovfsousa/.gvm/scripts/gvm"
+
+# pnpm
+export PNPM_HOME="/Users/joaovfsousa/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -32,11 +32,3 @@ eval "$(zoxide init zsh)"
 unsetopt PROMPT_SP
 clear
 
-
-# pnpm
-export PNPM_HOME="/Users/joaovfsousa/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
