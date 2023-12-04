@@ -27,7 +27,7 @@
   outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
   pl = pull -f
   pom = push origin main -u
-  ps = ! git push && postpush
+  ps = push
   psf = push -f
   rb = rebase
   rba = rebase --abort
