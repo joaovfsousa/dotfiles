@@ -33,6 +33,10 @@
   pom = push origin main -u
   rbi = "!r() { git rebase -i HEAD~$* ; }; r"
   rb = rebase
+  rbc = rebase --continue
+  rba = rebase --abort
+  m = merge
+  md = merge --no-commit --no-ff
   wt = worktree
   sm = switch -
   s = switch
