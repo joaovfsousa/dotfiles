@@ -11,36 +11,37 @@
 [alias]
   a = add
   aa = add *
+  cb = checkout -b
   ci = commit
   cim = "!f() { git commit -m \"$*\"; }; f"
-  pl = pull -f
-  ps = push
-  psf = push -f
+  cm = checkout main
   co = checkout
-  cb = checkout -b
-  st = status -sb
+  cp = cherry-pick
+  ct = reset --hard HEAD
+  incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+  last = log -1 HEAD --stat 
   lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
   lgg = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
-  cm = checkout main
-  cp = cherry-pick
-  sf = show --name-only
-  incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
-  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
-  unstage = reset HEAD --
-  undo = checkout --
-  rollback = reset --soft HEAD~1
-  ct = reset --hard HEAD
-  pom = push origin main -u
-  rbi = "!r() { git rebase -i HEAD~$* ; }; r"
-  rb = rebase
-  rbc = rebase --continue
-  rba = rebase --abort
   m = merge
   md = merge --no-commit --no-ff
-  wt = worktree
-  sm = switch -
+  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+  pl = pull -f
+  pom = push origin main -u
+  ps = ! git push && postpush
+  psf = push -f
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = "!r() { git rebase -i HEAD~$* ; }; r"
+  rollback = reset --soft HEAD~1
   s = switch
   sc = switch -c
+  sf = show --name-only
+  sm = switch -
+  st = status -sb
+  undo = checkout --
+  unstage = reset HEAD --
+  wt = worktree
 [init]
 	defaultBranch = main
 [credential]
