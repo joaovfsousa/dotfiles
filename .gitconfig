@@ -22,6 +22,7 @@
   cp = cherry-pick
   ct = reset --hard HEAD
   del = branch -D
+  ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ > .gitignoretempfile; sed -e '1,3d;$d' < .gitignoretempfile > .gitignore; rm .gitignoretempfile;}; gi"
   incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
   last = log -1 HEAD --stat 
   lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
