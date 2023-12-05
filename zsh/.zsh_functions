@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 source ~/.zsh_git_functions
 
 len(){
@@ -71,6 +73,18 @@ function dll {
   dl $container_id
 }
 
+function run-script {
+  local script_name=$1
+
+  if [ -f yarn.lock ]; then
+    yarn run "$script_name"
+  elif [ -f pnpm-lock.yaml ]; then
+    pnpm run "$script_name"
+  else
+    npm run "$script_name"
+  fi
+}
+
 function run {
   if [ -f package.json ]; then
     if ! jq -e '.scripts' package.json >/dev/null; then
@@ -86,13 +100,7 @@ function run {
     if [ -n "$script" ]; then
       echo "Running: $script_name"
       echo "Script: $script_value"
-      if [ -f yarn.lock ]; then
-        yarn run "$script_name"
-      elif [ -f pnpm-lock.yaml ]; then
-        pnpm run "$script_name"
-      else
-        npm run "$script_name"
-      fi
+      run-script $script_name
     fi
   elif [[ -f Cargo.toml ]]; then
     cargo run
@@ -100,6 +108,8 @@ function run {
     echo "No package.json or Cargo.toml found"
   fi
 }
+
+alias r='run'
 
 function brew {
   /opt/homebrew/bin/brew $@
