@@ -4,6 +4,6 @@ gps() {
 }
 
 gpsf() {
-  git push -f;
+  git push --force-with-lease;
   postpush;
 }
