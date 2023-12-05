@@ -38,20 +38,6 @@ return {
     end,
     "Resume last search",
   },
-  c = {
-    function()
-      local actions =
-        require("telescope._extensions.conventional_commits.actions")
-      local picker =
-        require("telescope._extensions.conventional_commits.picker")
-
-      picker({
-        action = actions.prompt,
-        include_body_and_footer = true,
-      })
-    end,
-    "Commit",
-  },
   T = {
     "<cmd>TodoTelescope<cr>",
     "Todo comments",
