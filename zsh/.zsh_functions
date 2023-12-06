@@ -120,7 +120,7 @@ function brew {
     brew bundle dump --force
 
     git add Brewfile
-    git ci -m "Update Brewfile" -q
+    git commit -m "Update Brewfile" -q
     git push -q
 
     echo "Brewfile updated and pushed to dotfiles repo"
