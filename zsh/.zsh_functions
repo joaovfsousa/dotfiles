@@ -110,10 +110,7 @@ function run {
 
 alias r='run'
 
-function brew {
-  /opt/homebrew/bin/brew $@
-
-  if ([ $1 = "install" ] || [ $1 = "uninstall" ]) && [ $2 != "-h" ]; then
+update_brewfile() {
     local current_dir=$(pwd)
 
     builtin cd '/Users/joaovfsousa/Projects/dotfiles'
@@ -126,6 +123,13 @@ function brew {
     echo "Brewfile updated and pushed to dotfiles repo"
 
     builtin cd $current_dir
+}
+
+function brew {
+  /opt/homebrew/bin/brew $@
+
+  if ([ $1 = "install" ] || [ $1 = "uninstall" ]) && [ $2 != "-h" ]; then
+    update_brewfile
   fi
 }
 
