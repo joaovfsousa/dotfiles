@@ -1,3 +1,4 @@
+tap "adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver", "https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver"
 tap "cmacrae/formulae"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -74,6 +75,7 @@ cask "termius"
 cask "visual-studio-code"
 cask "vlc"
 cask "warp"
+cask "wch-ch34x-usb-serial-driver"
 cask "wezterm"
 mas "Developer", id: 640199958
 mas "GeoGebra Calculator Suite", id: 1504416652
