@@ -51,12 +51,33 @@ config.leader = { key = "b", mods = "CTRL" }
 config.color_scheme = "Dracula (Official)"
 config.window_background_opacity = 0.92
 
-config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" })
--- Disabled while they dont fix ligatures
--- config.font = wezterm.font("Monaspace Argon", { weight = 700 })
 config.font_size = 15
 config.line_height = 1
 config.cell_width = 1
+config.underline_position = -2.
+
+config.font = wezterm.font_with_fallback({
+  {
+    family = "Monaspace Neon",
+    weight = 700,
+    harfbuzz_features = {
+      "ss01",
+      "ss02",
+      "ss03",
+      "ss04",
+      "ss05",
+      "ss06",
+      "ss07",
+      "ss08",
+      "calt",
+      "dlig",
+    },
+  },
+  {
+    family = "JetBrainsMono Nerd Font",
+    weight = "Bold",
+  },
+})
 
 config.hide_tab_bar_if_only_one_tab = true
 
