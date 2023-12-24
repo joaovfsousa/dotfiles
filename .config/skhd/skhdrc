@@ -4,39 +4,40 @@ alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
 # rotate + toggle float mode
-shift + alt - r : yabai -m space --rotate 270
-shift + alt - y : yabai -m space --mirror y-axis
-shift + alt - x : yabai -m space --mirror x-axis
-shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-shift + alt - s :  yabai -m window --toggle split
+alt - r : yabai -m space --rotate 270
+alt - y : yabai -m space --mirror y-axis
+alt - x : yabai -m space --mirror x-axis
+alt - t :  yabai -m window --toggle split
+alt - f : yabai -m window --toggle zoom-fullscreen
 
 # move window
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
 shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
-shift + alt - f : yabai -m window --toggle zoom-fullscreen
 
 # move window + split
-ctrl + alt - j : yabai -m window --warp south
-ctrl + alt - k : yabai -m window --warp north
-ctrl + alt - h : yabai -m window --warp west
-ctrl + alt - l : yabai -m window --warp east
+cmd + alt - j : yabai -m window --warp south
+cmd + alt - k : yabai -m window --warp north
+cmd + alt - h : yabai -m window --warp wesk
+cmd + alt - l : yabai -m window --warp east
+
+# set insertion point in focused container
+alt + ctrl - h : yabai -m window --insert west
+alt + ctrl - j : yabai -m window --insert south
+alt + ctrl - k : yabai -m window --insert north
+alt + ctrl - l : yabai -m window --insert east
 
 # monitor change focus + move windows
 
 alt - s: yabai -m display --focus west
 alt - g: yabai -m display --focus east
+
 shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
 shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
 
-# stop/start/restart yabai
-ctrl + alt - s : skhd --restart-service
-ctrl + alt - y : yabai --restart-service
-
-#move window to prev and next space
-shift + alt - p : yabai -m window --space prev;
-shift + alt - n : yabai -m window --space next;
+# restart yabai
+ctrl + alt - y : yabai --restart-service; skhd --restart-service
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;
@@ -49,6 +50,13 @@ shift + alt - 7 : yabai -m window --space 7;
 shift + alt - 8 : yabai -m window --space 8;
 shift + alt - 9 : yabai -m window --space 9;
 shift + alt - 0 : yabai -m window --space 10;
+
+# go back to previous workspace (kind of like back_and_forth in i3)
+alt - b : yabai -m space --focus recent
+
+# move focused window to previous workspace
+alt + shift - b : yabai -m window --space recent; \
+                  yabai -m space --focus recent
 
 ctrl + cmd - h : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
 ctrl + cmd - j : yabai -m window --resize bottom:0:20 ; yabai -m window --resize top:0:20
