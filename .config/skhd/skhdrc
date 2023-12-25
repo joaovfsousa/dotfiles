@@ -17,16 +17,16 @@ shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
 
 # move window + split
-cmd + alt - j : yabai -m window --warp south
-cmd + alt - k : yabai -m window --warp north
-cmd + alt - h : yabai -m window --warp wesk
-cmd + alt - l : yabai -m window --warp east
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - h : yabai -m window --warp wesk
+ctrl + alt - l : yabai -m window --warp east
 
 # set insertion point in focused container
-alt + ctrl - h : yabai -m window --insert west
-alt + ctrl - j : yabai -m window --insert south
-alt + ctrl - k : yabai -m window --insert north
-alt + ctrl - l : yabai -m window --insert east
+alt + cmd - h : yabai -m window --insert west
+alt + cmd - j : yabai -m window --insert south
+alt + cmd - k : yabai -m window --insert north
+alt + cmd - l : yabai -m window --insert east
 
 # monitor change focus + move windows
 
