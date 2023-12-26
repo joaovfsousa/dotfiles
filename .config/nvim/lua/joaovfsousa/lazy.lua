@@ -479,9 +479,10 @@ require("lazy").setup({
   },
   {
     "levouh/tint.nvim",
+    enabled = true,
     config = function()
       require("tint").setup({
-        tint = -50,
+        tint = -20,
       })
     end,
   },
