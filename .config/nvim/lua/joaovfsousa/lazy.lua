@@ -33,7 +33,7 @@ require("lazy").setup({
           additional_vim_regex_highlighting = false,
         },
         autopairs = {
-          enable = false,
+          enable = true,
         },
         context_commentstring = {
           enable = true,
@@ -50,7 +50,6 @@ require("lazy").setup({
           },
         },
         indent = { enable = true, disable = { "yaml", "python" } },
-        autotag = { enable = false },
         textobjects = {
           swap = {
             enable = false,
@@ -355,7 +354,23 @@ require("lazy").setup({
   },
   {
     "windwp/nvim-ts-autotag",
-    config = true,
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        autotag = {
+          enable = true,
+          enable_rename = true,
+          enable_close = true,
+          enable_close_on_slash = true,
+          filetypes = {
+            "html",
+            "xml",
+            "javascriptreact",
+            "typescriptreact",
+            "tsx",
+          },
+        },
+      })
+    end,
   },
   {
     "themaxmarchuk/tailwindcss-colors.nvim",
