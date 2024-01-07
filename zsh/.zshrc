@@ -1,10 +1,10 @@
+source ~/.zsh/.zsh_zimfw
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-
 source ~/.zsh/.zsh_vars
-source ~/.zsh/.zsh_package_managers
 source ~/.zsh/.zsh_theme
+source ~/.zsh/.zsh_package_managers
 source ~/.zsh/.zsh_aliases
 source ~/.zsh/.zsh_functions
 

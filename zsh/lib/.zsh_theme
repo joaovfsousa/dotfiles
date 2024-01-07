@@ -2,10 +2,7 @@ SPACESHIP_PROMPT_ASYNC=false
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
-  # host          # Hostname section
   git           # Git section (git_branch + git_status)
-  # hg            # Mercurial section (hg_branch  + hg_status)
-  # venv          # Python Venv section
   node          # Node.js section
   docker        # Docker section
   exec_time     # Execution time
@@ -47,5 +44,3 @@ plugins=(
   web-search
   zoxide
 )
-
-bindkey -v
