@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source ~/.zsh_git_functions
+source ~/.zsh/.zsh_git_functions
 
 len(){
   place=cwd

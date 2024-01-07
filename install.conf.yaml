@@ -5,12 +5,7 @@
       force: true
 
 - link:
-    ~/.zsh/.zsh_vars: ./zsh/lib/.zsh_vars
-    ~/.zsh/.zsh_aliases: ./zsh/lib/.zsh_aliases
-    ~/.zsh/.zsh_functions: ./zsh/lib/.zsh_functions
-    ~/.zsh/.zsh_git_functions: ./zsh/lib/.zsh_git_functions
-    ~/.zsh/.zsh_package_managers: ./zsh/lib/.zsh_package_managers
-    ~/.zsh/.zsh_theme: ./zsh/lib/.zsh_theme
+    ~/.zsh: ./zsh/lib
     ~/.zshrc: ./zsh/.zshrc
     ~/.tmux: ./tmux
     ~/.tmux.conf: ./.tmux.conf
