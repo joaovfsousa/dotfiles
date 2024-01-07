@@ -8,7 +8,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.default_prog = { "/bin/zsh", "-l", "-c", "tmux attach || tmux" }
+config.default_prog = { "/bin/zsh", "-lc", "tmux" }
 
 config.leader = { key = "b", mods = "CTRL" }
 
