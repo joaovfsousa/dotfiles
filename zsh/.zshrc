@@ -1,5 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 export ZSH="/Users/joaovfsousa/.oh-my-zsh"
 export ANDROID_HOME=~/Android/Sdk
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"

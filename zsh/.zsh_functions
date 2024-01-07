@@ -4,7 +4,7 @@ source ~/.zsh_git_functions
 
 len(){
   place=cwd
-  ls ${1:$place} | wc -l
+  ls -a ${1:$place} | wc -l
 }
 
 da() { docker exec -it $1 /bin/bash }
