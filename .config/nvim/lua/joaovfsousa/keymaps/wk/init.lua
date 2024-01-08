@@ -37,7 +37,7 @@ local nmaps = {
     "<cmd>Lazy<cr>",
     "Plugins",
   },
-  h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  H = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["/"] = {
     "<Plug>(comment_toggle_linewise_current)",
     "Comment toggle current line",
