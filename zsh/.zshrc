@@ -9,6 +9,7 @@ source ~/.zsh/.zsh_aliases
 source ~/.zsh/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.pdot/zshrc ] && source ~/.pdot/zshrc
 
 eval "$(zoxide init zsh)"
 
