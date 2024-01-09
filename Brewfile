@@ -11,6 +11,7 @@ brew "bat"
 brew "node"
 brew "bitwarden-cli"
 brew "bottom"
+brew "cmake"
 brew "fzf"
 brew "git"
 brew "git-delta"
@@ -84,7 +85,6 @@ mas "GeoGebra Calculator Suite", id: 1504416652
 mas "Hand Mirror", id: 1502839586
 mas "Kindle", id: 302584613
 mas "MyWallpaper", id: 1552826194
-mas "RetroClip", id: 1332064978
 mas "ScreenBrush", id: 1233965871
 mas "The Unarchiver", id: 425424353
 mas "Velja", id: 1607635845
