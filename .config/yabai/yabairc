@@ -21,3 +21,4 @@ yabai -m space 10 --label 0
 
 yabai -m rule --add subrole="^AXSystemDialog$" manage=off mouse_follows_focus=off
 yabai -m rule --add app="^Fig$" border=off manage=off
+yabai -m rule --add app="Nymeria" border=off manage=off
