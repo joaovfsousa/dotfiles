@@ -117,7 +117,7 @@ update_brewfile() {
     brew bundle dump --force
 
     git add Brewfile
-    git commit -m "Update Brewfile" -q
+    git commit -m "brewfile: update" -q
     git push -q
 
     echo "Brewfile updated and pushed to dotfiles repo"
@@ -128,7 +128,7 @@ update_brewfile() {
 function brew {
   /opt/homebrew/bin/brew $@
 
-  if ([ $1 = "install" ] || [ $1 = "uninstall" ]) && [ $2 != "-h" ]; then
+  if ([ $1 = "install" ] || [ $1 = "uninstall" ] || [ $1 = "upgrade" ]) && [ $2 != "-h" ]; then
     update_brewfile
   fi
 }
