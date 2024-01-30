@@ -13,3 +13,11 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+echo "Finished install of dotfiles" 
+
+PRIVATE_DOTFILES_PATH='../private-dotfiles/install'
+
+if [[ -f $PRIVATE_DOTFILES_PATH ]]; then
+  exec $PRIVATE_DOTFILES_PATH;
+fi
