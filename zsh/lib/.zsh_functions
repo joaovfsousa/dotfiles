@@ -216,3 +216,7 @@ function s {
 
   tmux switch-client -t $selected_name
 }
+
+function rbg {
+  nohup '$1' &> /dev/null
+}
