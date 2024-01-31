@@ -2,7 +2,7 @@ alias v='nvim'
 alias v.='nvim .'
 alias n='nvim'
 alias editp="v ~/.zshrc; szsh"
-alias szsh="source ~/.zshrc; clear"
+alias szsh="source ~/.zshenv; source ~/.zshrc; clear"
 alias diskusage="df -H /"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias cat='bat --paging=never'

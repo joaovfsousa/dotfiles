@@ -5,8 +5,6 @@ source ~/.zsh/.zsh_zimfw
 source ~/.zsh/.zsh_vars
 source ~/.zsh/.zsh_theme
 source ~/.zsh/.zsh_package_managers
-source ~/.zsh/.zsh_aliases
-source ~/.zsh/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.pdot/zshrc ] && source ~/.pdot/zshrc
