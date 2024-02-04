@@ -168,7 +168,7 @@ function last_commit_msg {
 }
 
 function desk_to_pos {
-  curl -X POST http://192.168.0.151:80/api/devices/lights/$1/state/ON -d bri
+  curl -X POST http://192.168.0.153:80/api/devices/lights/$1/state/ON -d bri
 }
 
 function pk {
