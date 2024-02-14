@@ -19,6 +19,8 @@ vim.keymap.set("t", "<c-s>", [[<C-\><C-n>]])
 vim.keymap.set("n", "<c-a>", "Nop")
 
 vim.keymap.set("v", "/", 'y<ESC>/<c-r>"<CR><ESC>')
+vim.keymap.set("v", "?", 'y<ESC>:%s/<c-r>"/')
+vim.keymap.set("n", "?", ":s/")
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
