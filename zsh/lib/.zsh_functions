@@ -220,3 +220,14 @@ function s {
 function rbg {
   nohup '$1' &> /dev/null
 }
+
+function ce {
+  local parent_dir=$(dirname "$PWD")
+
+  if [ -f "$parent_dir/.env" ]; then
+      ln -s "$parent_dir/.env" .env
+      echo "Symbolic link created to .env file in the current directory."
+  else
+      echo "No .env file found in the parent directory."
+  fi 
+}
