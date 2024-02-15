@@ -230,11 +230,4 @@ function wte {
   else
       echo "No .env file found in the parent directory."
   fi 
-
-  if [ -d "$parent_dir/node_modules" ]; then
-      ln -s "$parent_dir/node_modules" node_modules
-      echo "Symbolic link created to node_modules directory in the current directory."
-  else
-      echo "No node_modules directory found in the parent directory."
-  fi
 }
