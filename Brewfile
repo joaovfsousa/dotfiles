@@ -29,6 +29,7 @@ brew "navi"
 brew "neofetch"
 brew "neovim"
 brew "platformio"
+brew "ripgrep"
 brew "shellcheck"
 brew "tldr"
 brew "tmux"
@@ -77,7 +78,6 @@ mas "Kindle Classic", id: 405399194
 mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "The Unarchiver", id: 425424353
-mas "Velja", id: 1607635845
 mas "Xcode", id: 497799835
 vscode "awesomektvn.toggle-semicolon"
 vscode "britesnow.vscode-toggle-quotes"
