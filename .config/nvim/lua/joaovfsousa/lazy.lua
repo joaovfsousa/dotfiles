@@ -530,7 +530,7 @@ require("lazy").setup({
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
-    dir = "~/Projects/nvim-plugins/docker.nvim",
+    dir = "~/projects/nvim-plugins/docker.nvim",
     dependencies = {
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
@@ -540,7 +540,7 @@ require("lazy").setup({
     lazy = false,
   },
   {
-    dir = "~/Projects/nvim-plugins/telescope-cc.nvim",
+    dir = "~/projects/nvim-plugins/telescope-cc.nvim",
     config = function()
       local telescope = require("telescope")
       telescope.load_extension("conventional_commits")

@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local my_arduino_fqbn = {
-  ["/Users/joaovfsousa/Projects/nymeria/esp32"] = "esp32:esp32:nodemcu-32s",
+  ["/Users/joaovfsousa/projects/nymeria/esp32"] = "esp32:esp32:nodemcu-32s",
 }
 
 local DEFAULT_FQBN = "esp32:esp32:nodemcu-32s"

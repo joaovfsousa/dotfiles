@@ -113,7 +113,7 @@ alias r='run'
 update_brewfile() {
     local current_dir=$(pwd)
 
-    builtin cd '/Users/joaovfsousa/Projects/dotfiles'
+    builtin cd '/Users/joaovfsousa/projects/dotfiles'
     brew bundle dump --force
 
     git add Brewfile
@@ -195,7 +195,7 @@ function s {
   if [[ $# -eq 1 ]]; then
       selected=$1
   else
-    selected=$((find ~/Projects $SESSIONIZER_PRIVATE_PATHS -mindepth 1 -maxdepth 1 -type d) | fzf)
+    selected=$((find ~/projects $SESSIONIZER_PRIVATE_PATHS -mindepth 1 -maxdepth 1 -type d) | fzf)
   fi
 
   if [[ -z $selected ]]; then
