@@ -23,7 +23,6 @@ require("lazy").setup({
     config = function()
       local ts_config = require("nvim-treesitter.configs")
       ts_config.setup({
-        ensure_installed = "all",
         sync_install = false,
         auto_install = true,
         ignore_install = { "phpdoc" },
@@ -135,7 +134,7 @@ require("lazy").setup({
       })
     end,
   },
-  { "jose-elias-alvarez/null-ls.nvim", lazy = true },
+  { "jose-elias-alvarez/null-ls.nvim",     lazy = true },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -536,6 +535,7 @@ require("lazy").setup({
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
+    enabled = false,
     config = true,
     lazy = false,
   },
@@ -545,6 +545,7 @@ require("lazy").setup({
       local telescope = require("telescope")
       telescope.load_extension("conventional_commits")
     end,
+    enabled = false,
     lazy = false,
   },
 })

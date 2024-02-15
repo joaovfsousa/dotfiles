@@ -16,6 +16,7 @@
     ~/.wezterm.lua: ./terminal/.wezterm.lua
     ~/.gitconfig: ./git/.gitconfig
     ~/.config/lvim: .config/lvim
+    ~/.config/nvim: .config/nvim
     ~/.config/skhd: .config/skhd
     ~/.config/yabai: .config/yabai
     ~/.config/lazygit/config.yml: .config/lazygit/config.yml
