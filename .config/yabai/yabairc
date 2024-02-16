@@ -19,5 +19,6 @@ yabai -m space 10 --label 0
 
 yabai -m rule --add app="^Fig$" border=off manage=off
 yabai -m rule --add app="Nymeria" border=off manage=off
+yabai -m rule --add app="Finder" title="Copy" manage=off
 
 yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[] | select(.subrole == "AXStandardWindow")'  | jq .[0].id)"
