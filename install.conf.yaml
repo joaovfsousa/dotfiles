@@ -8,6 +8,7 @@
     ~/.zsh: ./zsh/lib
     ~/.zimrc: ./zsh/.zimrc
     ~/.zshrc: ./zsh/.zshrc
+    ~/.asdfrc: ./.asdfrc
     ~/.zshenv: ./zsh/.zshenv
     ~/.tmux: ./tmux
     ~/.tmux.conf: ./.tmux.conf

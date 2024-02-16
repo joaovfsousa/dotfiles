@@ -17,3 +17,10 @@ esac
 
 # Allow asdf to use non deterministic version of nvm, e.g. 18 => 18.19.1
 export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
+
+# asdf langs
+
+. ~/.asdf/plugins/golang/set-env.zsh
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+export RUST_WITHOUT=rust-docs
