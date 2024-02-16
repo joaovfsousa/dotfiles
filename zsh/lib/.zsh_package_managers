@@ -1,6 +1,8 @@
 (( $+commands[yarn] )) && export PATH="$PATH:`yarn global bin`"
 
-. "$HOME/.cargo/env"
+if [[ -f "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi
 
 # pnpm
 export PNPM_HOME="/Users/joaovfsousa/Library/pnpm"
@@ -10,3 +12,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
