@@ -44,7 +44,7 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "mongodb/brew/mongodb-database-tools"
 brew "zegervdv/zathura/girara", args: ["HEAD"]
-brew "zegervdv/zathura/zathura"
+brew "zegervdv/zathura/zathura", args: ["HEAD"]
 brew "zegervdv/zathura/zathura-pdf-mupdf"
 cask "bitwarden"
 cask "brave-browser"
