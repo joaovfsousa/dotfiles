@@ -4,10 +4,18 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
   node          # Node.js section
+  bun
+  deno
+  rust
+  golang
+  venv
+  ocaml
   docker        # Docker section
+  docker_compose
   exec_time     # Execution time
-  line_sep      # Line break
   jobs          # Background jobs indicator
+  async
+  line_sep      # Line break
   exit_code     # Exit code section
   char          # Prompt character
 )
