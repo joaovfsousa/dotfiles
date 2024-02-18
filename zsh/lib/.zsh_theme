@@ -10,11 +10,7 @@ SPACESHIP_PROMPT_ORDER=(
   golang
   venv
   ocaml
-  docker        # Docker section
-  docker_compose
   exec_time     # Execution time
-  jobs          # Background jobs indicator
-  async
   line_sep      # Line break
   exit_code     # Exit code section
   char          # Prompt character
