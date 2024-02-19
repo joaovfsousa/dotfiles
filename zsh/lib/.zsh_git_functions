@@ -1,9 +1,0 @@
-gps() {
-  git push;
-  postpush;
-}
-
-gpsf() {
-  git push --force-with-lease;
-  postpush;
-}

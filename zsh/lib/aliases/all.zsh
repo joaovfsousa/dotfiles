@@ -1,5 +1,4 @@
 alias v='nvim'
-alias v.='nvim .'
 alias n='nvim'
 alias editp="v ~/.zshrc; szsh"
 alias szsh="source ~/.zshenv; source ~/.zshrc; clear"
@@ -19,7 +18,6 @@ alias k='kill -9'
 
 alias lg='lazygit -ucd ~/.config/lazygit'
 alias gg='lazygit -ucd ~/.config/lazygit'
-alias wt='jump_to_worktree'
 alias lc='last_commit'
 alias lcm='last_commit_msg'
 alias cb='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff {1} --color=always" --pointer="" | xargs git checkout'
@@ -31,3 +29,5 @@ alias img='wezterm imgcat'
 
 alias cd='z'
 alias la='ls -la'
+
+alias wt='worktree'
