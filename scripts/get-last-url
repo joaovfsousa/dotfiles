@@ -1,3 +1,5 @@
+#!/Users/joaovfsousa/.asdf/shims/node
+
 const stdin = process.openStdin();
 let data = "";
 

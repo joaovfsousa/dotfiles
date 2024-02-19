@@ -13,6 +13,8 @@ local setup = function()
       diagnostics.yamllint,
       formatting.yamlfix,
       code_actions.shellcheck,
+      formatting.gofumpt,
+      formatting.goimports_reviser,
       require("typescript.extensions.null-ls.code-actions"),
     },
   })
