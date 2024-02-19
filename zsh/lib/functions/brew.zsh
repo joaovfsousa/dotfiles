@@ -3,7 +3,7 @@
 update_brewfile() {
     local current_dir=$(pwd)
 
-    builtin cd '/Users/joaovfsousa/projects/dotfiles'
+    builtin cd $HOME/projects/dotfiles
     brew bundle dump --force
 
     git add Brewfile

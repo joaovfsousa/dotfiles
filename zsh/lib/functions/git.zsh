@@ -4,7 +4,7 @@ postpush() {
   local originUrl=$(git remote get-url origin)
 
   if [[ $originUrl =~ bitbucket || $originUrl =~ github ]]; then
-    tmux capture-pane -S -900 -p | /Users/joaovfsousa/.scripts/get-url | pbcopy
+    tmux capture-pane -S -900 -p | $HOME/.scripts/get-url | pbcopy
   else
     echo "Push was successfull but could not copy url to clipboard"
   fi
@@ -39,4 +39,8 @@ function gps {
 function gpsf {
   git push --force-with-lease;
   postpush;
+}
+
+function fdsa {
+  echo $HOME
 }
