@@ -1,25 +1,10 @@
-function worktree_switch {
-  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    current=$(pwd | xargs basename)
-    list_of_worktrees=$(git worktree list | sed -E '/bare|\.repo/d')
-
-    local worktree_path=$(echo $list_of_worktrees | fzf --height 40% --reverse | awk '{print $1}')
-
-    builtin cd "$worktree_path"
-  else
-    echo "Not inside a worktree repo."
-  fi
+function _list_worktrees {
+  git worktree list | sed -E '/bare|\.repo/d'
 }
 
-function worktree_env {
-  local parent_dir=$(dirname "$PWD")
-
-  if [ -f "$parent_dir/.env" ]; then
-      ln -s "$parent_dir/.env" .env
-      echo "Symbolic link created to .env file in the current directory."
-  else
-      echo "No .env file found in the parent directory."
-  fi 
+function _select_worktree {
+  list_of_worktrees=$(_list_worktrees)
+  echo $list_of_worktrees | fzf --height 40% --reverse
 }
 
 function _get_tree_name_from_branch {
@@ -37,6 +22,29 @@ function _get_tree_name_from_branch {
   echo $input
 }
 
+function worktree_switch {
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    current=$(pwd | xargs basename)
+    list_of_worktrees=$(_list_worktrees)
+
+    local worktree_path=$(_select_worktree | awk '{print $1}')
+
+    builtin cd "$worktree_path"
+  else
+    echo "Not inside a worktree repo."
+  fi
+}
+
+function worktree_env {
+  local parent_dir=$(dirname "$PWD")
+
+  if [ -f "$parent_dir/.env" ]; then
+      ln -s "$parent_dir/.env" .env
+      echo "Symbolic link created to .env file in the current directory."
+  else
+      echo "No .env file found in the parent directory."
+  fi 
+}
 
 function worktree_add { 
   new_branch_input=$1
@@ -71,6 +79,22 @@ function worktree_add {
   git worktree add -b $new_branch_input --checkout $tree_name $base_branch_input
 }
 
+function worktree_rm {
+  selected_worktree=$(_select_worktree)
+
+  selected_path=$(echo $selected_worktree | awk '{print $1}')
+
+  selected_branch=$(echo $selected_worktree | awk '{print $3}' | sed 's/\[//;s/\]//')
+
+  rm -r $selected_path
+
+  git worktree prune
+
+  git branch -q -D $selected_branch 
+
+  echo "Delete tree $(_get_tree_name_from_branch $selected_branch) of branch ${selected_branch}"
+}
+
 function worktree {
   case $1 in
     env|e)
@@ -81,6 +105,9 @@ function worktree {
       ;;
     add|a)
       worktree_add ${@[2, -1]}
+      ;;
+    remove|r)
+      worktree_rm
       ;;
     *)
       echo "Invalid command"

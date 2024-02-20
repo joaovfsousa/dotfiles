@@ -40,7 +40,3 @@ function gpsf {
   git push --force-with-lease;
   postpush;
 }
-
-function fdsa {
-  echo $HOME
-}
