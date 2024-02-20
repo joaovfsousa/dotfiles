@@ -106,7 +106,7 @@ function worktree {
     add|a)
       worktree_add ${@[2, -1]}
       ;;
-    remove|r)
+    remove|rm|r)
       worktree_rm
       ;;
     *)
