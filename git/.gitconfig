@@ -14,9 +14,12 @@
   al = 'config --get-regexp ^alias\\.'
   b = branch
   brs = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-  cb = checkout -b
   c = commit
+  cb = checkout -b
   cim = "!f() { git commit -m \"$*\"; }; f"
+  cl = clone
+  clb = "!sh $HOME/.scripts/clone-bare"
+  clone-bare = "!sh $HOME/.scripts/clone-bare"
   cm = !git checkout $(git mb)
   co = checkout
   cp = cherry-pick
