@@ -3,8 +3,14 @@ function _list_worktrees {
 }
 
 function _select_worktree {
+  query=""
+  if [[ $# -gt 0 ]]; then
+    query=$1
+  fi
+
   list_of_worktrees=$(_list_worktrees)
-  echo $list_of_worktrees | fzf --height 40% --reverse
+
+  echo $list_of_worktrees | fzf --height 40% --reverse --query $query
 }
 
 function _get_tree_name_from_branch {
@@ -23,16 +29,16 @@ function _get_tree_name_from_branch {
 }
 
 function worktree_switch {
-  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    current=$(pwd | xargs basename)
-    list_of_worktrees=$(_list_worktrees)
-
-    local worktree_path=$(_select_worktree | awk '{print $1}')
-
-    builtin cd "$worktree_path"
-  else
-    echo "Not inside a worktree repo."
+  query=""
+  if [[ $# -gt 0 ]]; then
+    query=$1
   fi
+
+  current=$(pwd | xargs basename)
+
+  local worktree_path=$(_select_worktree $query | awk '{print $1}')
+
+  builtin cd "$worktree_path"
 }
 
 function worktree_env {
@@ -101,7 +107,7 @@ function worktree {
       worktree_env
       ;;
     switch|s)
-      worktree_switch
+      worktree_switch ${@[2, -1]}
       ;;
     add|a)
       worktree_add ${@[2, -1]}
