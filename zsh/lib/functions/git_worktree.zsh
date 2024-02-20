@@ -92,7 +92,7 @@ function worktree_rm {
 
   git branch -q -D $selected_branch 
 
-  echo "Delete tree $(_get_tree_name_from_branch $selected_branch) of branch ${selected_branch}"
+  echo "Delete tree $(basename $selected_path) of branch ${selected_branch}"
 }
 
 function worktree {
