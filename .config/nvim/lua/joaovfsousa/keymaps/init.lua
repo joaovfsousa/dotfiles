@@ -24,11 +24,11 @@ vim.keymap.set("n", "?", ":s/")
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
-vim.keymap.set("n", "<c-x>", "<c-a>")
-vim.keymap.set("v", "<c-x>", "<c-a>")
+vim.keymap.set("n", "<c-m>", "<c-a>")
+vim.keymap.set("v", "<c-m>", "<c-a>")
 
-vim.keymap.set("n", "<c-z>", "<c-x>")
-vim.keymap.set("v", "<c-z>", "<c-x>")
+vim.keymap.set("n", "<c-n>", "<c-x>")
+vim.keymap.set("v", "<c-n>", "<c-x>")
 
 require("joaovfsousa.keymaps.lsp")
 require("joaovfsousa.keymaps.navigation")
