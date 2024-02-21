@@ -3,7 +3,7 @@ function _list_worktrees {
 }
 
 function _select_worktree {
-  query=""
+  query=" "
   if [[ $# -gt 0 ]]; then
     query=$1
   fi
