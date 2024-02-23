@@ -8,6 +8,7 @@
 [diff]
 	guitool = code
 	tool = vimdiff
+	algorithm = histogram
 [alias]
   a = add
   aa = add *
@@ -65,3 +66,7 @@
 	autoSetupRemote = true
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[rerere]
+	enabled = true
+[branch]
+	sort = --committerdate
