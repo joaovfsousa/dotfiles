@@ -68,5 +68,3 @@
 	insteadOf = https://github.com/
 [rerere]
 	enabled = true
-[branch]
-	sort = --committerdate
