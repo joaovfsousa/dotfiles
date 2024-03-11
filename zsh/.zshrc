@@ -12,7 +12,6 @@ eval "$(zoxide init zsh)"
 
 unsetopt PROMPT_SP
 clear
-
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 # fig install --input-method to make it work with wezterm

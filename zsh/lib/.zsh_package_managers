@@ -24,3 +24,4 @@ export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 export RUST_WITHOUT=rust-docs
+

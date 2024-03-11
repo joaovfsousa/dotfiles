@@ -50,3 +50,5 @@ plugins=(
   web-search
   zoxide
 )
+
+eval "$(direnv hook zsh)"
