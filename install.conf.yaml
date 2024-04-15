@@ -12,6 +12,7 @@
     ~/.zshenv: ./zsh/.zshenv
     ~/.tmux: ./tmux
     ~/.tmux.conf: ./.tmux.conf
+    ~/.aerospace.toml: ./.aerospace.toml
     ~/.alacritty.yml: ./terminal/.alacritty.yml
     ~/.dracula.alacritty.yml: ./terminal/.dracula.alacritty.yml
     ~/.wezterm.lua: ./terminal/.wezterm.lua
