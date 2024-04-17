@@ -102,8 +102,10 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace A'
 
+cmd-ctrl-h = 'resize smart -50'
 cmd-ctrl-j = 'resize smart -50'
 cmd-ctrl-k = 'resize smart +50'
+cmd-ctrl-l = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
