@@ -10,6 +10,10 @@ postpush() {
   fi
 }
 
+function commit_msg {
+  git log --format=%B -n 1 $1
+}
+
 function last_commit {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     hash=$(g log -1 --oneline | awk '{print $1}')
