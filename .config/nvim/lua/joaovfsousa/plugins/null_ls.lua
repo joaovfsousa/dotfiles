@@ -7,6 +7,7 @@ local setup = function()
 
   null_ls.setup({
     sources = {
+      require("typescript.extensions.null-ls.code-actions"),
       formatting.prettierd,
       formatting.stylua,
       diagnostics.shellcheck,
@@ -15,7 +16,6 @@ local setup = function()
       code_actions.shellcheck,
       formatting.gofumpt,
       formatting.goimports_reviser,
-      require("typescript.extensions.null-ls.code-actions"),
     },
   })
 
