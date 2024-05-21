@@ -15,6 +15,10 @@ local function navigate_to(num)
 end
 
 local nmaps = {
+  D = {
+    "<cmd>DBUIToggle<cr>",
+    "Dadbod UI",
+  },
   d = dap_maps,
   f = find_maps,
   g = git_maps,

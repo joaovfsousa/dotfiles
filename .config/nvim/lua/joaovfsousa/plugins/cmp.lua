@@ -17,6 +17,7 @@ local setup = function()
     buffer = "[Buffer]",
     path = "[Path]",
     copilot = "[Copilot]",
+    dadbod = "[Dadbod]"
   }
 
   local icons = require("joaovfsousa.theme.icons")
