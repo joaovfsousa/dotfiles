@@ -549,7 +549,7 @@ require("lazy").setup({
   {
     "https://github.com/rhysd/committia.vim",
     init = function()
-
+      vim.g.committia_open_only_vim_starting = 0
     end,
   },
   {

@@ -36,12 +36,16 @@ return {
     "<cmd>Gitsigns diffthis HEAD<cr>",
     "Git Diff",
   },
+  i = {
+    "<cmd>lua vim.cmd(\"call committia#open('git')\")<cr>",
+    "Commitia"
+  },
   m = {
     function()
       local actions =
-        require("telescope._extensions.conventional_commits.actions")
+          require("telescope._extensions.conventional_commits.actions")
       local picker =
-        require("telescope._extensions.conventional_commits.picker")
+          require("telescope._extensions.conventional_commits.picker")
 
       picker({
         action = actions.prompt,
