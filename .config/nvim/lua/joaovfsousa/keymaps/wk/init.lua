@@ -21,6 +21,10 @@ local nmaps = {
   },
   d = dap_maps,
   f = find_maps,
+  F = {
+    "<cmd>Telescope git_files<cr>",
+    "Git Files",
+  },
   g = git_maps,
   l = lsp_maps,
   r = refactoring_maps,
@@ -36,6 +40,10 @@ local nmaps = {
   c = {
     "<cmd>BufferKill<cr>",
     "Close buffer",
+  },
+  C = {
+    "<cmd>pc<cr>",
+    "Kill preview windows"
   },
   P = {
     "<cmd>Lazy<cr>",
