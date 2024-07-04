@@ -57,7 +57,6 @@ brew "yarn"
 brew "zoxide"
 brew "fluxcd/tap/flux"
 brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai"
 brew "localstack/tap/localstack-cli"
 brew "mongodb/brew/mongodb-database-tools"
 brew "zegervdv/zathura/girara", args: ["HEAD"]
