@@ -102,6 +102,8 @@ require("lazy").setup({
       dependencies = "mason.nvim",
       config = function()
         local mason_lspconfig = require("mason-lspconfig")
+        -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
+        -- Use lspconfig names
         mason_lspconfig.setup({
           automatic_installation = true,
           ensure_installed = {
@@ -109,10 +111,11 @@ require("lazy").setup({
             "bashls",
             "cssls",
             "emmet_ls",
-            "jsonls",
             "eslint",
+            "jsonls",
             "lua_ls",
             "omnisharp",
+            "prettierd",
             "prismals",
             "pylsp",
             "rust_analyzer",
@@ -134,7 +137,7 @@ require("lazy").setup({
         })
       end,
     },
-    { "jose-elias-alvarez/null-ls.nvim",     lazy = true },
+    { "nvimtools/none-ls.nvim",              lazy = true },
     {
       "folke/which-key.nvim",
       event = "VeryLazy",
