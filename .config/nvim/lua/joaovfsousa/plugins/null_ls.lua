@@ -1,17 +1,15 @@
 local setup = function()
-  if true then
-    return
-  end
   local null_ls = require("null-ls")
 
   local formatting = null_ls.builtins.formatting
-  local diagnostics = null_ls.builtins.diagnostics
 
   null_ls.setup({
     sources = {
+      require("typescript.extensions.null-ls.code-actions"),
       formatting.gofumpt,
       formatting.goimports_reviser,
       formatting.prettierd,
+      formatting.prettier,
       formatting.stylua,
       formatting.yamlfix,
     },
