@@ -107,22 +107,26 @@ require("lazy").setup({
         mason_lspconfig.setup({
           automatic_installation = true,
           ensure_installed = {
-            "astro",
-            "bashls",
             "cssls",
-            "emmet_ls",
             "eslint",
+            "gofumpt",
+            "goimports_reviser",
+            "golangci-lint",
+            "gopls",
             "jsonls",
             "lua_ls",
-            "omnisharp",
+            "node-debug2-adapter",
+            "omnisharp", --
             "prettierd",
             "prismals",
             "pylsp",
             "rust_analyzer",
+            "stylua",
             "tailwindcss",
             "tsserver",
-            "vimls",
+            "volar",
             "yamlls",
+            "yamlfix",
           },
         })
 
@@ -137,7 +141,10 @@ require("lazy").setup({
         })
       end,
     },
-    { "nvimtools/none-ls.nvim",              lazy = true },
+    { "nvimtools/none-ls.nvim",              lazy = true, dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    }, },
+
     {
       "folke/which-key.nvim",
       event = "VeryLazy",
