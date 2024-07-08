@@ -13,20 +13,6 @@ local definitions = {
   {
     "FileType",
     {
-      group = "_filetype keymaps",
-      pattern = "typescript,typescriptreact",
-      desc = "Go to Typescript definition keymap",
-      callback = function()
-        vim.keymap.set("n", "gd", "<cmd>TypescriptGoToSourceDefinition<cr>", {
-          buffer = true,
-          desc = "Go to definition",
-        })
-      end,
-    },
-  },
-  {
-    "FileType",
-    {
       group = "LogSitter",
       pattern = "javascript,go,lua,typescript,typescriptreact,javascriptreact",
       desc = "Add logsitter keymap",

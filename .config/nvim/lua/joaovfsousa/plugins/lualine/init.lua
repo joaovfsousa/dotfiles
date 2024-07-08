@@ -1,8 +1,5 @@
-local lualine = require("lualine")
 local components = require("joaovfsousa.plugins.lualine.components")
-
-local setup = function()
-  local cfg = {
+  local opts = {
     active = true,
     style = "main",
     options = {
@@ -61,9 +58,9 @@ local setup = function()
     extensions = {},
   }
 
-  lualine.setup(cfg)
-end
-
-return {
-  setup = setup,
-}
+return {{
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons", "dbinagi/nomodoro" },
+    event = "VimEnter",
+    opts = opts
+}}

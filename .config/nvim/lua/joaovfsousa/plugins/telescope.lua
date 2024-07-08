@@ -1,8 +1,7 @@
-local telescope = require("telescope")
 local previewers = require("telescope.previewers")
 local sorters = require("telescope.sorters")
 
-local cfg = {
+local opts = {
   defaults = {
     layout_config = {
       horizontal = {
@@ -67,37 +66,37 @@ local cfg = {
   },
   extensions = {
     fzf = {
-      fuzzy = true,                   -- false will only do exact matching
+      fuzzy = true, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true,    -- override the file sorter
-      case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
     frecency = {
       show_scores = false,
       show_unindexed = false,
       ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
-      default_workspace = { "CWD" },
+      default_workspace = "CWD",
     },
   },
 }
 
-local toggle_layout_strategy = function()
-  local config = require("telescope.config")
-
-  if cfg.defaults.layout_strategy == "vertical" then
-    cfg.defaults.layout_strategy = "horizontal"
-  else
-    cfg.defaults.layout_strategy = "vertical"
-  end
-
-  config.set_defaults(cfg.defaults)
-end
-
-local setup = function()
-  telescope.setup(cfg)
-end
-
 return {
-  toggle_layout_strategy = toggle_layout_strategy,
-  setup = setup,
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = true,
+    opts = opts,
+  },
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension("frecency")
+    end,
+    dependencies = { "kkharji/sqlite.lua" },
+  },
+  {
+    "prochri/telescope-all-recent.nvim",
+    opts = {},
+    dependencies = { "kkharji/sqlite.lua" },
+  },
 }

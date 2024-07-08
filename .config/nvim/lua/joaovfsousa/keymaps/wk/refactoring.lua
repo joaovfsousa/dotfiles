@@ -1,4 +1,3 @@
-
 local refactoring = require("refactoring")
 
 return {

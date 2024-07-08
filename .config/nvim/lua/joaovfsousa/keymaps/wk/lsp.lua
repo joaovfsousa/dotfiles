@@ -11,8 +11,15 @@ return {
     "<cmd>lua vim.diagnostic.goto_prev()<cr>",
     "Prev Diagnostic",
   },
-  r = {
+  R = {
     ":IncRename ",
     "Rename",
+  },
+  r = {
+    function()
+      return ":IncRename " .. vim.fn.expand("<cword>")
+    end,
+    "Rename selected",
+    expr = true,
   },
 }

@@ -1,8 +1,6 @@
 local icons = require("joaovfsousa.theme.icons")
-local nvimtree = require("nvim-tree")
 
-local setup = function()
-  local on_attach = function(bufnr)
+local on_attach = function(bufnr)
     local api = require("nvim-tree.api")
 
     local function opts(desc)
@@ -26,7 +24,7 @@ local setup = function()
     vim.keymap.set("n", "v", api.node.open.vertical, opts("Open split"))
   end
 
-  local cfg = {
+  local opts = {
     on_attach = on_attach,
     auto_reload_on_write = false,
     disable_netrw = false,
@@ -246,9 +244,11 @@ local setup = function()
     },
   }
 
-  nvimtree.setup(cfg)
-end
 
 return {
-  setup = setup,
+  {
+    "nvim-tree/nvim-tree.lua",
+    -- event = "User DirOpened",
+    opts = opts
+ },
 }

@@ -1,8 +1,6 @@
 require("joaovfsousa.options")
 require("joaovfsousa.lazy")
 require("joaovfsousa.theme")
-require("joaovfsousa.plugins")
-require("joaovfsousa.lsp")
 require("joaovfsousa.keymaps")
 require("joaovfsousa.commands")
 require("joaovfsousa.autocmds")

@@ -2,7 +2,7 @@ local cmds = {
   {
     name = "BufferKill",
     fn = function()
-      require("joaovfsousa.plugins.bufferline").buf_kill("bd")
+      require("joaovfsousa.commands.bufferkill")("bd")
     end,
   },
 }

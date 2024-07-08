@@ -43,7 +43,7 @@ local nmaps = {
   },
   C = {
     "<cmd>pc<cr>",
-    "Kill preview windows"
+    "Kill preview windows",
   },
   P = {
     "<cmd>Lazy<cr>",
@@ -82,18 +82,3 @@ return {
   nmaps = nmaps,
   vmaps = vmaps,
 }
-
--- lvim.builtin.which_key.mappings["dt"] = {
---   "<cmd>PBToggleBreakpoint<CR>",
---   "Toggle breakpoint",
--- }
-
--- lvim.builtin.which_key.mappings["dl"] = {
---   "<cmd>lua require('dap').list_breakpoints(true)<cr>",
---   "List breakpoints",
--- }
-
--- lvim.builtin.which_key.mappings["dL"] = {
---   "<cmd>lua require('dap').clear_breakpoints()<cr>",
---   "Clear breakpoints",
--- }

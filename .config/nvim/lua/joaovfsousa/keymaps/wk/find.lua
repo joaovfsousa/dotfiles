@@ -22,10 +22,6 @@ return {
     telescope.live_grep,
     "Grep",
   },
-  t = {
-    require("joaovfsousa.plugins.telescope").toggle_layout_strategy,
-    "Toggle layout",
-  },
   d = {
     telescope.diagnostics,
     "Diagnostics",
