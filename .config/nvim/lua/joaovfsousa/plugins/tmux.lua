@@ -1,4 +1,5 @@
-return {{
+return {
+  {
     "numToStr/Navigator.nvim",
     config = function()
       require("Navigator").setup({
@@ -6,5 +7,5 @@ return {{
         disable_on_zoom = true,
       })
     end,
-  }
+  },
 }

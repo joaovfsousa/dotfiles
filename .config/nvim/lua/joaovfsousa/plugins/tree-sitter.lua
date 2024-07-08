@@ -8,6 +8,8 @@ return {
     config = function()
       local ts_config = require("nvim-treesitter.configs")
       ts_config.setup({
+        modules = {},
+        ensure_installed = {},
         sync_install = false,
         auto_install = true,
         ignore_install = { "phpdoc" },
