@@ -53,14 +53,14 @@ return {
       })
 
       vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, {
-          border = "rounded",
-        })
+          vim.lsp.with(vim.lsp.handlers.hover, {
+            border = "rounded",
+          })
 
       vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, {
-          border = "rounded",
-        })
+          vim.lsp.with(vim.lsp.handlers.signature_help, {
+            border = "rounded",
+          })
 
       vim.diagnostic.config({
         float = { border = "rounded" },
@@ -109,8 +109,7 @@ return {
         "prettier",
         "goimports_reviser",
         "gofumpt",
-        "yamlfix",
-        "yamllint",
+        "yamlfmt",
       },
       automatic_setup = true,
       automatic_installation = true,

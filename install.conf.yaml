@@ -3,7 +3,6 @@
       relink: true
       create: true
       force: true
-
 - link:
     ~/.zsh: ./zsh/lib
     ~/.zimrc: ./zsh/.zimrc
@@ -17,17 +16,13 @@
     ~/.dracula.alacritty.yml: ./terminal/.dracula.alacritty.yml
     ~/.wezterm.lua: ./terminal/.wezterm.lua
     ~/.gitconfig: ./git/.gitconfig
-    ~/.config/lvim: .config/lvim
-    ~/.config/nvim: .config/nvim
-    ~/.config/skhd: .config/skhd
-    ~/.config/yabai: .config/yabai
-    ~/.config/lazygit/config.yml: .config/lazygit/config.yml
-    ~/.scripts: ./scripts
-    ~/.config/lsd: .config/lsd
-
+    ~/.config/nvim: config/nvim
+    ~/.config/skhd: config/skhd
+    ~/.config/yabai: config/yabai
+    ~/.config/lazygit/config.yml: config/lazygit/config.yml
+    ~/.config/lsd: config/lsd
+    ~/.bin: bin
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [
-        ~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1,
-        Installing tmux plugins,
-      ]
+    - [~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1, Installing
+        tmux plugins]

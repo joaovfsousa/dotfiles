@@ -19,8 +19,8 @@
   cb = checkout -b
   cim = "!f() { git commit -m \"$*\"; }; f"
   cl = clone
-  clb = "!sh $HOME/.scripts/clone-bare"
-  clone-bare = "!sh $HOME/.scripts/clone-bare"
+  clb = "!sh $HOME/.bin/clone-bare"
+  clone-bare = "!sh $HOME/.bin/clone-bare"
   cm = !git checkout $(git mb)
   co = checkout
   cp = cherry-pick
