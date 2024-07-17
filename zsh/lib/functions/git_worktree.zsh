@@ -101,6 +101,54 @@ function worktree_rm {
   echo "Delete tree $(basename $selected_path) of branch ${selected_branch}"
 }
 
+function worktree_prune {
+  # Split the list into an array
+  list_of_worktrees=("${(@f)$(_list_worktrees)}")
+
+  repo_dir=$(pwd)
+
+  for selected_worktree in "${list_of_worktrees[@]}"; do
+    wt_path=$(echo $selected_worktree | awk '{print $1}')
+    wt_branch=$(echo $selected_worktree | awk '{print $3}' | sed 's/\[//;s/\]//')
+
+    if [[ "$wt_branch" == "master" || "$wt_branch" == "main" ]]; then
+      echo -e "${C_GREEN}Skipping:${C_NC} main branch"
+      continue
+    fi
+    
+    cd "$wt_path" || continue
+
+    # last_modified=$(stat -f "%m" $wt_path)
+    last_modified=$(git log -1 --format=%ct)
+
+    # Calculate the difference in days between now and the last modified date
+    current_time=$(date +%s)
+    diff_days=$(( (current_time - last_modified) / (60*60*24) ))
+
+    # Check if the difference is less than 15 days
+    if [ "$diff_days" -lt 15 ]; then
+      cd "$repo_dir" || exit
+      echo -e "${C_GREEN}Skipping $wt_branch - $wt_path:${C_NC} last commit $diff_days days ago"
+      continue
+    fi
+  
+    # Check for uncommitted changes
+    if ! git diff-index --quiet HEAD --; then
+      cd "$repo_dir" || exit
+      echo -e "${C_YELLOW}Skipping $wt_branch - $wt_path:${C_NC} uncommitted changes"
+      continue
+    fi
+
+    cd "$repo_dir" || exit
+
+    rm -r $wt_path
+    git worktree prune
+    git branch -q -D $wt_branch 
+
+    echo -e "${C_RED}Deleted $wt_branch - $wt_path:${C_NC} last commit $diff_days days ago"
+  done
+}
+
 function worktree {
   case $1 in
     env|e)
@@ -114,6 +162,9 @@ function worktree {
       ;;
     remove|rm|r)
       worktree_rm
+      ;;
+    prune|p)
+      worktree_prune
       ;;
     *)
       echo "Invalid command"

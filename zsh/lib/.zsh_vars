@@ -11,3 +11,11 @@ export EDITOR="nvim"
 export PROJECTS_DIR="$HOME/projects"
 
 export GOBIN="$HOME/.local/bin"
+
+# Define color variables
+# Usage:
+# echo -e "${RED}Error:${NC} Something went wrong."  # Red error message
+export C_RED='\033[0;31m'
+export C_GREEN='\033[0;32m'
+export C_YELLOW='\033[0;33m'
+export C_NC='\033[0m' # No Color
