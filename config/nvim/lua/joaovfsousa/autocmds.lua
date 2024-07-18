@@ -71,9 +71,18 @@ local definitions = {
   {
     "FocusLost",
     {
+      group = "autosave",
       pattern = "*",
       desc = "Write all unsaved buffers on unfocus",
       command = "silent! wa",
+    },
+  },
+  {
+    "VimResized",
+    {
+      group = "on_resize",
+      desc = "resize",
+      command = "wincmd =",
     },
   },
 }
