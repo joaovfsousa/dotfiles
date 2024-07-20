@@ -16,6 +16,7 @@
   b = branch
   brs = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   c = commit
+  ci = commit
   cb = checkout -b
   cim = "!f() { git commit -m \"$*\"; }; f"
   cl = clone
