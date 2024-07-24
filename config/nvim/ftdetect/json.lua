@@ -1,6 +1,11 @@
 vim.filetype.add({
   filename = {
-    [".swcrc"] = "json",
-    [".swcrc.build"] = "json",
+    [".swcrc"] = "jsonc",
+    [".swcrc.build"] = "jsonc",
+    [".eslintrc"] = "jsonc",
+    [".eslintrc.json"] = "jsonc",
+  },
+  pattern = {
+    ["[jt]sconfig%.json"] = "jsonc",
   },
 })
