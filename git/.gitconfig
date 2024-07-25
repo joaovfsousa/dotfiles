@@ -45,7 +45,7 @@
   rbc = rebase --continue
   rbi = "!r() { git rebase -i HEAD~$* ; }; r"
   s = switch
-  save = !git add -A && git commit -m 'chore: savepoint'
+  save = !git add -A && git commit -m 'chore: savepoint' --no-verify
   sb = switch -
   sc = switch -c
   sf = show --name-only

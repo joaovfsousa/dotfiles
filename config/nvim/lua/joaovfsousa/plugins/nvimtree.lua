@@ -250,4 +250,16 @@ return {
     -- event = "User DirOpened",
     opts = opts,
   },
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-tree.lua",
+    },
+    config = function()
+      require("lsp-file-operations").setup({
+        timeout_ms = 20000,
+      })
+    end,
+  },
 }
