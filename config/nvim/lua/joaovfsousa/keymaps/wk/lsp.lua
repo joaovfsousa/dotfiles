@@ -1,10 +1,12 @@
-if client.server_capabilities.inlayHintProvider then
-  vim.lsp.inlay_hint.enable(true, { bufnr })
-end
 return {
   name = "LSP",
   a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-  i = { "", toggle },
+  i = {
+    function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+    end,
+    "Toggle Inlay Hints",
+  },
   I = { "<cmd>LspInfo<cr>", "Info" },
   m = { "<cmd>Mason<cr>", "Mason Info" },
   j = {
