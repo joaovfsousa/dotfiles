@@ -16,7 +16,7 @@ config.leader = { key = "b", mods = "CTRL" }
 -- config.initial_cols = 148
 
 config.color_scheme = "Dracula (Official)"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 
 config.font_size = 15
 config.line_height = 1
@@ -147,10 +147,10 @@ config.keys = {
 
 config.key_tables = {
   resize_pane = {
-    { key = "h",      action = act.AdjustPaneSize({ "Left", 1 }) },
-    { key = "l",      action = act.AdjustPaneSize({ "Right", 1 }) },
-    { key = "k",      action = act.AdjustPaneSize({ "Up", 1 }) },
-    { key = "j",      action = act.AdjustPaneSize({ "Down", 1 }) },
+    { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
+    { key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
+    { key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
+    { key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 }

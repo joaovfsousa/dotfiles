@@ -3,6 +3,8 @@ local icons = require("joaovfsousa.theme.icons")
 return {
   {
     "LunarVim/lunar.nvim",
+    lazy = false,
+    priority = 1000,
   },
   {
     "lewis6991/gitsigns.nvim",

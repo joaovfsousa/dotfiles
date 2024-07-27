@@ -55,6 +55,7 @@ brew "sphinx-doc"
 brew "tldr"
 brew "tmux"
 brew "uvicorn"
+brew "watch"
 brew "wget"
 brew "yarn"
 brew "zoxide"
@@ -103,11 +104,7 @@ cask "vlc"
 cask "wch-ch34x-usb-serial-driver"
 cask "wezterm"
 mas "Developer", id: 640199958
-mas "GeoGebra Calculator Suite", id: 1504416652
-mas "Hand Mirror", id: 1502839586
 mas "Kindle", id: 302584613
-mas "Kindle Classic", id: 405399194
-mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
