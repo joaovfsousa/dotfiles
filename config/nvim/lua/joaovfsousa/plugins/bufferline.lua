@@ -44,7 +44,7 @@ return {
   {
     "akinsho/bufferline.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
-    event = "User FileOpened",
+    event = "BufReadPost",
     config = function()
       local bufferline = require("bufferline")
       local cfg = {
