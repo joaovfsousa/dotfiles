@@ -1,18 +1,9 @@
 local find_maps = require("joaovfsousa.keymaps.wkb.find")
 local lsp_maps = require("joaovfsousa.keymaps.wkb.lsp")
-local bufferline = require("bufferline")
 local jester_maps = require("joaovfsousa.keymaps.wkb.jester")
 local refactoring_maps = require("joaovfsousa.keymaps.wkb.refactoring")
 local dap_maps = require("joaovfsousa.keymaps.wkb.dap")
 local git_maps = require("joaovfsousa.keymaps.wkb.git")
-
----@param num integer
----@return function
-local function navigate_to(num)
-  return function()
-    bufferline.go_to(num, true)
-  end
-end
 
 local nmaps = {
   D = {
@@ -70,13 +61,6 @@ local vmaps = {
     "Comment toggle linewise (visual)",
   },
 }
-
-for i = 1, 10 do
-  nmaps[tostring(i)] = {
-    navigate_to(i),
-    "Go to buffer " .. i,
-  }
-end
 
 return {
   nmaps = nmaps,
