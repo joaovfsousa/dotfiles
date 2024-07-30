@@ -1,10 +1,10 @@
-local find_maps = require("joaovfsousa.keymaps.wk.find")
-local lsp_maps = require("joaovfsousa.keymaps.wk.lsp")
+local find_maps = require("joaovfsousa.keymaps.wkb.find")
+local lsp_maps = require("joaovfsousa.keymaps.wkb.lsp")
 local bufferline = require("bufferline")
-local jester_maps = require("joaovfsousa.keymaps.wk.jester")
-local refactoring_maps = require("joaovfsousa.keymaps.wk.refactoring")
-local dap_maps = require("joaovfsousa.keymaps.wk.dap")
-local git_maps = require("joaovfsousa.keymaps.wk.git")
+local jester_maps = require("joaovfsousa.keymaps.wkb.jester")
+local refactoring_maps = require("joaovfsousa.keymaps.wkb.refactoring")
+local dap_maps = require("joaovfsousa.keymaps.wkb.dap")
+local git_maps = require("joaovfsousa.keymaps.wkb.git")
 
 ---@param num integer
 ---@return function

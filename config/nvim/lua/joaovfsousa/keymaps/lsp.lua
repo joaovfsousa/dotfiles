@@ -61,3 +61,7 @@ vim.keymap.set(
   "<cmd>lua vim.lsp.buf.type_definition()<cr>",
   { desc = "Goto type definition" }
 )
+
+vim.keymap.set("n", "<leader>ll", function()
+  require("logsitter").log()
+end, { desc = "Add log" })

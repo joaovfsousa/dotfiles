@@ -13,19 +13,6 @@ local definitions = {
   {
     "FileType",
     {
-      group = "LogSitter",
-      pattern = "javascript,go,lua,typescript,typescriptreact,javascriptreact",
-      desc = "Add logsitter keymap",
-      callback = function()
-        vim.keymap.set("n", "<leader>ll", function()
-          require("logsitter").log()
-        end, { desc = "Add log" })
-      end,
-    },
-  },
-  {
-    "FileType",
-    {
       group = "_filetype colorizer",
       pattern = "*",
       desc = "Start colorizer",
