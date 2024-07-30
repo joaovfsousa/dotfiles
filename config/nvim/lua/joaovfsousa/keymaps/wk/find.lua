@@ -5,13 +5,6 @@ local us = require("joaovfsousa.utils.selection")
 wk.add({
   mode = { "n", "v" },
   {
-    "<leader>fb",
-    function()
-      telescope.builtin()
-    end,
-    desc = "builtin",
-  },
-  {
     "<leader>f",
     group = "Find",
   },
