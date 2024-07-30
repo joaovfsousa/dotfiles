@@ -4,6 +4,7 @@ require("joaovfsousa.keymaps.wk.jester")
 require("joaovfsousa.keymaps.wk.dap")
 require("joaovfsousa.keymaps.wk.git")
 require("joaovfsousa.keymaps.wk.lsp")
+require("joaovfsousa.keymaps.wk.refactoring")
 
 local wk = require("which-key")
 
