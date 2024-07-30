@@ -1,5 +1,7 @@
 require("joaovfsousa.keymaps.wk.find")
 require("joaovfsousa.keymaps.wk.search")
+require("joaovfsousa.keymaps.wk.jester")
+require("joaovfsousa.keymaps.wk.dap")
 
 local wk = require("which-key")
 

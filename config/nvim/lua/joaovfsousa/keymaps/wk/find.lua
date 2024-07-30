@@ -28,15 +28,6 @@ wk.add({
     desc = "Find Any File",
   },
   {
-    "<leader>fd",
-    function()
-      telescope.diagnostics({
-        initial_mode = "normal",
-      })
-    end,
-    desc = "Diagnostics",
-  },
-  {
     "<leader>fl",
     function()
       telescope.resume({
