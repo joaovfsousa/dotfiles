@@ -71,12 +71,6 @@ local opts = {
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
-    frecency = {
-      show_scores = false,
-      show_unindexed = false,
-      ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
-      default_workspace = "CWD",
-    },
   },
 }
 
@@ -88,15 +82,13 @@ return {
     opts = opts,
   },
   {
-    "nvim-telescope/telescope-frecency.nvim",
-    config = function()
-      require("telescope").load_extension("frecency")
-    end,
-    dependencies = { "kkharji/sqlite.lua" },
-  },
-  {
     "prochri/telescope-all-recent.nvim",
     opts = {},
     dependencies = { "kkharji/sqlite.lua" },
+  },
+  {
+    "gaborvecsei/memento.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
   },
 }

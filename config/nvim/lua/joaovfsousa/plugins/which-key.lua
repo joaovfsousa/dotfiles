@@ -21,25 +21,7 @@ return {
         },
       })
 
-      local wkb_maps = require("joaovfsousa.keymaps.wkb")
-
-      wk.register(wkb_maps.nmaps, {
-        prefix = "<leader>",
-        mode = "n",
-        buffer = nil,
-        silent = true,
-        noremap = true,
-        nowait = true,
-      })
-
-      wk.register(wkb_maps.vmaps, {
-        prefix = "<leader>",
-        mode = "v",
-        buffer = nil,
-        silent = true,
-        noremap = true,
-        nowait = true,
-      })
+      require("joaovfsousa.keymaps.wk")
     end,
   },
 }
