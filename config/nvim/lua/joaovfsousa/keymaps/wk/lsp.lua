@@ -1,6 +1,11 @@
 local wk = require("which-key")
 
 wk.add({
+  { "J", vim.diagnostic.open_float, desc = "Show line diagnostics" },
+  { "K", vim.lsp.buf.hover, desc = "Show hover" },
+})
+
+wk.add({
   {
     "<leader>l",
     group = "LSP",
@@ -9,16 +14,6 @@ wk.add({
     "<leader>la",
     vim.lsp.buf.code_action,
     desc = "Code Action",
-  },
-  {
-    "<leader>lq",
-    vim.diagnostic.setloclist,
-    desc = "QuickFix",
-  },
-  {
-    "<leader>ll",
-    vim.lsp.codelens.run,
-    desc = "Codelens actions",
   },
   {
     "<leader>lf",
@@ -43,6 +38,19 @@ wk.add({
     "<leader>lk",
     vim.diagnostic.goto_prev,
     desc = "Prev Diagnostic",
+  },
+  {
+    "<leader>ll",
+    function()
+      require("logsitter").log()
+    end,
+    desc = "Add log",
+  },
+
+  {
+    "<leader>lq",
+    vim.diagnostic.setloclist,
+    desc = "QuickFix",
   },
   {
     "<leader>lr",

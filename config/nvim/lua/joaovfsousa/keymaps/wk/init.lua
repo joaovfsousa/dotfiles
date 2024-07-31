@@ -1,6 +1,7 @@
 require("joaovfsousa.keymaps.wk.debug")
 require("joaovfsousa.keymaps.wk.find")
 require("joaovfsousa.keymaps.wk.git")
+require("joaovfsousa.keymaps.wk.goto")
 require("joaovfsousa.keymaps.wk.lsp")
 require("joaovfsousa.keymaps.wk.refactoring")
 require("joaovfsousa.keymaps.wk.search")
