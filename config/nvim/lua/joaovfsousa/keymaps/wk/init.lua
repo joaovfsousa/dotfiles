@@ -3,6 +3,7 @@ require("joaovfsousa.keymaps.wk.find")
 require("joaovfsousa.keymaps.wk.git")
 require("joaovfsousa.keymaps.wk.goto")
 require("joaovfsousa.keymaps.wk.lsp")
+require("joaovfsousa.keymaps.wk.navigation")
 require("joaovfsousa.keymaps.wk.refactoring")
 require("joaovfsousa.keymaps.wk.search")
 require("joaovfsousa.keymaps.wk.test")
@@ -49,6 +50,16 @@ wk.add({
     "<leader>;",
     "<cmd>lua require('chartoggle').toggle(';')<CR>",
     desc = "Toggle semicolon",
+  },
+  {
+    "<leader>+",
+    ":vertical resize +10<cr>",
+    desc = "Resize +",
+  },
+  {
+    "<leader>-",
+    ":vertical resize -10<cr>",
+    desc = "Resize -",
   },
   {
     mode = "n",

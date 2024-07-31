@@ -15,6 +15,3 @@ vim.keymap.set("n", "<c-h>", "<cmd>NavigatorLeft<cr>")
 vim.keymap.set("n", "<c-j>", "<cmd>NavigatorDown<cr>")
 vim.keymap.set("n", "<c-k>", "<cmd>NavigatorUp<cr>")
 vim.keymap.set("n", "<c-l>", "<cmd>NavigatorRight<cr>")
-
-vim.keymap.set("n", "<leader>+", ":vertical resize +10<cr>")
-vim.keymap.set("n", "<leader>-", ":vertical resize -10<cr>")
