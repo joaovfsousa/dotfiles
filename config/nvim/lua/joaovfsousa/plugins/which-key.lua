@@ -21,7 +21,7 @@ return {
         },
       })
 
-      require("joaovfsousa.keymaps.wk")
+      require("joaovfsousa.keymaps.init")
     end,
   },
 }

@@ -1,7 +1,6 @@
 local wk = require("which-key")
 local dap = require("dap")
 local dapui = require("dapui")
-local dapw = require("dap.ui.widgets")
 
 local function find_launch_json()
   local cwd = vim.fn.getcwd()
@@ -34,6 +33,8 @@ local function start()
   dap.continue()
 end
 
+vim.keymap.set("n", "E", dapui.eval, { desc = "Eval Hover" })
+
 wk.add({
   {
     "<leader>d",
@@ -62,7 +63,7 @@ wk.add({
   },
   { "<leader>dC", dap.run_to_cursor, desc = "Run To Cursor" },
   { "<leader>dr", dap.repl.toggle, desc = "Toggle Repl" },
-  { "<leader>de", dapw.hover, desc = "Eval Hover" },
+  { "<leader>de", dapui.eval, desc = "Eval Hover" },
   { "<leader>db", dap.toggle_breakpoint, desc = "Toggle Breakpoint" },
   {
     "<leader>dB",
