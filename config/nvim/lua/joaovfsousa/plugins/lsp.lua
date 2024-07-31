@@ -32,6 +32,7 @@ return {
           "pylsp",
           "rust_analyzer",
           "tailwindcss",
+          "tsserver",
           "volar",
           "yamlls",
         },
@@ -48,6 +49,10 @@ return {
           require("lspconfig")["tailwindcss"].setup({
             on_attach = on_attach,
           })
+        end,
+        ["tsserver"] = function()
+          -- Should not init. It's being installed to be used by "pmizio/typescript-tools.nvim"
+          -- in js projects
         end,
       })
 
