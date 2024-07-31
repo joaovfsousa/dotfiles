@@ -91,4 +91,8 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
+  {
+    "kevinhwang91/nvim-bqf",
+    opts = {},
+  },
 }

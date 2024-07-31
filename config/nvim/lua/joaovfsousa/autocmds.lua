@@ -1,44 +1,5 @@
 local definitions = {
-  {
-    "TextYankPost",
-    {
-      group = "_general_settings",
-      pattern = "*",
-      desc = "Highlight text on yank",
-      callback = function()
-        vim.highlight.on_yank({ higroup = "Search", timeout = 100 })
-      end,
-    },
-  },
-  {
-    "FileType",
-    {
-      group = "_filetype colorizer",
-      pattern = "*",
-      desc = "Start colorizer",
-      callback = function()
-        vim.cmd([[ColorizerAttachToBuffer]])
-      end,
-    },
-  },
-  {
-    "TermOpen",
-    {
-      group = "bufcheck",
-      pattern = "*",
-      desc = "Starts terminal in insert mode",
-      command = "startinsert | set winfixheight",
-    },
-  },
-  {
-    "FileType",
-    {
-      group = "bufcheck",
-      pattern = { "gitcommit", "gitrebase" },
-      desc = "Starts git commit and rebase in insert mode",
-      command = "startinsert | 1",
-    },
-  },
+
   {
     "BufReadPost",
     {
@@ -56,12 +17,63 @@ local definitions = {
     },
   },
   {
+    "FileType",
+    {
+      group = "_filetype colorizer",
+      pattern = "*",
+      desc = "Start colorizer",
+      callback = function()
+        vim.cmd([[ColorizerAttachToBuffer]])
+      end,
+    },
+  },
+  {
+    "FileType",
+    {
+      group = "close-with-q",
+      pattern = { "qf", "help", "spectre_panel", "checkhealth", "lazy" },
+      desc = "Close with q",
+      callback = function()
+        vim.keymap.set({ "n", "v" }, "q", "<cmd>q<cr>", { desc = "Close" })
+      end,
+    },
+  },
+  {
+    "FileType",
+    {
+      group = "bufcheck",
+      pattern = { "gitcommit", "gitrebase" },
+      desc = "Starts git commit and rebase in insert mode",
+      command = "startinsert | 1",
+    },
+  },
+  {
     "FocusLost",
     {
       group = "autosave",
       pattern = "*",
       desc = "Write all unsaved buffers on unfocus",
       command = "silent! wa",
+    },
+  },
+  {
+    "TermOpen",
+    {
+      group = "bufcheck",
+      pattern = "*",
+      desc = "Starts terminal in insert mode",
+      command = "startinsert | set winfixheight",
+    },
+  },
+  {
+    "TextYankPost",
+    {
+      group = "_general_settings",
+      pattern = "*",
+      desc = "Highlight text on yank",
+      callback = function()
+        vim.highlight.on_yank({ higroup = "Search", timeout = 100 })
+      end,
     },
   },
   {

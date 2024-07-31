@@ -19,8 +19,8 @@ wk.add({
   },
   {
     "<leader>C",
-    "<cmd>pc<cr>",
-    desc = "Kill preview windows",
+    "<cmd>ccl<cr>",
+    desc = "Close quickfix window",
   },
   {
     "<leader>D",
