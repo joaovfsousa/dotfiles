@@ -1,9 +1,12 @@
 local wk = require("which-key")
 
-wk.add({
-  { "J", vim.diagnostic.open_float, desc = "Show line diagnostics" },
-  { "K", vim.lsp.buf.hover, desc = "Show hover" },
-})
+vim.keymap.set(
+  "n",
+  "J",
+  vim.diagnostic.open_float,
+  { desc = "Show line diagnostics" }
+)
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover" })
 
 wk.add({
   {
