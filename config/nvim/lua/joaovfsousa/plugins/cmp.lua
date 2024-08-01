@@ -34,6 +34,7 @@ return {
         buffer = "[Buffer]",
         path = "[Path]",
         copilot = "[Copilot]",
+        codeium = "[Codeium]",
         dadbod = "[Dadbod]",
       }
 
@@ -105,6 +106,7 @@ return {
           { name = "luasnip" },
           { name = "path" },
           { name = "copilot" },
+          { name = "codeium" },
         }, {
           { name = "buffer" },
         }),
@@ -115,6 +117,7 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    enabled = false,
     config = function()
       require("copilot").setup({
         suggestion = { enabled = false },
@@ -125,8 +128,17 @@ return {
   {
     "zbirenbaum/copilot-cmp",
     event = "InsertEnter",
+    enabled = false,
     config = function()
       require("copilot_cmp").setup()
     end,
+  },
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    opts = { enable_chat = true },
   },
 }
