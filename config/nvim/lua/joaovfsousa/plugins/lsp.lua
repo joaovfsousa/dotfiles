@@ -148,11 +148,17 @@ return {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
-      -- on_attach = function(client, bufnr)
-      --   if client.server_capabilities.inlayHintProvider then
-      --     vim.lsp.inlay_hint.enable(true, { bufnr })
-      --   end
-      -- end,
+      on_attach = function(client, bufnr)
+        local wk = require("which-key")
+        wk.add({
+          {
+            "gd",
+            "<cmd>TSToolsGoToSourceDefinition<cr>",
+            desc = "Goto definition",
+            buffer = bufnr,
+          },
+        })
+      end,
       settings = {
         separate_diagnostic_server = true,
         expose_as_code_action = "all",
