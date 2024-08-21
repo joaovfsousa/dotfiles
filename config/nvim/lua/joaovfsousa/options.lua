@@ -56,6 +56,9 @@ local options = {
   previewheight = 30,
 }
 
+vim.o.sessionoptions =
+  "blank,folds,buffers,curdir,help,tabpages,winsize,winpos,terminal,localoptions"
+
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.g.mapleader = " "

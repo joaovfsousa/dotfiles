@@ -1,21 +1,4 @@
 local definitions = {
-
-  {
-    "BufReadPost",
-    {
-      group = "bufcheck",
-      pattern = "*",
-      desc = "Return to last edit position when opening files",
-      callback = function()
-        local fn = vim.fn
-        if fn.line("'\"") > 0 and fn.line("'\"") <= fn.line("$") then
-          fn.setpos(".", fn.getpos("'\""))
-          -- vim.cmd('normal zz') -- how do I center the buffer in a sane way??
-          vim.cmd("silent! foldopen")
-        end
-      end,
-    },
-  },
   {
     "FileType",
     {
