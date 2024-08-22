@@ -66,10 +66,6 @@ return {
     end,
   },
   {
-    "leafOfTree/vim-matchtag",
-    enabled = true,
-  },
-  {
     "saifulapm/chartoggle.nvim",
     event = "User FileOpened",
   },
