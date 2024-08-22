@@ -111,7 +111,7 @@ return {
       ensure_installed = {
         "stylua",
         "prettier",
-        "goimports_reviser",
+        "goimports-reviser",
         "gofumpt",
         "yamlfmt",
       },
