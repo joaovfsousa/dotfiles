@@ -46,7 +46,6 @@ brew "mas"
 brew "meson"
 brew "mongosh"
 brew "navi"
-brew "neofetch"
 brew "neovim"
 brew "platformio"
 brew "pnpm"
@@ -106,6 +105,7 @@ cask "wch-ch34x-usb-serial-driver"
 cask "wezterm"
 mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
+mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
