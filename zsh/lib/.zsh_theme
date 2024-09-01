@@ -30,20 +30,6 @@ SPACESHIP_PROMPT_SEPARATE_LINE=true
 SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_DIR_TRUNC='3'
 
-spaceship_nixshell() {
-  [[ $SPACESHIP_NIXSHELL_SHOW == false ]] && return
-
-  [[ -z $IN_NIX_SHELL ]] && return
-
-  spaceship::section \
-    --color "yellow" \
-    --prefix "in " \
-    "nix-shell"
-}
-
-# run this somewhere after sourcing oh-my-zsh and spaceship-prompt
-spaceship add nixshell
-
 plugins=(
   asdf
   command-not-found
@@ -54,7 +40,6 @@ plugins=(
   git-prompt
   gitignore
   jsontools
-  nix-shell
   node
   npm
   pip
