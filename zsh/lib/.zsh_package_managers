@@ -12,7 +12,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Allow asdf to use non deterministic version of nvm, e.g. 18 => 18.19.1

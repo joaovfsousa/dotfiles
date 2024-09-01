@@ -7,6 +7,7 @@
     ~/.zsh: ./zsh/lib
     ~/.zimrc: ./zsh/.zimrc
     ~/.zshrc: ./zsh/.zshrc
+    ~/.fzf.zsh: ./zsh/.fzf.zsh
     ~/.asdfrc: ./.asdfrc
     ~/.zshenv: ./zsh/.zshenv
     ~/.tmux: ./tmux
@@ -17,8 +18,6 @@
     ~/.wezterm.lua: ./terminal/.wezterm.lua
     ~/.gitconfig: ./git/.gitconfig
     ~/.config/nvim: config/nvim
-    ~/.config/skhd: config/skhd
-    ~/.config/yabai: config/yabai
     ~/.config/lazygit/config.yml: config/lazygit/config.yml
     ~/.config/lsd: config/lsd
     ~/.bin: bin
