@@ -1,14 +1,45 @@
+[include]
+  path = ~/.workgitconfig
+
 [core]
 	editor = nvim
 	autocrlf = input
 	ignorecase = false
+  pager = delta
+
 [user]
 	name = João Vitor Sousa
 	email = joaovfsousa@gmail.com
+
+[init]
+	defaultBranch = main
+
+[credential]
+	helper = store
+
+[pull]
+  rebase = true
+
+[push]
+	autoSetupRemote = true
+
 [diff]
 	guitool = code
 	tool = vimdiff
 	algorithm = histogram
+
+[rerere]
+	enabled = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
 [alias]
   a = add
   aa = add *
@@ -57,17 +88,3 @@
   undo = checkout --
   unstage = reset HEAD --
   wt = worktree
-[init]
-	defaultBranch = main
-[credential]
-	helper = store
-[pull]
-  rebase = true
-[include]
-  path = ~/.workgitconfig
-[push]
-	autoSetupRemote = true
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-[rerere]
-	enabled = true
