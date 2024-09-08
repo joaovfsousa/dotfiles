@@ -8,8 +8,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("v", "n", "nzz")
 
-vim.keymap.set("n", "mm", "<cmd>BufferLinePick<CR>")
-vim.keymap.set("v", "mm", "<cmd>BufferLinePick<CR>")
+local open_buffer_menu = function()
+  require("snipe").open_buffer_menu({ max_path_width = 3 })
+end
+
+vim.keymap.set("n", "mm", open_buffer_menu)
+vim.keymap.set("v", "mm", open_buffer_menu)
 
 vim.keymap.set("n", "<c-h>", "<cmd>NavigatorLeft<cr>")
 vim.keymap.set("n", "<c-j>", "<cmd>NavigatorDown<cr>")
