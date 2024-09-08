@@ -16,7 +16,7 @@ wk.add({
     desc = "Goto Declaration",
   },
   {
-    "gI",
+    "gi",
     vim.lsp.buf.implementation,
     desc = "Goto Implementation",
   },
