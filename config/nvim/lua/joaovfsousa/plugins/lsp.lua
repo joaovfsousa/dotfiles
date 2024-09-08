@@ -14,7 +14,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = true,
     event = "User FileOpened",
-    dependencies = { "williamboman/mason.nvim" },
+    dependencies = { "williamboman/mason.nvim", "b0o/schemastore.nvim" },
     config = function()
       local mason_lspconfig = require("mason-lspconfig")
       -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
@@ -53,6 +53,36 @@ return {
         ["tsserver"] = function()
           -- Should not init. It's being installed to be used by "pmizio/typescript-tools.nvim"
           -- in js projects
+        end,
+        ["jsonls"] = function()
+          local capabilities = vim.lsp.protocol.make_client_capabilities()
+          capabilities.textDocument.completion.completionItem.snippetSupport =
+            true
+          require("lspconfig").jsonls.setup({
+            capabilities = capabilities,
+            settings = {
+              json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+              },
+            },
+          })
+        end,
+        ["yamlls"] = function()
+          require("lspconfig").yamlls.setup({
+            settings = {
+              yaml = {
+                schemaStore = {
+                  -- You must disable built-in schemaStore support if you want to use
+                  -- this plugin and its advanced options like `ignore`.
+                  enable = false,
+                  -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                  url = "",
+                },
+                schemas = require("schemastore").yaml.schemas(),
+              },
+            },
+          })
         end,
       })
 

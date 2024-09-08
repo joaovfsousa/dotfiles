@@ -18,6 +18,11 @@ wk.add({
     desc = "Kill buffer",
   },
   {
+    "<leader>T",
+    "<cmd>TextCaseOpenTelescope<cr>",
+    desc = "Text case change",
+  },
+  {
     "<leader>C",
     "<cmd>ccl<cr>",
     desc = "Close quickfix window",
