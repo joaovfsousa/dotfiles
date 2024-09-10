@@ -1,6 +1,3 @@
-[include]
-  path = ~/.workgitconfig
-
 [core]
 	editor = nvim
 	autocrlf = input
@@ -88,3 +85,6 @@
   undo = checkout --
   unstage = reset HEAD --
   wt = worktree
+
+[include]
+  path = ~/.workgitconfig
