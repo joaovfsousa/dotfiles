@@ -32,7 +32,7 @@ return {
           "pylsp",
           "rust_analyzer",
           "tailwindcss",
-          "tsserver",
+          "ts_ls",
           "volar",
           "yamlls",
         },
@@ -50,14 +50,14 @@ return {
             on_attach = on_attach,
           })
         end,
-        ["tsserver"] = function()
+        ["ts_ls"] = function()
           -- Should not init. It's being installed to be used by "pmizio/typescript-tools.nvim"
           -- in js projects
         end,
         ["jsonls"] = function()
           local capabilities = vim.lsp.protocol.make_client_capabilities()
           capabilities.textDocument.completion.completionItem.snippetSupport =
-            true
+              true
           require("lspconfig").jsonls.setup({
             capabilities = capabilities,
             settings = {
@@ -87,14 +87,14 @@ return {
       })
 
       vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, {
-          border = "rounded",
-        })
+          vim.lsp.with(vim.lsp.handlers.hover, {
+            border = "rounded",
+          })
 
       vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, {
-          border = "rounded",
-        })
+          vim.lsp.with(vim.lsp.handlers.signature_help, {
+            border = "rounded",
+          })
 
       vim.diagnostic.config({
         float = { border = "rounded" },
