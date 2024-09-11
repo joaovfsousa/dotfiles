@@ -1,6 +1,6 @@
 {
   "handle error": {
-    "prefix": "ien",
+    "prefix": "ie",
     "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
     "description": "Snippet for if err != nil"
   },
@@ -60,10 +60,7 @@
     "description": "Snippet for main function"
   },
   "method declaration": {
-    "prefix": [
-      "meth",
-      "fum"
-    ],
+    "prefix": ["meth", "fum"],
     "body": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$0\n}",
     "description": "Snippet for method declaration"
   },
