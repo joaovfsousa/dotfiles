@@ -1,0 +1,85 @@
+{
+  "handle error": {
+    "prefix": "ien",
+    "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
+    "description": "Snippet for if err != nil"
+  },
+  "panic on error": {
+    "prefix": "iep",
+    "body": "if err != nil {\n\tpanic(err)\n}",
+    "description": "Snippet for panic on if err != nil"
+  },
+  "format string": {
+    "prefix": "fs",
+    "body": "fmt.Sprintf(\"$1\", $2)",
+    "description": "Snippet for quickly formatting a string"
+  },
+  "format error": {
+    "prefix": "fe",
+    "body": "fmt.Errorf(\"$1\", $2)",
+    "description": "Snippet for quickly formatting an error"
+  },
+  "for statement": {
+    "prefix": "for",
+    "body": "for ${1}{\n\t$0\n}",
+    "description": "Snippet for a pure for loop"
+  },
+  "for n statement": {
+    "prefix": "fori",
+    "body": "for ${1:i} := ${2:0}; $1 < ${3:count}; $1${4:++} {\n\t$0\n}",
+    "description": "Snippet for a for loop"
+  },
+  "for range statement": {
+    "prefix": "forr",
+    "body": "for ${1:_, }${2:v} := range ${3:v} {\n\t$0\n}",
+    "description": "Snippet for a for range loop"
+  },
+  "fmt.Println": {
+    "prefix": "fp",
+    "body": "fmt.Println(\"$1\")",
+    "description": "Snippet for fmt.Println()"
+  },
+  "fmt.Printf": {
+    "prefix": "ff",
+    "body": "fmt.Printf(\"$1\", ${2:var})",
+    "description": "Snippet for fmt.Printf()"
+  },
+  "json tag": {
+    "prefix": "json",
+    "body": "`json:\"$1\"`",
+    "description": "Snippet for struct json tag"
+  },
+  "init function": {
+    "prefix": "finit",
+    "body": "func init() {\n\t$1\n}",
+    "description": "Snippet for init function"
+  },
+  "main function": {
+    "prefix": "fmain",
+    "body": "func main() {\n\t$1\n}",
+    "description": "Snippet for main function"
+  },
+  "method declaration": {
+    "prefix": [
+      "meth",
+      "fum"
+    ],
+    "body": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$0\n}",
+    "description": "Snippet for method declaration"
+  },
+  "test function": {
+    "prefix": "tf",
+    "body": "func Test$1(t *testing.T) {\n\t$0\n}",
+    "description": "Snippet for Test function"
+  },
+  "test main": {
+    "prefix": "tm",
+    "body": "func TestMain(m *testing.M) {\n\t$1\n\n\tos.Exit(m.Run())\n}",
+    "description": "Snippet for TestMain function"
+  },
+  "benchmark function": {
+    "prefix": "bf",
+    "body": "func Benchmark$1(b *testing.B) {\n\tfor ${2:i} := 0; ${2:i} < b.N; ${2:i}++ {\n\t\t$0\n\t}\n}",
+    "description": "Snippet for Benchmark function"
+  }
+}

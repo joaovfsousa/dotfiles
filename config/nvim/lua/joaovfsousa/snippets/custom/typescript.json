@@ -1,12 +1,16 @@
 {
-    "console.log": {
-        "prefix": "clg",
-        "body": ["console.log($0);"],
-        "description": "console.log();"
-    },
-    "forceReturn": {
-        "prefix": "H",
-        "body": ["const H = 1;", "if (1 === H) return $0"],
-        "description": "Force return"
-    }
+  "console.log": {
+    "prefix": "clg",
+    "body": [
+      "console.log($0);"
+    ],
+    "description": "console.log();"
+  },
+  "forceReturn": {
+    "prefix": "fr",
+    "body": [
+      "if (true as boolean) return $0"
+    ],
+    "description": "Force return"
+  }
 }

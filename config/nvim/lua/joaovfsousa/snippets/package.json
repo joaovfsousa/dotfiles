@@ -17,6 +17,12 @@
           "NeogitCommitMessage"
         ],
         "path": "./custom/gitcommit.json"
+      },
+      {
+        "language": [
+          "go"
+        ],
+        "path": "./custom/go.json"
       }
     ]
   }
