@@ -16,8 +16,13 @@ local definitions = {
       group = "close-with-q",
       pattern = { "qf", "help", "spectre_panel", "checkhealth", "lazy" },
       desc = "Close with q",
-      callback = function()
-        vim.keymap.set({ "n", "v" }, "q", "<cmd>q<cr>", { desc = "Close" })
+      callback = function(event)
+        vim.keymap.set(
+          { "n", "v" },
+          "q",
+          "<cmd>q<cr>",
+          { desc = "Close", buffer = event.buf }
+        )
       end,
     },
   },
