@@ -52,7 +52,7 @@ local options = {
   foldenable = false,
   spellsuggest = "best",
   list = false,
-  guicursor = "",
+  guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20",
   previewheight = 30,
 }
 
