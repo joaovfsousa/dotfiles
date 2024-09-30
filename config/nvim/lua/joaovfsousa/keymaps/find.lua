@@ -16,7 +16,7 @@ wk.add({
     desc = "Git Files",
   },
   {
-    "<leader>T",
+    "<leader>fT",
     "<cmd>TodoTelescope<cr>",
     desc = "Todo comments",
   },
