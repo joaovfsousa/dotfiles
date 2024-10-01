@@ -63,7 +63,7 @@ return {
           end,
         },
         experimental = {
-          ghost_text = false,
+          ghost_text = true,
         },
         mapping = cmp.mapping.preset.insert({
           ["<CR>"] = cmp.mapping.confirm({
