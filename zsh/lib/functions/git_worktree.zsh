@@ -175,7 +175,7 @@ function worktree {
 function wt {
     export GWT_NEW_DIR_FILE=~/.gwt/newdir
 
-    ~/projects/gwtree/main/gwtree "$@"
+    gwtree "$@"
 
     if [ -f $GWT_NEW_DIR_FILE ]; then
       builtin cd "$(cat $GWT_NEW_DIR_FILE)"
