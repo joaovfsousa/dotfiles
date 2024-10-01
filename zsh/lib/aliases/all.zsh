@@ -30,4 +30,4 @@ alias img='wezterm imgcat'
 alias cd='z'
 alias la='ls -la'
 
-alias wt='worktree'
+alias gwt='worktree'

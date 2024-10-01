@@ -172,7 +172,7 @@ function worktree {
   esac
 }
 
-function gwt {
+function wt {
     export GWT_NEW_DIR_FILE=~/.gwt/newdir
 
     ~/projects/gwtree/main/gwtree "$@"
