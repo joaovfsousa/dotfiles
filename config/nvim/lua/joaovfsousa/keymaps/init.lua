@@ -88,6 +88,9 @@ wk.add({
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("v", ";", ":")
 
+vim.keymap.set("n", "q;", "q:")
+vim.keymap.set("v", "q;", "q:")
+
 vim.keymap.set("n", "|", '"_')
 vim.keymap.set("v", "|", '"_')
 
