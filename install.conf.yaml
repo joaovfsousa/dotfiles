@@ -20,6 +20,7 @@
     ~/.config/nvim: config/nvim
     ~/.config/lazygit/config.yml: config/lazygit/config.yml
     ~/.config/lsd: config/lsd
+    ~/.config/direnv: config/direnv
     ~/.bin: bin
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
