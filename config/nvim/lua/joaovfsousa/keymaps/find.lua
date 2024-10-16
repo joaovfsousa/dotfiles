@@ -69,6 +69,16 @@ wk.add({
     },
   },
   {
+    mode = { "n" },
+    {
+      "<leader>fG",
+      function()
+        telescope.live_grep({ additional_args = { "-uuu" } })
+      end,
+      desc = "Grep",
+    },
+  },
+  {
     mode = { "v" },
     {
       "<leader>fg",
