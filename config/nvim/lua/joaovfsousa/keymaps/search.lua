@@ -12,14 +12,14 @@ wk.add({
     {
       "<leader>sr",
       function()
-        gf.grug_far({ transient = true })
+        gf.open({ transient = true })
       end,
       desc = "SaR",
     },
     {
       "<leader>sR",
       function()
-        gf.grug_far({
+        gf.open({
           transient = true,
           prefills = { search = vim.fn.expand("<cword>") },
         })
@@ -29,12 +29,19 @@ wk.add({
     {
       "<leader>sf",
       function()
-        gf.grug_far({
+        gf.open({
           transient = true,
           prefills = { paths = vim.fn.expand("%") },
         })
       end,
       desc = "Search current file",
+    },
+    {
+      "<leader>si",
+      function()
+        gf.open({ transient = true, extraRgArgs = "-uuu" })
+      end,
+      desc = "Search ignoring gitignore",
     },
   },
   {
@@ -43,7 +50,7 @@ wk.add({
       "<leader>sr",
       function()
         local selection = us.get_visual_selection()
-        gf.grug_far({
+        gf.open({
           transient = true,
           prefills = { search = selection },
         })
@@ -54,7 +61,7 @@ wk.add({
       "<leader>sf",
       function()
         local selection = us.get_visual_selection()
-        gf.grug_far({
+        gf.open({
           transient = true,
           prefills = { search = selection, paths = vim.fn.expand("%") },
         })
