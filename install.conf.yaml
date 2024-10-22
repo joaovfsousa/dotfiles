@@ -19,6 +19,7 @@
     ~/.gitconfig: ./git/.gitconfig
     ~/.config/nvim: config/nvim
     ~/.config/lazygit/config.yml: config/lazygit/config.yml
+    ~/.config/jpm: config/jpm
     ~/.config/lsd: config/lsd
     ~/.config/direnv: config/direnv
     ~/.bin: bin

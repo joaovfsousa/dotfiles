@@ -1,0 +1,17 @@
+{
+  "include": [],
+  "projects": [
+    {
+      "name": "MightyID",
+      "dirs": [
+        {
+          "path": "",
+          "commands": ""
+        }
+      ]
+    },
+    {
+      "name": "Anonimatta"
+    }
+  ]
+}
