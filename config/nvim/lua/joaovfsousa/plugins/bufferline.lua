@@ -141,6 +141,9 @@ return {
             reveal = { "close" },
           },
           sort_by = "id",
+          pick = {
+            alphabet = "asdfghjkl",
+          },
         },
       }
 

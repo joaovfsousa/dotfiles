@@ -7,6 +7,7 @@ require("joaovfsousa.keymaps.navigation")
 require("joaovfsousa.keymaps.refactoring")
 require("joaovfsousa.keymaps.search")
 require("joaovfsousa.keymaps.test")
+require("joaovfsousa.keymaps.toggle")
 require("joaovfsousa.keymaps.zen")
 
 local wk = require("which-key")
