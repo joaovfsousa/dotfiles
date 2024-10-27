@@ -107,6 +107,7 @@ cask "visual-studio-code"
 cask "vlc"
 cask "wch-ch34x-usb-serial-driver"
 cask "wezterm"
+cask "zen-browser"
 mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
 mas "MyWallpaper", id: 1552826194
@@ -129,6 +130,7 @@ vscode "meganrogge.template-string-converter"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.cpptools"
