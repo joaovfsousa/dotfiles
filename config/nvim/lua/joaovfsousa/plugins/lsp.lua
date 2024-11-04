@@ -178,13 +178,19 @@ return {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
-      on_attach = function(client, bufnr)
+      on_attach = function(_, bufnr)
+        local filename = vim.api.nvim_buf_get_name(bufnr)
+
+        if not filename:match(".tsx$") then
+          return
+        end
+
         local wk = require("which-key")
         wk.add({
           {
             "gd",
             "<cmd>TSToolsGoToSourceDefinition<cr>",
-            desc = "Goto definition",
+            desc = "TS Goto definition",
             buffer = bufnr,
           },
         })
