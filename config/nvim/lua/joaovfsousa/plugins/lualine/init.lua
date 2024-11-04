@@ -3,7 +3,7 @@ local opts = {
   active = true,
   style = "main",
   options = {
-    theme = "auto",
+    theme = "catppuccin",
     globalstatus = true,
     icons_enabled = true,
     component_separators = { left = "", right = "" },

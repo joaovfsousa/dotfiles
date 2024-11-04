@@ -43,19 +43,11 @@ end
 return {
   {
     "akinsho/bufferline.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
+    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
     event = "BufReadPost",
     config = function()
       local bufferline = require("bufferline")
       local cfg = {
-        highlights = {
-          background = {
-            italic = true,
-          },
-          buffer_selected = {
-            bold = true,
-          },
-        },
         options = {
           mode = "buffers", -- set to "tabs" to only show tabpages instead
           numbers = "ordinal", -- can be "none" | "ordinal" | "buffer_id" | "both" | function
@@ -146,8 +138,6 @@ return {
           },
         },
       }
-
-      vim.opt.termguicolors = true
 
       bufferline.setup({
         options = cfg.options,

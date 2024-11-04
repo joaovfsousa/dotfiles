@@ -15,7 +15,7 @@ config.leader = { key = "b", mods = "CTRL" }
 -- config.initial_rows = 36
 -- config.initial_cols = 148
 
-config.color_scheme = "Dracula (Official)"
+config.color_scheme = "Catppuccin Mocha"
 config.window_background_opacity = 0.95
 
 config.font_size = 15

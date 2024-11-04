@@ -7,6 +7,22 @@ return {
     priority = 1000,
   },
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 10000,
+    opts = {
+      flavour = "mocha",
+      default_integrations = true,
+      integrations = {
+        grug_far = true,
+        mason = true,
+        dadbod_ui = true,
+        lsp_trouble = true,
+        which_key = true,
+      },
+    },
+  },
+  {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPost",
     opts = {
