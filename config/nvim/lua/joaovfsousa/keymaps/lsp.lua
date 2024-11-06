@@ -1,5 +1,7 @@
 local wk = require("which-key")
 
+local config = require("joaovfsousa.config")
+
 vim.keymap.set(
   "n",
   "J",
@@ -34,12 +36,16 @@ wk.add({
   },
   {
     "<leader>lj",
-    vim.diagnostic.goto_next,
+    function()
+      vim.diagnostic.goto_next({ severity = { min = config.severity } })
+    end,
     desc = "Next Diagnostic",
   },
   {
     "<leader>lk",
-    vim.diagnostic.goto_prev,
+    function()
+      vim.diagnostic.goto_prev({ severity = { min = config.severity } })
+    end,
     desc = "Prev Diagnostic",
   },
   {
@@ -52,7 +58,9 @@ wk.add({
 
   {
     "<leader>lq",
-    vim.diagnostic.setloclist,
+    function()
+      vim.diagnostic.setloclist({ severity = config.severity })
+    end,
     desc = "QuickFix",
   },
   {

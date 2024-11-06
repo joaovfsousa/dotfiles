@@ -1,8 +1,6 @@
 local wk = require("which-key")
 
-local config = {
-  diagnostic = vim.diagnostic.is_enabled(),
-}
+local config = require("joaovfsousa.config")
 
 wk.add({
   {
@@ -14,15 +12,36 @@ wk.add({
     {
       "<leader>xd",
       function()
-        if config.diagnostic then
-          vim.diagnostic.enable(false)
+        config.diagnostic = not config.diagnostic
+        vim.diagnostic.enable(config.diagnostic)
+      end,
+      desc = "Diagnostic",
+    },
+  },
+  {
+    mode = { "n", "v" },
+    {
+      "<leader>xw",
+      function()
+        if config.severity == vim.diagnostic.severity.ERROR then
+          config.severity = vim.diagnostic.severity.HINT
         else
-          vim.diagnostic.enable()
+          config.severity = vim.diagnostic.severity.ERROR
         end
 
-        config.diagnostic = vim.diagnostic.is_enabled()
+        vim.diagnostic.config({
+          float = {
+            float = { border = "rounded" },
+          },
+          virtual_text = {
+            severity = { min = config.severity },
+          },
+          signs = {
+            severity = { min = config.severity },
+          },
+        })
       end,
-      desc = "SaR",
+      desc = "Diagnostic warnings",
     },
   },
 })

@@ -93,6 +93,10 @@ return {
   },
   {
     "kevinhwang91/nvim-bqf",
-    opts = {},
+    opts = {
+      preview = {
+        winblend = 0,
+      },
+    },
   },
 }

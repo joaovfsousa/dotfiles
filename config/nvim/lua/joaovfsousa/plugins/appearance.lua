@@ -20,6 +20,20 @@ return {
         lsp_trouble = true,
         which_key = true,
       },
+      custom_highlights = function(colors)
+        return {
+          BqfPreviewFloat = {
+            bg = colors.crust,
+          },
+          BqfPreviewBorder = {
+            bg = colors.crust,
+          },
+          BqfPreviewTitle = {
+            bg = colors.crust,
+            fg = colors.text,
+          },
+        }
+      end,
     },
   },
   {
