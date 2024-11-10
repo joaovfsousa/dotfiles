@@ -31,3 +31,5 @@ alias cd='z'
 alias la='ls -la'
 
 alias gwt='worktree'
+
+alias copy-zellij-dump="cat /tmp/zellij-panel-dump | pbcopy && rm /tmp/zellij-panel-dump"

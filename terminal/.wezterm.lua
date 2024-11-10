@@ -8,7 +8,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.default_prog = { "/bin/zsh", "-lc", "tmux attach || tmux" }
+-- config.default_prog = { "/bin/zsh", "-lc", "tmux attach || tmux" }
+config.default_prog = { "/bin/zsh", "-lc", "zellij a || zellij" }
 
 config.leader = { key = "b", mods = "CTRL" }
 
@@ -48,110 +49,43 @@ config.font = wezterm.font_with_fallback({
 
 config.hide_tab_bar_if_only_one_tab = true
 
+config.disable_default_key_bindings = true
+
 config.keys = {
   {
-    key = "r",
-    mods = "LEADER",
-    action = act.ActivateKeyTable({
-      name = "resize_pane",
-      one_shot = false,
-    }),
-  },
-  -- {
-  --   key = "h",
-  --   mods = "CTRL",
-  --   action = act.EmitEvent("ActivatePaneDirection-left"),
-  -- },
-  -- {
-  --   key = "j",
-  --   mods = "CTRL",
-  --   action = act.EmitEvent("ActivatePaneDirection-down"),
-  -- },
-  -- {
-  --   key = "k",
-  --   mods = "CTRL",
-  --   action = act.EmitEvent("ActivatePaneDirection-up"),
-  -- },
-  -- {
-  --   key = "l",
-  --   mods = "CTRL",
-  --   action = act.EmitEvent("ActivatePaneDirection-right"),
-  -- },
-  {
-    key = "\\",
-    mods = "LEADER",
-    action = act.SplitPane({ direction = "Right", size = { Percent = 30 } }),
+    key = "q",
+    mods = "CTRL",
+    action = act.Nop,
   },
   {
-    key = "|",
-    mods = "LEADER",
-    action = act.SplitPane({ direction = "Down", size = { Percent = 30 } }),
-  },
-  {
-    key = "l",
-    mods = "LEADER",
-    action = act.SplitPane({ direction = "Right" }),
-  },
-  {
-    key = "k",
-    mods = "LEADER",
-    action = act.SplitPane({ direction = "Up" }),
-  },
-  {
-    key = "j",
-    mods = "LEADER",
-    action = act.SplitPane({ direction = "Down" }),
-  },
-  {
-    key = "h",
-    mods = "LEADER",
-    action = act.SplitPane({ direction = "Left" }),
+    key = "q",
+    mods = "SUPER",
+    action = act.QuitApplication,
   },
   {
     key = "c",
-    mods = "LEADER",
-    action = act.CloseCurrentPane({ confirm = true }),
+    mods = "SUPER",
+    action = act.CopyTo("Clipboard"),
   },
   {
-    key = "m",
-    mods = "LEADER",
-    action = act.PaneSelect({
-      alphabet = "asdfghjkl;",
-    }),
-  },
-  {
-    key = "s",
-    mods = "LEADER",
-    action = act.PaneSelect({
-      mode = "SwapWithActive",
-    }),
-  },
-  {
-    key = " ",
-    mods = "LEADER",
-    action = act.ShowLauncherArgs({
-      flags = "FUZZY|WORKSPACES",
-    }),
-  },
-  {
-    key = "S",
-    mods = "LEADER",
-    action = act.ShowLauncher,
+    key = "v",
+    mods = "SUPER",
+    action = act.PasteFrom("Clipboard"),
   },
   {
     key = "+",
-    mods = "CMD",
-    action = act.ResetFontSize,
+    mods = "SUPER",
+    action = act.IncreaseFontSize,
   },
-}
-
-config.key_tables = {
-  resize_pane = {
-    { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
-    { key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
-    { key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
-    { key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
-    { key = "Escape", action = "PopKeyTable" },
+  {
+    key = "-",
+    mods = "SUPER",
+    action = act.DecreaseFontSize,
+  },
+  {
+    key = "=",
+    mods = "SUPER",
+    action = act.ResetFontSize,
   },
 }
 

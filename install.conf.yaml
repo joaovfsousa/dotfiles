@@ -22,8 +22,12 @@
     ~/.config/jpm: config/jpm
     ~/.config/lsd: config/lsd
     ~/.config/direnv: config/direnv
+    ~/.config/zellij: config/zellij
     ~/.bin: bin
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1, Installing
-        tmux plugins]
+    - [
+        ~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1,
+        Installing
+        tmux plugins,
+      ]
