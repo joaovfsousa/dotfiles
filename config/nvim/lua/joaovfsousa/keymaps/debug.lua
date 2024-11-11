@@ -33,8 +33,6 @@ local function start()
   dap.continue()
 end
 
-vim.keymap.set("n", "E", dapui.eval, { desc = "Eval Hover" })
-
 wk.add({
   {
     "<leader>d",

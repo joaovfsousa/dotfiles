@@ -21,7 +21,7 @@ on_force_close "detach"
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+simplified_ui false
 
 // Toggle between having pane frames around the panes
 // Options:
@@ -37,7 +37,7 @@ pane_frames false
 //   - true (default)
 //   - false
 //
-mouse_mode true
+mouse_mode false
 
 theme "catppuccin-mocha"
 // The folder in which Zellij will look for themes
@@ -65,14 +65,8 @@ keybinds clear-defaults=true {
     shared_except "pane" "locked" {
         bind "Ctrl p" { SwitchToMode "Pane"; }
     }
-    shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
-    }
-    shared_except "scroll" "locked" {
-        bind "Ctrl s" { SwitchToMode "Scroll"; }
-    }
     shared_except "session" "locked" {
-        bind "Ctrl o" { SwitchToMode "Session"; }
+        bind "Ctrl s" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
@@ -101,14 +95,16 @@ keybinds clear-defaults=true {
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; } 
 
-        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "f" { TogglePaneFrames; SwitchToMode "Normal"; }
+
+        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 3;}
         bind "R" { SwitchToMode "Resize"; PaneNameInput 0;}
+        bind "s" { SwitchToMode "Scroll"; }
 
         // bind "c" { DumpScreen "/tmp/zellij-panel-dump"; Run "zsh" "-ci" "copy-zellij-dump"; SwitchToMode "Normal"; }
     }
 
     resize {
-        bind "Ctrl n" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -144,8 +140,6 @@ keybinds clear-defaults=true {
     }
 
     scroll {
-        bind "Ctrl s" { SwitchToMode "Normal"; }
-
         bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
 
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
@@ -164,8 +158,6 @@ keybinds clear-defaults=true {
     }
 
     search {
-        bind "Ctrl /" { SwitchToMode "Normal"; }
-
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
 
         bind "n" { Search "down"; }
@@ -194,19 +186,19 @@ keybinds clear-defaults=true {
     }
 
     renametab {
-        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Ctrl c" "Enter" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
 
     renamepane {
-        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Ctrl c" "Enter" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
 
     session {
-        bind "Ctrl o" { SwitchToMode "Normal"; }
+        bind "Ctrl s" { SwitchToMode "Normal"; }
         bind "d" { Detach; }
-        bind "w" {
+        bind "m" {
             LaunchOrFocusPlugin "session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -226,6 +218,12 @@ keybinds clear-defaults=true {
                 move_to_focused_tab true
             };
             SwitchToMode "Normal"
+        }
+        bind "f" {
+            LaunchOrFocusPlugin "https://github.com/karimould/zellij-forgot/releases/latest/download/zellij_forgot.wasm" {
+                "LOAD_ZELLIJ_BINDINGS" "true"
+                floating true
+            }
         }
     }
 
