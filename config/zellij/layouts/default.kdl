@@ -5,7 +5,7 @@ layout {
             format_space  ""
             format_right  "{command_git_branch} {datetime}"
 
-            mode_normal "#[bg=#7f849c,fg=#FFFFFF] {name} "
+            mode_normal "#[bg=blue,fg=black] {name} "
 
             tab_normal   "#[fg=#6C7086] {name} "
             tab_active   "#[fg=#FFFFFF,bold,italic] {name} "
