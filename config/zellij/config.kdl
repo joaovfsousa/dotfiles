@@ -48,7 +48,7 @@ layout_dir "/Users/joaovfsousa/.config/zellij/layouts"
 keybinds clear-defaults=true {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl f" { ToggleFloatingPanes; }
+        bind "Ctrl a" { ToggleFloatingPanes; }
 
         bind "Ctrl =" { Resize "Increase"; }
         bind "Ctrl -" { Resize "Decrease"; }
@@ -135,8 +135,14 @@ keybinds clear-defaults=true {
         bind "r" { SwitchToMode "RenamePane"; PaneNameInput 3;}
         bind "R" { SwitchToMode "Resize"; PaneNameInput 0;}
         bind "s" { SwitchToMode "Scroll"; }
+        bind "m" { SwitchToMode "Move"; }
+    }
 
-        // bind "c" { DumpScreen "/tmp/zellij-panel-dump"; Run "zsh" "-ci" "copy-zellij-dump"; SwitchToMode "Normal"; }
+    move {
+        bind "h" "Left" { MovePane "Left"; }
+        bind "j" "Down" { MovePane "Down"; }
+        bind "k" "Up" { MovePane "Up"; }
+        bind "l" "Right" { MovePane "Right"; }
     }
 
     resize {
