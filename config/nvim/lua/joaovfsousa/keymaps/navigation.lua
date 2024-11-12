@@ -10,8 +10,3 @@ vim.keymap.set("v", "n", "nzz")
 
 vim.keymap.set("n", "mm", "<cmd>BufferLinePick<cr>")
 vim.keymap.set("v", "mm", "<cmd>BufferLinePick<cr>")
-
-vim.keymap.set("n", "<c-h>", "<cmd>NavigatorLeft<cr>")
-vim.keymap.set("n", "<c-j>", "<cmd>NavigatorDown<cr>")
-vim.keymap.set("n", "<c-k>", "<cmd>NavigatorUp<cr>")
-vim.keymap.set("n", "<c-l>", "<cmd>NavigatorRight<cr>")
