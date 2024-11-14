@@ -167,14 +167,6 @@ return {
     config = true,
   },
   {
-    "Wansmer/symbol-usage.nvim",
-    event = "BufReadPre",
-    enabled = false,
-    config = function()
-      require("symbol-usage").setup()
-    end,
-  },
-  {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
