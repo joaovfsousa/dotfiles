@@ -33,3 +33,5 @@ alias la='ls -la'
 alias gwt='worktree'
 
 alias copy-zellij-dump="cat /tmp/zellij-panel-dump | pbcopy && rm /tmp/zellij-panel-dump"
+
+alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-template.git'
