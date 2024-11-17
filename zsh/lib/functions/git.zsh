@@ -4,7 +4,10 @@ postpush() {
   local originUrl=$(git remote get-url origin)
 
   if [[ $originUrl =~ bitbucket || $originUrl =~ github ]]; then
-    tmux capture-pane -S -900 -p | $HOME/.bin/get-url | pbcopy
+    # if tmux info &> /dev/null; then 
+    #   tmux capture-pane -S -900 -p | $HOME/.bin/get-url | pbcopy
+    # fi
+    zcat | $HOME/.bin/get-url | pbcopy 
   else
     echo "Push was successfull but could not copy url to clipboard"
   fi

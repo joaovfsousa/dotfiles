@@ -19,3 +19,5 @@ export C_RED='\033[0;31m'
 export C_GREEN='\033[0;32m'
 export C_YELLOW='\033[0;33m'
 export C_NC='\033[0m' # No Color
+
+export ZELLIJ_DUMP='/tmp/zellij_dump'
