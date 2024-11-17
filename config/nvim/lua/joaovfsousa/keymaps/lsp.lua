@@ -28,13 +28,6 @@ wk.add({
     desc = "Format",
   },
   {
-    "<leader>li",
-    function()
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-    end,
-    desc = "Toggle Inlay Hints",
-  },
-  {
     "<leader>lj",
     function()
       vim.diagnostic.goto_next({ severity = { min = config.severity } })
