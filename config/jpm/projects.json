@@ -1,17 +1,23 @@
-{
-  "include": [],
-  "projects": [
-    {
-      "name": "MightyID",
-      "dirs": [
+[
+  {
+    "name": "MightyID",
+    "alias": "mid",
+    "dirs": {
+      "api": {
+        "path": "/Users/joaovfsousa/work/tevora/mid/api"
+      },
+      "fe": {
+        "path": "/Users/joaovfsousa/work/tevora/mid/fe"
+      }
+    },
+    "commands": {
+      "install": [
         {
-          "path": "",
-          "commands": ""
+          "fe": "yarn install",
+          "api": "npm install"
         }
       ]
     },
-    {
-      "name": "Anonimatta"
-    }
-  ]
-}
+    "isWorktree": true
+  }
+]
