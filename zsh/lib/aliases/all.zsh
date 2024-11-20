@@ -33,3 +33,5 @@ alias la='ls -la'
 alias gwt='worktree'
 
 alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-template.git'
+
+alias zj='zellij'
