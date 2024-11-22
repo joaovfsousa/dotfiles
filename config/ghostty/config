@@ -1,0 +1,32 @@
+theme = catppuccin-mocha
+background-opacity = 0.95
+window-theme = ghostty
+title = "Ghostty 👻"
+
+font-family = "JetBrainsMono Nerd Font"
+font-size = 15
+font-feature = ss01 ss02 ss03 ss04 ss05 ss06 ss07 ss08 calt dlig liga
+font-thicken = true
+
+mouse-hide-while-typing = true
+quit-after-last-window-closed = true
+macos-options-as-alt = true
+
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = false
+
+command = "/bin/zsh -l -c 'zellij a || zellij'"
+
+keybind = clear
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+equal=increase_font_size:1
+
+keybind = cmd+shift+comma=reload_config
+
+keybind = cmd+c=copy_to_clipboard
+keybind = cmd+v=paste_from_clipboard
+
+# vim: ft=conf
