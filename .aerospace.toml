@@ -125,6 +125,7 @@ h = ['join-with left', 'mode main']
 j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 esc = 'mode main'
 
 [workspace-to-monitor-force-assignment]
