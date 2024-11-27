@@ -10,7 +10,7 @@ font-thicken = true
 
 mouse-hide-while-typing = true
 quit-after-last-window-closed = true
-macos-options-as-alt = true
+macos-option-as-alt = true
 
 clipboard-read = allow
 clipboard-write = allow
