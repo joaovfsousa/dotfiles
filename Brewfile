@@ -56,7 +56,7 @@ brew "potrace"
 brew "python@3.11"
 brew "ripgrep"
 brew "shellcheck"
-brew "sphinx-doc"
+brew "sphinx-doc", link: false
 brew "telnet"
 brew "tldr"
 brew "tmux"
@@ -115,6 +115,7 @@ mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
 mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
+mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
 vscode "awesomektvn.toggle-semicolon"
