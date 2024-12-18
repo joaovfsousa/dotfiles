@@ -63,6 +63,7 @@ wk.add({
   { "<leader>dr", dap.repl.toggle, desc = "Toggle Repl" },
   { "<leader>de", dapui.eval, desc = "Eval Hover" },
   { "<leader>db", dap.toggle_breakpoint, desc = "Toggle Breakpoint" },
+  { "<leader>dt", dap.toggle_breakpoint, desc = "Toggle Breakpoint" },
   {
     "<leader>dB",
     group = "Breakpoint",
