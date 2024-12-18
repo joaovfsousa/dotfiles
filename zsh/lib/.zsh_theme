@@ -10,6 +10,7 @@ SPACESHIP_PROMPT_ORDER=(
   golang
   venv
   ocaml
+  kubectl_context
   exec_time     # Execution time
   line_sep      # Line break
   exit_code     # Exit code section
@@ -40,6 +41,7 @@ plugins=(
   git-prompt
   gitignore
   jsontools
+  kubectl
   node
   npm
   pip

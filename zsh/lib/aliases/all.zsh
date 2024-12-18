@@ -33,6 +33,5 @@ alias hg='history | grep -i'
 alias proj='cd $PROJECTS_DIR'
 alias dot='proj; cd ~/projects/dotfiles'
 alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
-alias k='kill -9'
 
 alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-template.git'
