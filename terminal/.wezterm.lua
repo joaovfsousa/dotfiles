@@ -26,7 +26,7 @@ config.underline_position = -2.
 
 config.font = wezterm.font_with_fallback({
   {
-    family = "Monaspace Neon",
+    family = "JetBrainsMono Nerd Font",
     weight = 700,
     harfbuzz_features = {
       "ss01",
@@ -42,8 +42,7 @@ config.font = wezterm.font_with_fallback({
     },
   },
   {
-    family = "JetBrainsMono Nerd Font",
-    weight = "Bold",
+    family = "Monaspace Neon",
   },
 })
 
