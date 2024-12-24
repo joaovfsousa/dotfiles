@@ -57,7 +57,7 @@ brew "potrace"
 brew "python@3.11"
 brew "ripgrep"
 brew "shellcheck"
-brew "sphinx-doc", link: false
+brew "sphinx-doc"
 brew "telnet"
 brew "tldr"
 brew "tmux"
@@ -120,6 +120,7 @@ mas "ScreenBrush", id: 1233965871
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
+vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "awesomektvn.toggle-semicolon"
 vscode "britesnow.vscode-toggle-quotes"
 vscode "bungcip.better-toml"
@@ -152,4 +153,3 @@ vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vscodevim.vim"
 vscode "vue.volar"
 vscode "wayou.vscode-todo-highlight"
-vscode "withfig.fig"
