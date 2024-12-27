@@ -5,7 +5,7 @@ title = "Ghostty 👻"
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 15
-font-feature = ss01 ss02 ss03 ss04 ss05 ss06 ss07 ss08 calt dlig liga
+font-feature = -calt
 font-thicken = true
 
 mouse-hide-while-typing = true
