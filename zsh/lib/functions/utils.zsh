@@ -30,3 +30,7 @@ function pk {
 
   echo "Killed process running in port $port"
 }
+
+function rm_node_modules {
+  find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+}

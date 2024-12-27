@@ -31,7 +31,9 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias cat='bat --paging=never'
 alias hg='history | grep -i'
 alias proj='cd $PROJECTS_DIR'
-alias dot='proj; cd ~/projects/dotfiles'
+alias dot='cd ~/projects/dotfiles'
+alias work='cd $PROJECTS_DIR/work'
+
 alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
 
 alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-template.git'
