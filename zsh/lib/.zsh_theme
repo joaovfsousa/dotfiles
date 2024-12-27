@@ -1,6 +1,5 @@
 SPACESHIP_PROMPT_ASYNC=false
 SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
   node          # Node.js section
