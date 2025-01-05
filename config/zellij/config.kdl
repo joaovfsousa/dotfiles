@@ -127,6 +127,8 @@ keybinds clear-defaults=true {
 
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
 
+        bind "c" { Clear; SwitchToMode "Normal"; }
+
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; } 
 
@@ -136,6 +138,8 @@ keybinds clear-defaults=true {
         bind "R" { SwitchToMode "Resize"; PaneNameInput 0;}
         bind "s" { SwitchToMode "Scroll"; }
         bind "m" { SwitchToMode "Move"; }
+
+        bind "Enter" { WriteChars "!!\r\r"; SwitchToMode "Normal"; }
     }
 
     move {
