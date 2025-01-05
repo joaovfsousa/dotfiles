@@ -1,6 +1,7 @@
 theme = catppuccin-mocha
 background-opacity = 0.95
-window-theme = ghostty
+window-theme = auto
+window-colorspace = display-p3
 title = "Ghostty 👻"
 
 font-family = "JetBrainsMono Nerd Font"
