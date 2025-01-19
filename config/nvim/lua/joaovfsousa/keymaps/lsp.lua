@@ -17,7 +17,15 @@ wk.add({
   },
   {
     "<leader>la",
-    vim.lsp.buf.code_action,
+    function()
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+          -- Remove refactor options
+          only = { "quickfix", "source" },
+        },
+      })
+    end,
     desc = "Code Action",
   },
   {
