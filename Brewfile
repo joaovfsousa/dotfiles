@@ -111,6 +111,7 @@ cask "visual-studio-code"
 cask "vlc"
 cask "wch-ch34x-usb-serial-driver"
 cask "wezterm"
+cask "zed"
 cask "zen-browser"
 mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
