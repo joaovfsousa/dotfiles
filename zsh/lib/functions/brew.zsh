@@ -18,7 +18,7 @@ update_brewfile() {
 function brew {
   /opt/homebrew/bin/brew $@
 
-  if ([ $1 = "install" ] || [ $1 = "uninstall" ] || [ $1 = "upgrade" ]); then
+  if ([ $1 = "install" ] || [ $1 = "uninstall" ]); then
     update_brewfile
   fi
 }
