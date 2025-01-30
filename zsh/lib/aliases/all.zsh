@@ -22,6 +22,8 @@ alias cb='git branch --sort=-committerdate | fzf --header "Checkout Recent Branc
 alias cd='z'
 alias la='ls -la'
 
+alias o='ollama'
+
 # Misc
 
 alias editp="v ~/.zshrc; szsh"
