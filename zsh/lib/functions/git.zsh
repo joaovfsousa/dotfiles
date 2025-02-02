@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+# Move to bin and git aliases
 postpush() {
   local originUrl=$(git remote get-url origin)
 
