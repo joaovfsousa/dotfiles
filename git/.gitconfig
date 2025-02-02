@@ -40,7 +40,6 @@
 [alias]
   a = add
   aa = add *
-  al = 'config --get-regexp ^alias\\.'
   b = branch
   brs = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   c = commit
@@ -53,6 +52,7 @@
   clb = "!sh $HOME/.bin/clone-bare"
   clone-bare = "!sh $HOME/.bin/clone-bare"
   cm = !git checkout $(git mb)
+  cmsg = log --format=%B -n 1
   co = checkout
   cp = cherry-pick
   ct = reset --hard HEAD
@@ -60,13 +60,15 @@
   ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ > .gitignoretempfile; sed -e '1,3d;$d' < .gitignoretempfile > .gitignore; rm .gitignoretempfile;}; gi"
   incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
   last = log -1 HEAD --stat 
+  lc = !git log -1 --oneline | awk '{print $1}'
+  lcm = !git log -1 --pretty=format:%B | sed -e 's/^/ /'
   lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
   lgg = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
   m = merge
   mb = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
   md = merge --no-commit --no-ff
   outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
-  pl = pull -f
+  pl = pull
   pom = !git push origin $(git mb) -u
   ps = push
   psf = push --force-with-lease
