@@ -15,6 +15,7 @@
     ~/.config/lsd: config/lsd
     ~/.config/nvim: config/nvim
     ~/.config/zellij: config/zellij
+    ~/.jqp.yaml: config/jqp/.jqp.yaml
     ~/.dracula.alacritty.yml: ./terminal/.dracula.alacritty.yml
     ~/.fzf.zsh: ./zsh/.fzf.zsh
     ~/.gitconfig: ./git/.gitconfig
@@ -27,8 +28,5 @@
     ~/.zshrc: ./zsh/.zshrc
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [
-        ~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1,
-        Installing
-        tmux plugins,
-      ]
+    - [~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1, Installing
+        tmux plugins]
