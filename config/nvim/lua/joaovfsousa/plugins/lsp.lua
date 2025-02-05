@@ -178,7 +178,9 @@ return {
   { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
   {
     "smjonas/inc-rename.nvim",
-    config = true,
+    opts = {
+      input_buffer_type = "dressing",
+    },
   },
   {
     "pmizio/typescript-tools.nvim",
