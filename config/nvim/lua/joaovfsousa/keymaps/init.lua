@@ -1,5 +1,6 @@
 require("joaovfsousa.keymaps.debug")
 require("joaovfsousa.keymaps.find")
+require("joaovfsousa.keymaps.focus")
 require("joaovfsousa.keymaps.git")
 require("joaovfsousa.keymaps.goto")
 require("joaovfsousa.keymaps.lsp")
@@ -8,7 +9,6 @@ require("joaovfsousa.keymaps.refactoring")
 require("joaovfsousa.keymaps.search")
 require("joaovfsousa.keymaps.test")
 require("joaovfsousa.keymaps.toggle")
-require("joaovfsousa.keymaps.zen")
 
 local wk = require("which-key")
 

@@ -38,6 +38,7 @@
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "memento.nvim": { "branch": "master", "commit": "7e5e5a86ccaec2892fc2d8197fc01a25d1cf8951" },
   "neogen": { "branch": "main", "commit": "dd0301bfba1f83a3bc009b5430fce7aa3cee6941" },
+  "no-neck-pain.nvim": { "branch": "main", "commit": "860462dd8b3d36861a81724a7b473db279f673f2" },
   "nomodoro": { "branch": "main", "commit": "35076f96ea21fecc6202162304891338c8eebe3c" },
   "none-ls-extras.nvim": { "branch": "main", "commit": "6557f20e631d2e9b2a9fd27a5c045d701a3a292c" },
   "none-ls.nvim": { "branch": "main", "commit": "ed8f80849ef1ad31c2f74679fafdef7801091247" },
