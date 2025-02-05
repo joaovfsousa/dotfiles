@@ -18,7 +18,7 @@ wk.add({
   {
     "<leader>la",
     function()
-      vim.lsp.buf.code_action({
+      require("fastaction").code_action({
         apply = true,
         context = {
           -- Remove refactor options
