@@ -5,7 +5,7 @@ return {
     lazy = false,
     opts = {
       ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-      provider = "local-qwen2.5-coder",
+      provider = "litellm-gemini-2.0-flash-exp",
       -- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
       -- currently designating it as `copilot` provider is dangerous because: https://github.com/yetone/avante.nvim/issues/1048
       -- Of course, you can reduce the request frequency by increasing `suggestion.debounce`.
@@ -28,8 +28,26 @@ return {
           endpoint = "http://127.0.0.1:11434/v1",
           model = "deepseek-r1:8b",
         },
+        ["litellm-gemini-2.0-flash-exp"] = { -- free 1500/day
+          __inherited_from = "openai",
+          api_key_name = "LITELLM_KEY",
+          endpoint = "https://litellm.l.joaovfsousa.dev",
+          model = "gemini-2.0-flash-exp",
+        },
+        ["litellm-gemini-2.0-flash-thinking-exp-01-21"] = { -- free 1500/day
+          __inherited_from = "openai",
+          api_key_name = "LITELLM_KEY",
+          endpoint = "https://litellm.l.joaovfsousa.dev",
+          model = "gemini-2.0-flash-thinking-exp-01-21",
+        },
+        ["litellm-gemini-2.0-pro-exp-02-05"] = { -- free 50/day
+          __inherited_from = "openai",
+          api_key_name = "LITELLM_KEY",
+          endpoint = "https://litellm.l.joaovfsousa.dev",
+          model = "gemini-2.0-pro-exp-02-05",
+        },
       },
-      auto_suggestions_provider = "local-deepseek-r1-14b",
+      auto_suggestions_provider = "litellm-gemini-2.0-flash-exp",
       dual_boost = {
         enabled = false,
       },
