@@ -39,3 +39,5 @@ alias work='cd $PROJECTS_DIR/work'
 alias port='lsof -nP -iTCP -sTCP:LISTEN | grep'
 
 alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-template.git'
+
+alias emulator='~/Library/Android/sdk/emulator/emulator'
