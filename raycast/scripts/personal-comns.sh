@@ -14,5 +14,5 @@
 
 open /Applications/Discord.app
 sleep .5
-open /Applications/Telegram.app
+open /Applications/WhatsApp.app
 
