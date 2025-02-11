@@ -90,6 +90,7 @@ cask "docker"
 cask "dotnet-sdk6-0-400"
 cask "dotnet-sdk7-0-400"
 cask "figma"
+cask "flutter"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-monaspace"
 cask "gimp"
@@ -126,6 +127,7 @@ mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
+mas "WhatsApp", id: 310633997
 mas "Xcode", id: 497799835
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "awesomektvn.toggle-semicolon"
