@@ -10,3 +10,9 @@ vim.keymap.set("v", "n", "nzz")
 
 vim.keymap.set("n", "mm", "<cmd>BufferLinePick<cr>")
 vim.keymap.set("v", "mm", "<cmd>BufferLinePick<cr>")
+
+local qf = require("joaovfsousa.utils.quickfix")
+
+vim.keymap.set({ "n", "v" }, "<leader>mm", qf.buffers, {
+  desc = "List buffers",
+})

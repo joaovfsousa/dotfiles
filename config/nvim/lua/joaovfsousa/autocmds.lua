@@ -29,6 +29,31 @@ local definitions = {
   {
     "FileType",
     {
+      group = "qf",
+      pattern = { "qf" },
+      desc = "quickfix keymaps",
+      callback = function(event)
+        local qf = require("joaovfsousa.utils.quickfix")
+
+        vim.keymap.set(
+          { "n", "v" },
+          "dd",
+          qf.delete_qf_entry,
+          { desc = "Delete entry", buffer = event.buf }
+        )
+
+        vim.keymap.set(
+          { "n", "v" },
+          "D",
+          qf.delete_buf_from_qf,
+          { desc = "Delete buffer", buffer = event.buf }
+        )
+      end,
+    },
+  },
+  {
+    "FileType",
+    {
       group = "bufcheck",
       pattern = { "gitcommit", "gitrebase" },
       desc = "Starts git commit and rebase in insert mode",
