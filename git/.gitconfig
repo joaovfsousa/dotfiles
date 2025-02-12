@@ -76,12 +76,14 @@
   rba = rebase --abort
   rbc = rebase --continue
   rbi = "!r() { git rebase -i HEAD~$* ; }; r"
+  rbis= "!sh $HOME/.bin/squash"
   s = switch
   save = !git add -A && git commit -m 'chore: savepoint' --no-verify
   sb = switch -
   sc = switch -c
   sf = show --name-only
   sm = !git switch $(git mb)
+  squash= "!sh $HOME/.bin/squash"
   st = status -sb
   uncommit = reset --soft HEAD^
   undo = checkout --
