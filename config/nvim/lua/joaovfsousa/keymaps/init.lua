@@ -1,3 +1,4 @@
+require("joaovfsousa.keymaps.ai")
 require("joaovfsousa.keymaps.debug")
 require("joaovfsousa.keymaps.find")
 require("joaovfsousa.keymaps.focus")

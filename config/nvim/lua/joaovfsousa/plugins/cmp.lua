@@ -107,6 +107,7 @@ return {
           { name = "path" },
           { name = "copilot" },
           { name = "codeium" },
+          { name = "codecompanion", filetype = "codecompanion" },
         }, {
           { name = "buffer" },
         }),
