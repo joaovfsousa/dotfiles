@@ -9,3 +9,4 @@ eval "$(zoxide init zsh)"
 
 unsetopt PROMPT_SP
 clear
+eval "$(~/.local/bin/mise activate zsh)"

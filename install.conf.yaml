@@ -6,7 +6,6 @@
 - link:
     ~/.aerospace.toml: ./.aerospace.toml
     ~/.alacritty.yml: ./terminal/.alacritty.yml
-    ~/.asdfrc: ./.asdfrc
     ~/.bin: bin
     ~/.config/direnv: config/direnv
     ~/.config/ghostty: config/ghostty
@@ -28,5 +27,8 @@
     ~/.zshrc: ./zsh/.zshrc
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1, Installing
-        tmux plugins]
+    - [
+        ~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1,
+        Installing
+        tmux plugins,
+      ]
