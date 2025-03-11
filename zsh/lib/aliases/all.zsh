@@ -1,6 +1,8 @@
 # Softwares
 alias v='nvim'
 alias n='nvim'
+alias c='open $1 -a "Cursor"'
+alias vs='open $1 -a "Visual Studio Code"'
 
 alias p='pnpm'
 
