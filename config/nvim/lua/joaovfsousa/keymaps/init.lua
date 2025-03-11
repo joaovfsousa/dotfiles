@@ -46,6 +46,11 @@ wk.add({
     desc = "Close window",
   },
   {
+    "<leader>Q",
+    "<cmd>bufdo bd<cr>",
+    desc = "Close all buffers",
+  },
+  {
     "<leader>w",
     "<cmd>w<cr>",
     desc = "Save",

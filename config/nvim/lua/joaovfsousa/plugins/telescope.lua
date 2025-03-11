@@ -47,7 +47,7 @@ local opts = {
     file_previewer = previewers.vim_buffer_cat.new,
     grep_previewer = previewers.vim_buffer_vimgrep.new,
     qflist_previewer = previewers.vim_buffer_qflist.new,
-    file_sorter = sorters.get_fuzzy_file,
+    file_sorter = sorters.get_fzy_sorter,
     generic_sorter = sorters.get_generic_fuzzy_sorter,
   },
   pickers = {

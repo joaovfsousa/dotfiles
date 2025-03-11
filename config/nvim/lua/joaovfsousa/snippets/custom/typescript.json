@@ -1,16 +1,22 @@
 {
   "console.log": {
     "prefix": "clg",
-    "body": [
-      "console.log($0);"
-    ],
+    "body": ["console.log($0);"],
     "description": "console.log();"
   },
   "forceReturn": {
     "prefix": "fr",
-    "body": [
-      "if (true as boolean) return $0"
-    ],
+    "body": ["if (true as boolean) return $0"],
     "description": "Force return"
+  },
+  "readonly": {
+    "prefix": "ro",
+    "body": ["readonly"],
+    "description": "Readonly"
+  },
+  "private.readonly": {
+    "prefix": "pr",
+    "body": ["private readonly"],
+    "description": "Private readonly"
   }
 }
