@@ -16,3 +16,6 @@ local qf = require("joaovfsousa.utils.quickfix")
 vim.keymap.set({ "n", "v" }, "<leader>mm", qf.buffers, {
   desc = "List buffers",
 })
+
+vim.keymap.set({ "n", "v" }, "M", "m")
+vim.keymap.set({ "n", "v" }, "m", "'")
