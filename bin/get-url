@@ -1,4 +1,4 @@
-#!/Users/joaovfsousa/.asdf/shims/node
+#!node
 
 const stdin = process.openStdin();
 let data = "";
@@ -21,3 +21,5 @@ stdin.on("end", function () {
     }
   }
 });
+
+// vim: ft=javascript
