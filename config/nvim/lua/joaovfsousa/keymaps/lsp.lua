@@ -38,14 +38,22 @@ wk.add({
   {
     "<leader>lj",
     function()
-      vim.diagnostic.goto_next({ severity = { min = config.severity } })
+      vim.diagnostic.jump({
+        severity = { min = config.severity },
+        float = true,
+        count = 1,
+      })
     end,
     desc = "Next Diagnostic",
   },
   {
     "<leader>lk",
     function()
-      vim.diagnostic.goto_prev({ severity = { min = config.severity } })
+      vim.diagnostic.jump({
+        severity = { min = config.severity },
+        float = true,
+        count = -1,
+      })
     end,
     desc = "Prev Diagnostic",
   },

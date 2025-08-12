@@ -33,72 +33,71 @@ return {
           "rust_analyzer",
           "tailwindcss",
           "ts_ls",
-          "volar",
           "yamlls",
         },
       })
 
-      mason_lspconfig.setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({})
-        end,
-        ["tailwindcss"] = function()
-          local on_attach = function(_, bufnr)
-            require("tailwindcss-colors").buf_attach(bufnr)
-          end
-          require("lspconfig")["tailwindcss"].setup({
-            on_attach = on_attach,
-          })
-        end,
-        ["ts_ls"] = function()
-          -- Should not init. It's being installed to be used by "pmizio/typescript-tools.nvim"
-          -- in js projects
-        end,
-        ["jsonls"] = function()
-          local capabilities = vim.lsp.protocol.make_client_capabilities()
-          capabilities.textDocument.completion.completionItem.snippetSupport =
-            true
-          require("lspconfig").jsonls.setup({
-            capabilities = capabilities,
-            settings = {
-              json = {
-                schemas = require("schemastore").json.schemas(),
-                validate = { enable = true },
-              },
-            },
-          })
-        end,
-        ["yamlls"] = function()
-          require("lspconfig").yamlls.setup({
-            settings = {
-              yaml = {
-                schemaStore = {
-                  -- You must disable built-in schemaStore support if you want to use
-                  -- this plugin and its advanced options like `ignore`.
-                  enable = false,
-                  -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-                  url = "",
-                },
-                schemas = {
-                  kubernetes = "*.yaml",
-                  ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-                  ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-                  ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-                  ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-                  ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-                  ["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
-                  ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-                  ["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
-                  ["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
-                  ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
-                  ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
-                  ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
-                },
-              },
-            },
-          })
-        end,
-      })
+      -- mason_lspconfig.setup_handlers({
+      --   function(server_name)
+      --     require("lspconfig")[server_name].setup({})
+      --   end,
+      --   ["tailwindcss"] = function()
+      --     local on_attach = function(_, bufnr)
+      --       require("tailwindcss-colors").buf_attach(bufnr)
+      --     end
+      --     require("lspconfig")["tailwindcss"].setup({
+      --       on_attach = on_attach,
+      --     })
+      --   end,
+      --   ["ts_ls"] = function()
+      --     -- Should not init. It's being installed to be used by "pmizio/typescript-tools.nvim"
+      --     -- in js projects
+      --   end,
+      --   ["jsonls"] = function()
+      --     local capabilities = vim.lsp.protocol.make_client_capabilities()
+      --     capabilities.textDocument.completion.completionItem.snippetSupport =
+      --       true
+      --     require("lspconfig").jsonls.setup({
+      --       capabilities = capabilities,
+      --       settings = {
+      --         json = {
+      --           schemas = require("schemastore").json.schemas(),
+      --           validate = { enable = true },
+      --         },
+      --       },
+      --     })
+      --   end,
+      --   ["yamlls"] = function()
+      --     require("lspconfig").yamlls.setup({
+      --       settings = {
+      --         yaml = {
+      --           schemaStore = {
+      --             -- You must disable built-in schemaStore support if you want to use
+      --             -- this plugin and its advanced options like `ignore`.
+      --             enable = false,
+      --             -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+      --             url = "",
+      --           },
+      --           schemas = {
+      --             kubernetes = "*.yaml",
+      --             ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+      --             ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+      --             ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+      --             ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+      --             ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+      --             ["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
+      --             ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+      --             ["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
+      --             ["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
+      --             ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
+      --             ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
+      --             ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
+      --           },
+      --         },
+      --       },
+      --     })
+      --   end,
+      -- })
 
       vim.lsp.handlers["textDocument/hover"] =
         vim.lsp.with(vim.lsp.handlers.hover, {
