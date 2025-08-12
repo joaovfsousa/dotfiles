@@ -13,10 +13,8 @@ tap "nikitabobko/tap"
 tap "noahgorstein/tap"
 tap "oven-sh/bun"
 tap "zegervdv/zathura"
-brew "python@3.12"
-brew "icu4c@76"
-brew "cryptography"
 brew "awscli"
+brew "cryptography"
 brew "localstack"
 brew "awscli-local"
 brew "bat"
@@ -37,7 +35,9 @@ brew "git-delta"
 brew "git-filter-repo"
 brew "glow"
 brew "goose"
+brew "icu4c@76"
 brew "htop"
+brew "python@3.12"
 brew "imagemagick"
 brew "imagesnap"
 brew "jq"
@@ -120,11 +120,19 @@ cask "termius"
 cask "transmit"
 cask "visual-studio-code"
 cask "vlc"
-cask "wch-ch34x-usb-serial-driver"
 cask "wezterm"
 cask "windsurf"
 cask "zed"
 cask "zen"
+mas "Developer", id: 640199958
+mas "Kindle", id: 302584613
+mas "MyWallpaper", id: 1552826194
+mas "ScreenBrush", id: 1233965871
+mas "Table Tool", id: 1122008420
+mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
+mas "WhatsApp", id: 310633997
+mas "Xcode", id: 497799835
 vscode "adpyke.codesnap"
 vscode "alefragnani.project-manager"
 vscode "amatiasq.sort-imports"
