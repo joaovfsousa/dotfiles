@@ -3,7 +3,6 @@ tap "cmacrae/formulae"
 tap "felixkratz/formulae"
 tap "fluxcd/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "isen-ng/dotnet-sdk-versions"
 tap "koekeishiya/formulae"
@@ -63,6 +62,7 @@ brew "sphinx-doc"
 brew "telnet"
 brew "tldr"
 brew "tmux"
+brew "uv"
 brew "uvicorn"
 brew "watch"
 brew "west"
@@ -126,6 +126,7 @@ cask "zed"
 cask "zen"
 mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
+mas "Microsoft OneNote", id: 784801555
 mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "Table Tool", id: 1122008420
