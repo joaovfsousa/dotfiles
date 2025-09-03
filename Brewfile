@@ -82,6 +82,7 @@ brew "zegervdv/zathura/girara", args: ["HEAD"]
 brew "zegervdv/zathura/zathura", args: ["HEAD"]
 brew "zegervdv/zathura/zathura-pdf-mupdf"
 cask "aerospace"
+cask "android-platform-tools"
 cask "android-studio"
 cask "bitwarden"
 cask "brave-browser"
