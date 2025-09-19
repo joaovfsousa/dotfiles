@@ -2,6 +2,7 @@
 alias v='nvim'
 alias n='nvim'
 alias c='open $1 -a "Cursor"'
+alias cr='cursor -r .'
 alias vs='open $1 -a "Visual Studio Code"'
 alias ca='cursor-agent'
 alias cas='cursor-agent -m sonnet-4-thinking'

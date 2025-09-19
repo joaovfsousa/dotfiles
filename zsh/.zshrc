@@ -8,5 +8,8 @@ source ~/.zsh/.zsh_package_managers
 eval "$(zoxide init zsh)"
 
 unsetopt PROMPT_SP
+
+export GPG_TTY=$(tty)
+
 clear
 eval "$(~/.local/bin/mise activate zsh)"
