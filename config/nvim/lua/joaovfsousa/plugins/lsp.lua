@@ -32,7 +32,6 @@ return {
           "pylsp",
           "rust_analyzer",
           "tailwindcss",
-          "ts_ls",
           "yamlls",
         },
       })
