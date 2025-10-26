@@ -7,6 +7,8 @@ function run-script {
     yarn run "$script_name"
   elif [ -f pnpm-lock.yaml ]; then
     pnpm run "$script_name"
+  elif [ -f bun.lock ]; then
+    bun run "$script_name"
   else
     npm run "$script_name"
   fi

@@ -1,13 +1,16 @@
 # Softwares
 alias v='nvim'
 alias n='nvim'
-alias c='cursor --user-data-dir $HOME/.appdata/cursor/personal'
-alias cr='cursor --user-data-dir $HOME/.appdata/cursor/personal -r .'
-alias cw='cursor --user-data-dir $HOME/.appdata/cursor/work'
-alias cwr='cursor --user-data-dir $HOME/.appdata/cursor/work -r .'
+# alias c='cursor --user-data-dir $HOME/.appdata/cursor/personal'
+# alias cr='cursor --user-data-dir $HOME/.appdata/cursor/personal -r .'
+# alias cw='cursor --user-data-dir $HOME/.appdata/cursor/work'
+# alias cwr='cursor --user-data-dir $HOME/.appdata/cursor/work -r .'
+alias c='cursor'
+alias cr='cursor -r .'
 alias vs='open $1 -a "Visual Studio Code"'
 alias ca='cursor-agent'
-alias cas='cursor-agent -m sonnet-4-thinking'
+alias cas='cursor-agent --model sonnet-4.5-thinking'
+alias cag='cursor-agent --model gpt-5'
 
 alias p='pnpm'
 
