@@ -4,7 +4,7 @@
 postpush() {
   local originUrl=$(git remote get-url origin)
 
-  if [[ $originUrl =~ bitbucket || $originUrl =~ github ]]; then
+  if [[ $originUrl =~ bitbucket || $originUrl =~ github || $originUrl =~ mid ]]; then
     # if tmux info &> /dev/null; then 
     #   tmux capture-pane -S -900 -p | $HOME/.bin/get-url | pbcopy
     # fi
