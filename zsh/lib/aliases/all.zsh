@@ -37,6 +37,7 @@ alias d='docker'
 alias dc='docker-compose'
 alias dd='oxker'
 alias emulator='~/Library/Android/sdk/emulator/emulator'
+alias awsl='aws --profile localstack'
 
 # Git
 alias g='git'
