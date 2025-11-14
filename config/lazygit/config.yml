@@ -1,5 +1,7 @@
 os:
   editPreset: "nvim"
   open: "nvim"
+git:
+  overrideGpg: true
 notARepository: "skip"
 promptToReturnFromSubprocess: false
