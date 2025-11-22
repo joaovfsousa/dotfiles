@@ -123,6 +123,6 @@ vim.keymap.set("v", "<c-m>", "<c-a>")
 vim.keymap.set("n", "<c-n>", "<c-x>")
 vim.keymap.set("v", "<c-n>", "<c-x>")
 
-vim.keymap.set({ "i", "s" }, "<C-N>", function()
+vim.keymap.set({ "i", "s", "n" }, "<C-N>", function()
   require("luasnip").jump(1)
 end, { silent = true })
