@@ -133,6 +133,7 @@ cask "wezterm"
 cask "windsurf"
 cask "zed"
 cask "zen"
+cask "zulu@17"
 mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
 mas "Microsoft OneNote", id: 784801555
