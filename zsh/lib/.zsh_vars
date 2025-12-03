@@ -1,6 +1,8 @@
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.bin
 export PATH="$HOMEBREW_PREFIX/opt/make/libexec/gnubin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=/Users/joaovfsousa/Library/Android/sdk
 
 export LC_CTYPE=en_US.UTF-8
 
