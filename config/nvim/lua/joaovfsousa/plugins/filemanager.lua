@@ -122,7 +122,7 @@ local opts = {
     auto_open = true,
   },
   update_focused_file = {
-    enable = true,
+    enable = false,
     debounce_delay = 15,
     update_root = true,
     ignore_list = {},
