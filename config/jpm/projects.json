@@ -4,19 +4,79 @@
     "alias": "mid",
     "dirs": {
       "api": {
-        "path": "/Users/joaovfsousa/work/tevora/mid/api"
+        "path": "/Users/joaovfsousa/work/tevora/mid/api",
+        "baseBranch": "master",
+        "cmds": {
+          "preInstall": "ln -sf ../.env .env",
+          "install": "ni"
+        }
       },
-      "fe": {
-        "path": "/Users/joaovfsousa/work/tevora/mid/fe"
+      "ui": {
+        "path": "/Users/joaovfsousa/work/tevora/mid/new-ui",
+        "baseBranch": "master",
+        "cmds": {
+          "preInstall": "ln -sf ../.env .env",
+          "install": "ni"
+        }
       }
     },
-    "commands": {
-      "install": [
-        {
-          "fe": "yarn install",
-          "api": "npm install"
+    "layouts": [
+      {
+        "name": "Runner",
+        "path": "/Users/joaovfsousa/projects/dotfiles/config/zellij/layouts/mid-runner.kdl"
+      },
+      {
+        "name": "Fullstack + Scheduler",
+        "path": "/Users/joaovfsousa/projects/dotfiles/config/zellij/layouts/mid-full-sch.kdl"
+      },
+      {
+        "name": "Fullstack",
+        "path": "/Users/joaovfsousa/projects/dotfiles/config/zellij/layouts/mid-fullstack.kdl"
+      }
+    ],
+    "customCommands": {
+      "test": "",
+      "lint": ""
+    },
+    "isWorktree": true
+  },
+  {
+    "name": "MightyID2",
+    "alias": "mid2",
+    "dirs": {
+      "api": {
+        "path": "/Users/joaovfsousa/work/tevora/mid/api",
+        "baseBranch": "master",
+        "cmds": {
+          "preInstall": "ln -sf ../.env .env",
+          "install": "ni"
         }
-      ]
+      },
+      "ui": {
+        "path": "/Users/joaovfsousa/work/tevora/mid/new-ui",
+        "baseBranch": "master",
+        "cmds": {
+          "preInstall": "ln -sf ../.env .env",
+          "install": "ni"
+        }
+      }
+    },
+    "layouts": [
+      {
+        "name": "Runner",
+        "path": "/Users/joaovfsousa/projects/dotfiles/config/zellij/layouts/mid-runner.kdl"
+      },
+      {
+        "name": "Fullstack + Scheduler",
+        "path": "/Users/joaovfsousa/projects/dotfiles/config/zellij/layouts/mid-full-sch.kdl"
+      },
+      {
+        "name": "Fullstack",
+        "path": "/Users/joaovfsousa/projects/dotfiles/config/zellij/layouts/mid-fullstack.kdl"
+      }
+    ],
+    "customCommands": {
+      "test": ""
     },
     "isWorktree": true
   }
