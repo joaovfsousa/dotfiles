@@ -119,6 +119,7 @@ cask "mqttx"
 cask "notunes"
 cask "obs"
 cask "obsidian"
+cask "orcaslicer"
 cask "postman"
 cask "qutebrowser"
 cask "rar"
@@ -140,6 +141,7 @@ cask "zulu@17"
 mas "Developer", id: 640199958
 mas "Kindle", id: 302584613
 mas "Microsoft OneNote", id: 784801555
+mas "MQTT Explorer", id: 1455214828
 mas "MyWallpaper", id: 1552826194
 mas "ScreenBrush", id: 1233965871
 mas "Table Tool", id: 1122008420

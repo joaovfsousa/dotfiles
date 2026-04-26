@@ -54,3 +54,7 @@ alias bi='ln -sf ../.env .env && ni'
 alias proj='cd $PROJECTS_DIR'
 alias work='cd $PROJECTS_DIR/work'
 alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-template.git'
+
+# Homelab
+
+alias labj="ssh joaovfsousa@labj.us"
