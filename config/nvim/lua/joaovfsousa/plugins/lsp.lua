@@ -99,14 +99,14 @@ return {
       -- })
 
       vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, {
-          border = "rounded",
-        })
+          vim.lsp.with(vim.lsp.handlers.hover, {
+            border = "rounded",
+          })
 
       vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, {
-          border = "rounded",
-        })
+          vim.lsp.with(vim.lsp.handlers.signature_help, {
+            border = "rounded",
+          })
 
       vim.diagnostic.config({
         float = { border = "rounded" },
@@ -181,6 +181,7 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    enabled = false,
     opts = {
       on_attach = function(_, bufnr)
         local filename = vim.api.nvim_buf_get_name(bufnr)
@@ -215,9 +216,5 @@ return {
         },
       },
     },
-  },
-  {
-    "leoluz/nvim-dap-go",
-    opts = {},
   },
 }

@@ -66,10 +66,10 @@ local opts = {
   },
   extensions = {
     fzf = {
-      fuzzy = true, -- false will only do exact matching
+      fuzzy = true,                   -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      override_file_sorter = true,    -- override the file sorter
+      case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
     },
   },
 }
@@ -90,13 +90,5 @@ return {
     "gaborvecsei/memento.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
-  },
-  {
-    "kevinhwang91/nvim-bqf",
-    opts = {
-      preview = {
-        winblend = 0,
-      },
-    },
   },
 }

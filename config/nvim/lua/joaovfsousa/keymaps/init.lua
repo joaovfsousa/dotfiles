@@ -41,9 +41,19 @@ wk.add({
     desc = "Toggle NvimTree",
   },
   {
-    "<leader>q",
+    "<leader>qq",
     "<cmd>q<cr>",
     desc = "Close window",
+  },
+  {
+    "<leader>qr",
+    "<cmd>restart<cr>",
+    desc = "Restart Neovim(:restart)",
+  },
+  {
+    "<leader>qa",
+    "<cmd>qa<cr>",
+    desc = "Close all windows",
   },
   {
     "<leader>Q",

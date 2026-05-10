@@ -78,6 +78,11 @@ return {
     },
   },
   {
+    "windwp/nvim-ts-autotag",
+    event = "LazyFile",
+    opts = {},
+  },
+  {
     "gaelph/logsitter.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },

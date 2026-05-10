@@ -16,4 +16,8 @@ return {
     },
     lazy = false,
   },
+  {
+    "saifulapm/chartoggle.nvim",
+    event = "User FileOpened",
+  }
 }

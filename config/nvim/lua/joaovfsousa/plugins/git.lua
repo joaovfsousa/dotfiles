@@ -14,4 +14,18 @@ return {
       vim.g.lazygit_floating_window_scaling_factor = 1
     end,
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufReadPost",
+    opts = {
+      signs = {
+        add = { text = "+" },
+        change = { text = "M" },
+        delete = { text = "_" },
+        topdelete = { text = "-" },
+        changedelete = { text = "-" },
+        untracked = { text = "U" },
+      },
+    },
+  }
 }

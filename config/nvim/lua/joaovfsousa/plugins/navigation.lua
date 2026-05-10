@@ -1,17 +1,5 @@
 return {
   {
-    "leath-dub/snipe.nvim",
-    opts = {
-      ui = {
-        position = "cursor",
-      },
-      hints = {
-        dictionary = "asdfghjkl;",
-      },
-      sort = "last",
-    },
-  },
-  {
     "https://git.sr.ht/~swaits/zellij-nav.nvim",
     lazy = true,
     event = "VeryLazy",
@@ -39,4 +27,8 @@ return {
     },
     opts = {},
   },
+  {
+    "chentoast/marks.nvim",
+    config = true,
+  }
 }
