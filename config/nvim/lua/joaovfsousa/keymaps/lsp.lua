@@ -8,7 +8,11 @@ vim.keymap.set(
   vim.diagnostic.open_float,
   { desc = "Show line diagnostics" }
 )
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover" })
+vim.keymap.set("n", "K", function()
+  vim.lsp.buf.hover({
+    border = "rounded",
+  })
+end, { desc = "Show hover" })
 
 wk.add({
   {

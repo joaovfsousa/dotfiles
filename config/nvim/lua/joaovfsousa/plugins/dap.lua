@@ -10,6 +10,8 @@ local typescriptConfigs = {
   },
 }
 
+local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
+
 local nodeConfigs = {
   type = "executable",
   command = "node",
@@ -23,7 +25,6 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      "David-Kunz/jester",
       "Weissle/persistent-breakpoints.nvim",
       "nvim-neotest/nvim-nio",
       "rcarriga/nvim-dap-ui",
@@ -33,8 +34,6 @@ return {
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
-      local jester = require("jester")
-      local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
       local icons = require("joaovfsousa.theme.icons")
 
       dap.active = true
@@ -46,22 +45,6 @@ return {
       dap.adapters.node = nodeConfigs
 
       dap.adapters.node2 = nodeConfigs
-
-      jester.setup({
-        path_to_jest_run = "npm test --",
-        dap = {
-          type = "node2",
-          request = "launch",
-          cwd = vim.fn.getcwd(),
-          args = { "--no-cache" },
-          sourceMaps = true,
-          protocol = "inspector",
-          skipFiles = { "<node_internals>/**/*.js" },
-          port = 9229,
-          disableOptimisticBPs = true,
-          testTimeout = 30000,
-        },
-      })
 
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -113,33 +96,6 @@ return {
           },
         },
       })
-
-      local function find_launch_json()
-        local cwd = vim.fn.getcwd()
-        local path = cwd .. "/.nvim/launch.json"
-
-        local file = io.open(path, "r")
-
-        if file ~= nil then
-          io.close(file)
-          return path
-        end
-
-        path = cwd .. "/.vscode/launch.json"
-
-        file = io.open(path, "r")
-        if file ~= nil then
-          io.close(file)
-          return path
-        end
-
-        return nil
-      end
-
-      require("dap.ext.vscode").load_launchjs(
-        find_launch_json(),
-        { node = { "typescript", "typescriptreact" } }
-      )
 
       require("persistent-breakpoints").setup({
         load_breakpoints_event = { "BufReadPost" },

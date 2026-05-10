@@ -3,7 +3,7 @@ local opts = {
   active = true,
   style = "main",
   options = {
-    theme = "catppuccin",
+    theme = "catppuccin-mocha",
     globalstatus = true,
     icons_enabled = true,
     component_separators = { left = "", right = "" },
@@ -27,7 +27,6 @@ local opts = {
       components.spaces,
       components.filetype,
     },
-    lualine_y = { components.location, require("nomodoro").status },
     lualine_z = {
       components.progress,
     },
@@ -61,7 +60,7 @@ local opts = {
 return {
   {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", "dbinagi/nomodoro" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VimEnter",
     opts = opts,
   },

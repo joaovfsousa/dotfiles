@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("joaovfsousa.plugins", {
   install = {
     missing = true,
-    colorscheme = { "lunar" },
+    colorscheme = { "catppuccin-mocha" },
   },
   change_detection = {
     notify = false, -- Suppress change notices (default true results in having to dismiss the notice every time you change plugin config).

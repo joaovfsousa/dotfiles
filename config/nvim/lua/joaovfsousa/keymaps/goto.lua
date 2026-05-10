@@ -40,7 +40,11 @@ wk.add({
   },
   {
     "gs",
-    vim.lsp.buf.signature_help,
+    function()
+      vim.lsp.buf.signature_help({
+        border = "rounded",
+      })
+    end,
     desc = "Show signature help",
   },
   {
