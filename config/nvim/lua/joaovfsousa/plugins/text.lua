@@ -19,5 +19,29 @@ return {
   {
     "saifulapm/chartoggle.nvim",
     event = "User FileOpened",
-  }
+  },
+  {
+    "nvim-mini/mini.align",
+    version = "*",
+    opts = {
+      mappings = {
+        start = "",
+        start_with_preview = "<leader>Ta",
+      },
+    },
+  },
+  {
+    "nvim-mini/mini.splitjoin",
+    version = "*",
+    opts = {
+      mappings = {
+        toggle = "<leader>Ts",
+      },
+    },
+    {
+      "nvim-mini/mini.pairs",
+      version = "*",
+      config = true,
+    },
+  },
 }

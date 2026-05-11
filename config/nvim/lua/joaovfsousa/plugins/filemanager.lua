@@ -13,7 +13,7 @@ local on_attach = function(bufnr)
     }
   end
 
-  api.config.mappings.default_on_attach(bufnr)
+  api.map.on_attach.default(bufnr)
   vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
   vim.keymap.set(
     "n",

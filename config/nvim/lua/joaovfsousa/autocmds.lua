@@ -92,6 +92,17 @@ local definitions = {
     },
   },
   {
+    "FileType",
+    {
+      pattern = "help",
+      callback = function()
+        vim.keymap.set("n", "gd", "<C-]>", { buffer = true, silent = true })
+
+        vim.keymap.set("n", "<C-O>", "<C-T>", { buffer = true, silent = true })
+      end,
+    },
+  },
+  {
     "VimResized",
     {
       group = "on_resize",

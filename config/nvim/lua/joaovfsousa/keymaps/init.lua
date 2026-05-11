@@ -10,6 +10,7 @@ require("joaovfsousa.keymaps.quickfix")
 require("joaovfsousa.keymaps.refactoring")
 require("joaovfsousa.keymaps.search")
 require("joaovfsousa.keymaps.test")
+require("joaovfsousa.keymaps.text")
 require("joaovfsousa.keymaps.toggle")
 
 local wk = require("which-key")
@@ -21,19 +22,9 @@ wk.add({
     desc = "Kill buffer",
   },
   {
-    "<leader>T",
-    "<cmd>TextCaseOpenTelescope<cr>",
-    desc = "Text case change",
-  },
-  {
     "<leader>C",
     "<cmd>ccl<cr>",
     desc = "Close quickfix window",
-  },
-  {
-    "<leader>D",
-    "<cmd>DBUIToggle<cr>",
-    desc = "Dadbod UI",
   },
   {
     "<leader>e",
@@ -64,16 +55,6 @@ wk.add({
     "<leader>w",
     "<cmd>w<cr>",
     desc = "Save",
-  },
-  {
-    "<leader>,",
-    "<cmd>lua require('chartoggle').toggle(',')<CR>",
-    desc = "Toggle comma",
-  },
-  {
-    "<leader>;",
-    "<cmd>lua require('chartoggle').toggle(';')<CR>",
-    desc = "Toggle semicolon",
   },
   {
     "<leader>+",
