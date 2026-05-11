@@ -1,3 +1,5 @@
+local nvimtree_prev = { new_name = "", old_name = "" }
+
 local definitions = {
   {
     "FileType",
@@ -95,6 +97,41 @@ local definitions = {
       group = "on_resize",
       desc = "resize",
       command = "wincmd =",
+    },
+  },
+  {
+    "User",
+    {
+      pattern = "OilActionsPost",
+      desc = "LSP Rename on Oil save",
+      callback = function(event)
+        if event.data.actions[1].type == "move" then
+          Snacks.rename.on_rename_file(
+            event.data.actions[1].src_url,
+            event.data.actions[1].dest_url
+          )
+        end
+      end,
+    },
+  },
+  {
+    "User",
+    {
+      pattern = "NvimTreeSetup",
+      group = "file_manager_rename",
+      desc = "LSP Rename on NvimTree save",
+      callback = function()
+        local events = require("nvim-tree.api").events
+        events.subscribe(events.Event.NodeRenamed, function(data)
+          if
+            nvimtree_prev.new_name ~= data.new_name
+            or nvimtree_prev.old_name ~= data.old_name
+          then
+            data = data
+            Snacks.rename.on_rename_file(data.old_name, data.new_name)
+          end
+        end)
+      end,
     },
   },
 }

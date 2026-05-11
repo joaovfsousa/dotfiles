@@ -5,7 +5,9 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-      indent = { enabled = true },
+      indent = { enabled = true, animate = {
+        enabled = false,
+      } },
     },
-  }
+  },
 }
