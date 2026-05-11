@@ -15,6 +15,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "codeium.nvim": { "branch": "main", "commit": "f6a2ef32a9e923cb0104a19d3e426b0e40e49505" },
   "committia.vim": { "branch": "master", "commit": "c8c0f255e8090ed90dd9d5dd2e8672994f8e3671" },
+  "conform.nvim": { "branch": "master", "commit": "dca1a190aa85f9065979ef35802fb77131911106" },
   "copilot-cmp": { "branch": "master", "commit": "b6e5286b3d74b04256d0a7e3bd2908eabec34b44" },
   "eyeliner.nvim": { "branch": "main", "commit": "8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6" },
   "fastaction": { "branch": "main", "commit": "b147d91727cb35be4f722f17e7d4ed5b4a5801d8" },
