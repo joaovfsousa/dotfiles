@@ -21,6 +21,7 @@ return {
       preview = {
         winblend = 0,
       },
+      auto_resize_height = true,
     },
   },
 }

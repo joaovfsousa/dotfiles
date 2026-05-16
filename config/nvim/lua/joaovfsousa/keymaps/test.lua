@@ -1,38 +1,51 @@
 local wk = require("which-key")
 
--- wk.add({
---   {
---     "<leader>t",
---     group = "Jester",
---   },
---   {
---     "<leader>tr",
---     jester.run,
---     desc = "Run nearest",
---   },
---   {
---     "<leader>tf",
---     jester.run_file,
---     desc = "Run file",
---   },
---   {
---     "<leader>tR",
---     jester.debug,
---     desc = "Debug nearest",
---   },
---   {
---     "<leader>tF",
---     jester.debug_file,
---     desc = "Debug file",
---   },
---   {
---     "<leader>tl",
---     jester.run_last,
---     desc = "Run last",
---   },
---   {
---     "<leader>tL",
---     jester.debug_last,
---     desc = "Debug last",
---   },
--- })
+local neotest = require("neotest")
+
+wk.add({
+  {
+    "<leader>t",
+    group = "Test",
+  },
+  {
+    "<leader>tr",
+    neotest.run.run,
+    desc = "Run nearest",
+  },
+  {
+    "<leader>tf",
+    function()
+      neotest.run.run(vim.fn.expand("%"))
+    end,
+    desc = "Run file",
+  },
+  {
+    "<leader>tl",
+    neotest.run.run_last,
+    desc = "Run last",
+  },
+  {
+    "<leader>ts",
+    function()
+      require("neotest").summary.toggle()
+    end,
+    desc = "Toggle Summary Panel",
+  },
+  {
+    "<leader>tS",
+    neotest.run.stop,
+    desc = "Stop",
+  },
+  {
+    "<leader>to",
+    function()
+      require("neotest").output.open({ enter = true, auto_close = true })
+    end,
+    desc = "Show Output(Single test)",
+  },
+  {
+    "<leader>tO",
+    neotest.output_panel.toggle,
+    desc = "Show Output Panel(All tests)",
+  },
+})

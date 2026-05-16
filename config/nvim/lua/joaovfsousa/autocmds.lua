@@ -16,7 +16,14 @@ local definitions = {
     "FileType",
     {
       group = "close-with-q",
-      pattern = { "qf", "help", "spectre_panel", "checkhealth", "lazy" },
+      pattern = {
+        "qf",
+        "help",
+        "spectre_panel",
+        "checkhealth",
+        "lazy",
+        "neotest-output",
+      },
       desc = "Close with q",
       callback = function(event)
         vim.keymap.set(
