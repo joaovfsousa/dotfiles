@@ -1,0 +1,67 @@
+local icons = require("joaovfsousa.theme.icons")
+
+return {
+  {
+    "LunarVim/lunar.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 10000,
+    opts = {
+      flavour = "mocha",
+      default_integrations = true,
+      integrations = {
+        grug_far = true,
+        mason = true,
+        dadbod_ui = true,
+        lsp_trouble = true,
+        which_key = true,
+      },
+      custom_highlights = function(colors)
+        return {
+          BqfPreviewFloat = {
+            bg = colors.crust,
+          },
+          BqfPreviewBorder = {
+            bg = colors.crust,
+          },
+          BqfPreviewTitle = {
+            bg = colors.crust,
+            fg = colors.text,
+          },
+        }
+      end,
+    },
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = true,
+  },
+  {
+    "themaxmarchuk/tailwindcss-colors.nvim",
+  },
+  {
+    "levouh/tint.nvim",
+    enabled = true,
+    config = function()
+      require("tint").setup({
+        tint = -20,
+      })
+    end,
+  },
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      require("illuminate").configure()
+    end,
+  },
+}

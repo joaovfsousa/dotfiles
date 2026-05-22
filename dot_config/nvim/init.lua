@@ -1,0 +1,6 @@
+require("joaovfsousa.options")
+require("vim._core.ui2").enable()
+require("joaovfsousa.lazy")
+require("joaovfsousa.theme")
+require("joaovfsousa.commands")
+require("joaovfsousa.autocmds")
