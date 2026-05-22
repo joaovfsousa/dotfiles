@@ -58,3 +58,5 @@ alias tspg='git clone --depth 1 git@github.com:joaovfsousa/ts-playground-templat
 # Homelab
 
 alias labj="ssh root@labj.us"
+
+alias cz="chezmoi"
