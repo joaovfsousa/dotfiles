@@ -34,6 +34,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-for FILE in ~/.zsh/functions/* ; do source $FILE ; done
+for FILE in ~/.zsh_functions/* ; do source $FILE ; done
 
 source ~/.zsh_aliases
