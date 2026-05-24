@@ -24,6 +24,7 @@ return {
         bash = sh_formatters,
         zsh = sh_formatters,
         sh = sh_formatters,
+        make = { "bake" },
       },
       formatters = {
         beautysh = function()
