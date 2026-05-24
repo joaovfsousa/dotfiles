@@ -222,7 +222,7 @@ local opts = {
     },
   },
   notify = {
-    threshold = vim.log.levels.INFO,
+    threshold = vim.log.levels.WARN,
   },
   log = {
     enable = false,
