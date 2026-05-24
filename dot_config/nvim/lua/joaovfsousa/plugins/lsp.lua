@@ -88,6 +88,10 @@ return {
         },
       })
 
+      vim.lsp.config("bashls", {
+        filetypes = { "sh", "bash", "zsh" },
+      })
+
       vim.diagnostic.config({
         float = { border = "rounded" },
       })
