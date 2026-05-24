@@ -1,0 +1,5 @@
+{{- $machineTypes := list "personal" "work" -}}
+{{- $machine := promptChoiceOnce . "machine" "What is the machine type" $machineTypes -}}
+
+[data]
+machine = {{ $machine | quote }}
