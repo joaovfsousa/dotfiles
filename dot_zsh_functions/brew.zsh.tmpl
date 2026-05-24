@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# vim: set ft=zsh
+# vim: set filetype=zsh
 
 update_brewfile() {
   local current_dir=$(pwd)
@@ -30,7 +30,7 @@ update_brewfile() {
 function brew {
   /opt/homebrew/bin/brew $@
 
-  if ([ $1 = "install" ] || [ $1 = "uninstall" ]); then
-    update_brewfile
-  fi
+  # if ([ $1 = "install" ] || [ $1 = "uninstall" ]); then
+  #   update_brewfile
+  # fi
 }
