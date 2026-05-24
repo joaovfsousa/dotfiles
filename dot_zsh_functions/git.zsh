@@ -2,8 +2,7 @@
 
 # Move to bin and git aliases
 postpush() {
-  zellij action dump-screen /tmp/zellij-dump
-  cat /tmp/zellij-dump | $HOME/.bin/get-url | pbcopy 
+  zellij action dump-screen | $HOME/.bin/get-url | pbcopy
 }
 
 function last_commit_msg {
@@ -18,11 +17,11 @@ function last_commit_msg {
 }
 
 function gps {
-  git push;
-  postpush;
+  git push
+  postpush
 }
 
 function gpsf {
-  git push --force-with-lease;
-  postpush;
+  git push --force-with-lease
+  postpush
 }
