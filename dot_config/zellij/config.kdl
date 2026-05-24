@@ -135,8 +135,8 @@ keybinds clear-defaults=true {
 
         bind "f" { TogglePaneFrames; SwitchToMode "Normal"; }
 
-        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 3;}
-        bind "R" { SwitchToMode "Resize"; PaneNameInput 0;}
+        bind "R" { SwitchToMode "RenamePane"; PaneNameInput 3;}
+        bind "r" { SwitchToMode "Resize";}
         bind "s" { SwitchToMode "Scroll"; }
         bind "m" { SwitchToMode "Move"; }
 
