@@ -1,0 +1,34 @@
+{
+  "keyMappings": "unmapAll\nmap ; LinkHints.activateMode\nmap : LinkHints.activateModeToOpenInNewTab\nmap yy copyCurrentUrl\nmap gg scrollToTop\nmap G scrollToBottom\nmap rr reload\nmap / enterFindMode\nmap j performFind\nmap k performBackwardsFind'\nmap i enterInsertMode\nmap v enterVisualMode\nmap gh previousTab\nmap gl nextTab\nmap yp duplicateTab\nmap xx removeTab\nmap gb goBack\nmap gf goForward\nmap o Vomnibar.activate\nmap O Vomnibar.activateInNewTab\nmap n performFind\nmap N performBackwardsFind",
+  "settingsVersion": "2.0.5",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "1,2,3,4,5,6,7,8,9,0",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.techrmo.app/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://docs.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://term.ooo/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.geoguessr.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.gabtoschi.com/*"
+    }
+  ]
+}
