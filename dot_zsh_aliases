@@ -27,7 +27,11 @@ alias d='docker'
 alias dc='docker-compose'
 alias dd='oxker'
 alias awsl='aws --profile localstack'
+
+# Chezmoi
 alias cz="chezmoi"
+alias czaa="chezmoi apply"
+alias czai="chezmoi apply --interactive"
 
 # Git
 alias g='git'
