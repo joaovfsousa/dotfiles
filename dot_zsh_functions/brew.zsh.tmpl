@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+# vim: set ft=zsh
+
+update_brewfile() {
+  local current_dir=$(pwd)
+
+  local cz_path=$(chezmoi source-path)
+
+  cd $cz_path
+
+  {{ if eq .machine "work" "personal" -}}
+  local dumpFileNamePath="manual/{{- .machine -}}_Brewfile"
+  {{- else -}}
+  echo "chezmoi machine type is invalid" 1>&2
+  exit 1
+  {{- end }}
+
+  brew bundle dump \
+    --force --no-vscode --no-npm --no-vscode --no-go --no-cargo --no-uv --no-flatpak --no-krew --file $dumpFileNamePath
+
+  git add $dumpFileNamePath
+  git commit -m "brewfile({{ .machine }}): update" -q
+  git push -q
+
+  echo "Brewfile updated and pushed to dotfiles repo"
+
+  builtin cd $current_dir
+}
+
+function brew {
+  /opt/homebrew/bin/brew $@
+
+  if ([ $1 = "install" ] || [ $1 = "uninstall" ]); then
+    update_brewfile
+  fi
+}
