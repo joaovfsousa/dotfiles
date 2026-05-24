@@ -1,0 +1,11 @@
+{{ if eq .machine "work" }}
+/personal/**
+{{ end }}
+
+{{ if eq .machine "personal" }}
+/work/**
+{{ end }}
+
+**/manual_*
+/README.md
+/stylua.toml
