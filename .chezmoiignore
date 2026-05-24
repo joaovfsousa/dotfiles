@@ -1,11 +1,11 @@
 {{ if eq .machine "work" }}
-/personal/**
+**/personal**
 {{ end }}
 
 {{ if eq .machine "personal" }}
-/work/**
+**/work**
 {{ end }}
 
-**/manual_*
+/manual
 /README.md
 /stylua.toml
