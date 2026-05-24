@@ -3,6 +3,7 @@
 	autocrlf = input
 	ignorecase = false
   pager = delta
+  excludesFile = ~/.gitignore
 
 [user]
 	name = João Vitor Sousa
