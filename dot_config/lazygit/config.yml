@@ -5,3 +5,7 @@ git:
   overrideGpg: true
 notARepository: "skip"
 promptToReturnFromSubprocess: false
+keybinding:
+  universal:
+    pullFiles: "P"
+    pushFiles: "p"
