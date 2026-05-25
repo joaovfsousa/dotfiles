@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "lastSpeed": null,
+  "enabled": true,
+  "rememberSpeed": false,
+  "exclusiveKeys": false,
+  "audioBoolean": true,
+  "startHidden": false,
+  "controllerOpacity": 0.3,
+  "controllerButtonSize": 14,
+  "customCSS": "",
+  "keyBindings": [
+    {
+      "action": "slower",
+      "code": "KeyS",
+      "displayKey": "s",
+      "key": 83,
+      "keyCode": 83,
+      "predefined": true,
+      "value": 0.25
+    },
+    {
+      "action": "faster",
+      "code": "KeyD",
+      "displayKey": "d",
+      "key": 68,
+      "keyCode": 68,
+      "predefined": true,
+      "value": 0.25
+    },
+    {
+      "action": "rewind",
+      "code": "KeyZ",
+      "displayKey": "z",
+      "key": 90,
+      "keyCode": 90,
+      "predefined": true,
+      "value": 10
+    },
+    {
+      "action": "advance",
+      "code": "KeyB",
+      "displayKey": "b",
+      "key": 66,
+      "keyCode": 66,
+      "predefined": true,
+      "value": 10
+    },
+    {
+      "action": "reset",
+      "code": "KeyA",
+      "displayKey": "a",
+      "key": 65,
+      "keyCode": 65,
+      "predefined": true,
+      "value": 1
+    },
+    {
+      "action": "fast",
+      "code": "KeyG",
+      "displayKey": "g",
+      "key": 71,
+      "keyCode": 71,
+      "predefined": true,
+      "value": 2
+    },
+    {
+      "action": "display",
+      "code": "KeyV",
+      "displayKey": "v",
+      "key": 86,
+      "keyCode": 86,
+      "predefined": true,
+      "value": 0
+    },
+    {
+      "action": "mark",
+      "code": "KeyM",
+      "displayKey": "m",
+      "key": 77,
+      "keyCode": 77,
+      "predefined": true,
+      "value": 0
+    },
+    {
+      "action": "jump",
+      "code": "KeyJ",
+      "displayKey": "j",
+      "key": 74,
+      "keyCode": 74,
+      "predefined": true,
+      "value": 0
+    }
+  ],
+  "siteRules": [
+    {
+      "enabled": true,
+      "pattern": "www.instagram.com",
+      "speed": null
+    },
+    {
+      "enabled": true,
+      "pattern": "imgur.com",
+      "speed": null
+    },
+    {
+      "enabled": false,
+      "pattern": "teams.microsoft.com",
+      "speed": null
+    },
+    {
+      "enabled": false,
+      "pattern": "meet.google.com",
+      "speed": null
+    }
+  ],
+  "blacklist": "www.instagram.com\nimgur.com\nteams.microsoft.com\nmeet.google.com",
+  "defaultLogLevel": 4,
+  "logLevel": 3
+}
