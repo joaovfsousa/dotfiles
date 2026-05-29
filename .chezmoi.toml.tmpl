@@ -1,8 +1,14 @@
 {{- $machineTypes := list "personal" "work" -}}
 {{- $machine := promptChoiceOnce . "machine" "What is the machine type" $machineTypes -}}
+{{- $username := promptStringOnce . "username" "What is your username" }}
 {{- $email:= promptStringOnce . "email" "What is your email address for git" }}
+{{- $signingKey:= promptStringOnce . "signingKey" "What is the signingKey for git" }}
+{{- $enableCommitSigning := promptBoolOnce . "enableCommitSigning" "Should enable commit signing" }}
 
 [data]
 machine = {{ $machine | quote }}
+username = {{ $username | quote }}
 email = {{ $email | quote }}
+signingKey = {{ $signingKey | quote }}
+enableCommitSigning = {{ $enableCommitSigning | quote }}
 

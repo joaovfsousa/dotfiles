@@ -43,8 +43,8 @@ mouse_mode false
 theme "catppuccin-mocha"
 // The folder in which Zellij will look for themes
 //
-theme_dir "/Users/joaovfsousa/.config/zellij/themes"
-layout_dir "/Users/joaovfsousa/.config/zellij/layouts"
+theme_dir "/Users/{{- .username -}}/.config/zellij/themes"
+layout_dir "/Users/{{- .username -}}/.config/zellij/layouts"
 
 keybinds clear-defaults=true {
     shared_except "locked" {

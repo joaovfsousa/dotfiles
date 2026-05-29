@@ -8,6 +8,7 @@
 [user]
 	name = João Vitor Sousa
 	email = {{ .email }}
+	signingkey = {{ .signingKey }} 
 
 [init]
 	defaultBranch = main
@@ -91,5 +92,14 @@
   unstage = reset HEAD --
   wt = worktree
 
-[include]
-  path = ~/.workgitconfig
+
+{{ if .enableCommitSigning }}
+[gpg]
+	program = gpg
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
+{{ end }}
