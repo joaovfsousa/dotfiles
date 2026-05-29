@@ -1,4 +1,5 @@
 local wk = require("which-key")
+local s = require("snacks")
 
 wk.add({
   {
@@ -7,12 +8,12 @@ wk.add({
   },
   {
     "<leader>gg",
-    "<cmd>LazyGit<cr>",
+    s.lazygit.open,
     desc = "LazyGit",
   },
   {
     "<leader>gf",
-    "<cmd>LazyGitFilterCurrentFile<cr>",
+    s.lazygit.log_file,
     desc = "LazyGit Current file",
   },
   {
@@ -34,9 +35,9 @@ wk.add({
     "<leader>gc",
     function()
       local actions =
-        require("telescope._extensions.conventional_commits.actions")
+          require("telescope._extensions.conventional_commits.actions")
       local picker =
-        require("telescope._extensions.conventional_commits.picker")
+          require("telescope._extensions.conventional_commits.picker")
 
       picker({
         action = actions.prompt,
