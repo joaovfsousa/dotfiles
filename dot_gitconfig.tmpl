@@ -8,7 +8,9 @@
 [user]
 	name = João Vitor Sousa
 	email = {{ .email }}
+{{- if .signingKey }}
 	signingkey = {{ .signingKey }} 
+{{ end }}
 
 [init]
 	defaultBranch = main
@@ -93,7 +95,7 @@
   wt = worktree
 
 
-{{ if .enableCommitSigning }}
+{{ if .signingKey }}
 [gpg]
 	program = gpg
 
