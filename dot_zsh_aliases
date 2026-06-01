@@ -25,8 +25,7 @@ alias c='cursor'
 alias cr='cursor -r .'
 alias vs='open $1 -a "Visual Studio Code"'
 alias ca='cursor-agent'
-alias cas='cursor-agent --model sonnet-4.5-thinking'
-alias cag='cursor-agent --model gpt-5'
+alias oc='opencode'
 
 # Dev tools
 alias p='pnpm'
