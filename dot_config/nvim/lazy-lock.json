@@ -61,7 +61,7 @@
   "persistent-breakpoints.nvim": { "branch": "main", "commit": "d1656221836207787b8a7969cc2dc72668c4742a" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "refactoring.nvim": { "branch": "master", "commit": "624c01e8175901484eac74512baf35e9dfe269b8" },
-  "schemastore.nvim": { "branch": "main", "commit": "efa62017f59a6346486cc567d70acce965a00b12" },
+  "schemastore.nvim": { "branch": "main", "commit": "bb1550c91d09d2ede8edd90a87fa4ccc9c0b9e1f" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
   "sqlite.lua": { "branch": "master", "commit": "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   "submode.nvim": { "branch": "main", "commit": "d3cd2ceed6e2379caba6ec2e75dc50a9a832be63" },
