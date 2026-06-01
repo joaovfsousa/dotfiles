@@ -39,6 +39,7 @@ alias awsl='aws --profile localstack'
 alias cz="chezmoi"
 alias czaa="chezmoi apply"
 alias czai="chezmoi apply --interactive"
+alias cznl="cz add ~/.config/nvim/lazy-lock.json"
 
 # Git
 alias g='git'
