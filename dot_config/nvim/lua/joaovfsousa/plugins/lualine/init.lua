@@ -13,6 +13,7 @@ local opts = {
   sections = {
     lualine_a = {
       components.mode,
+      components.submode,
     },
     lualine_b = {
       components.branch,

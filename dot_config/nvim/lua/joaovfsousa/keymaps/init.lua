@@ -22,11 +22,6 @@ wk.add({
     desc = "Kill buffer",
   },
   {
-    "<leader>C",
-    "<cmd>ccl<cr>",
-    desc = "Close quickfix window",
-  },
-  {
     "<leader>e",
     "<cmd>NvimTreeToggle<cr>",
     desc = "Toggle NvimTree",

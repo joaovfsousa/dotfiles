@@ -22,9 +22,17 @@ return {
     function()
       return " " .. icons.ui.Target .. " "
     end,
-    padding = { left = 0, right = 0 },
+    padding = { left = 0, right = 1 },
     color = {},
     cond = nil,
+  },
+  submode = {
+    require("submode").mode,
+    padding = { left = 0, right = 1 },
+    color = {},
+    cond = function()
+      return require("submode").mode() ~= nil
+    end
   },
   branch = {
     "b:gitsigns_head",
@@ -132,10 +140,10 @@ return {
 
       if copilot_active then
         language_servers = language_servers
-          .. "%#SLCopilot#"
-          .. " "
-          .. icons.git.Octoface
-          .. "%*"
+            .. "%#SLCopilot#"
+            .. " "
+            .. icons.git.Octoface
+            .. "%*"
       end
 
       return language_servers
