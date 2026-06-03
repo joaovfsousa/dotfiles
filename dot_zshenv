@@ -35,6 +35,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Fix OpenCode Cursor plugin writes
+CURSOR_ACP_TOOL_LOOP_MODE=proxy-exec
+
 for FILE in ~/.zsh_functions/* ; do source $FILE ; done
 
 source ~/.zsh_aliases
