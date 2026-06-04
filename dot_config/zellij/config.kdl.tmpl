@@ -48,8 +48,15 @@ layout_dir "/Users/{{- .username -}}/.config/zellij/layouts"
 
 keybinds clear-defaults=true {
     shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl /" { SwitchToMode "Locked"; }
         bind "Ctrl a" { ToggleFloatingPanes; }
+        bind "Ctrl g" { Run "lazygit" {
+                floating true
+                close_on_exit true
+                width "80%"
+                height "80%"
+            } 
+        }
 
         bind "Ctrl =" { Resize "Increase"; }
         bind "Ctrl -" { Resize "Decrease"; }
@@ -112,7 +119,7 @@ keybinds clear-defaults=true {
     }
 
     locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
+        bind "Ctrl /" { SwitchToMode "Normal"; }
     }
 
     normal {
