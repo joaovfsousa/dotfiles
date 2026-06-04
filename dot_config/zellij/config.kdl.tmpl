@@ -48,15 +48,21 @@ layout_dir "/Users/{{- .username -}}/.config/zellij/layouts"
 
 keybinds clear-defaults=true {
     shared_except "locked" {
-        bind "Ctrl /" { SwitchToMode "Locked"; }
+        bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl a" { ToggleFloatingPanes; }
-        bind "Ctrl g" { Run "lazygit" "-ucd" "/Users/{{- .username -}}/.config/lazygit" {
+        bind "Super g" { Run "lazygit" "-ucd" "/Users/{{- .username -}}/.config/lazygit" {
                 floating true
                 close_on_exit true
                 width "80%"
                 height "80%"
             } 
         }
+
+        bind "Super r" {
+            Write 33 33 13;
+        }
+
+        bind "Super a" { ToggleFloatingPanes; Write 33 33 13; switchToMode }
 
         bind "Ctrl =" { Resize "Increase"; }
         bind "Ctrl -" { Resize "Decrease"; }
@@ -102,6 +108,10 @@ keybinds clear-defaults=true {
         }
     }
 
+    shared_except "locked" "compilation" {
+        bind "Super a" { ToggleFloatingPanes; Write 33 33 13; SwitchToMode "Compilation"}
+    }
+
     shared_except "normal" "locked" {
         bind "Esc" { SwitchToMode "Normal"; }
     }
@@ -119,10 +129,14 @@ keybinds clear-defaults=true {
     }
 
     locked {
-        bind "Ctrl /" { SwitchToMode "Normal"; }
+        bind "Ctrl g" { SwitchToMode "Normal"; }
     }
 
     normal {
+    }
+
+    compilation {
+        bind "Super a" { ToggleFloatingPanes; SwitchToMode "Normal"}
     }
 
     pane {
