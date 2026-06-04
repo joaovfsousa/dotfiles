@@ -106,9 +106,9 @@ keybinds clear-defaults=true {
         }
     }
 
-    shared_except "locked" "compilation" {
-        bind "Super a" { ToggleFloatingPanes; Write 33 33 13; SwitchToMode "Compilation"}
-    }
+    //shared_except "locked" "compilation" {
+    //    bind "Super a" { ToggleFloatingPanes; Write 33 33 13; SwitchToMode "Compilation"; }
+    //}
 
     shared_except "normal" "locked" {
         bind "Esc" { SwitchToMode "Normal"; }
@@ -133,9 +133,9 @@ keybinds clear-defaults=true {
     normal {
     }
 
-    compilation {
-        bind "Super a" { ToggleFloatingPanes; SwitchToMode "Normal"}
-    }
+    //compilation {
+    //    bind "Super a" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+    //}
 
     pane {
         bind "Ctrl p" { SwitchToMode "Normal"; }
