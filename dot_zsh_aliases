@@ -34,6 +34,11 @@ alias dc='docker-compose'
 alias dd='oxker'
 alias awsl='aws --profile localstack'
 
+## Zig
+
+alias z='zig'
+alias zb='zig build'
+
 # Chezmoi
 alias cz="chezmoi"
 alias czaa="chezmoi apply"
