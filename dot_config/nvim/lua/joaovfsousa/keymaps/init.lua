@@ -61,22 +61,6 @@ wk.add({
     ":vertical resize -10<cr>",
     desc = "Resize -",
   },
-  {
-    mode = "n",
-    {
-      "<leader>/",
-      "<Plug>(comment_toggle_linewise_current)",
-      desc = "Comment toggle current line",
-    },
-  },
-  {
-    mode = "v",
-    {
-      "<leader>/",
-      "<Plug>(comment_toggle_linewise_visual)",
-      desc = "Comment toggle linewise (visual)",
-    },
-  },
 })
 
 vim.keymap.set("n", ";", ":")
