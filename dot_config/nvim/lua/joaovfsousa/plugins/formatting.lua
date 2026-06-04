@@ -25,6 +25,7 @@ return {
         zsh = sh_formatters,
         sh = sh_formatters,
         make = { "bake" },
+        zig = { "zigfmt" },
       },
       formatters = {
         beautysh = function()
