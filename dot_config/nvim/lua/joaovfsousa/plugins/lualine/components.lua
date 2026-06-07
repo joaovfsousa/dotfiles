@@ -1,4 +1,3 @@
-local conditions = require("joaovfsousa.plugins.lualine.conditions")
 local colors = require("joaovfsousa.plugins.lualine.colors")
 local icons = require("joaovfsousa.theme.icons")
 
@@ -12,10 +11,6 @@ local function diff_source()
     }
   end
 end
-
-local branch = icons.git.Branch
-
-branch = "%#SLGitIcon#" .. icons.git.Branch .. "%*" .. "%#SLBranchName#"
 
 return {
   mode = {
@@ -32,17 +27,18 @@ return {
     color = {},
     cond = function()
       return require("submode").mode() ~= nil
-    end
+    end,
   },
   branch = {
-    "b:gitsigns_head",
-    icon = branch,
-    color = { gui = "bold" },
+    "branch",
+    icon = icons.git.Branch,
   },
   filename = {
     "filename",
     color = {},
-    cond = nil,
+    padding = { left = 1, right = 1 },
+    path = 1,
+    file_status = false,
   },
   diff = {
     "diff",
@@ -52,32 +48,13 @@ return {
       modified = icons.git.LineModified .. " ",
       removed = icons.git.LineRemoved .. " ",
     },
-    padding = { left = 2, right = 1 },
+    padding = { left = 1, right = 1 },
     diff_color = {
       added = { fg = colors.green },
       modified = { fg = colors.yellow },
       removed = { fg = colors.red },
     },
     cond = nil,
-  },
-  python_env = {
-    function()
-      local utils = require("joaovfsousa.plugins.lualine.utils")
-      if vim.bo.filetype == "python" then
-        local venv = os.getenv("CONDA_DEFAULT_ENV") or os.getenv("VIRTUAL_ENV")
-        if venv then
-          local icons = require("nvim-web-devicons")
-          local py_icon, _ = icons.get_icon(".py")
-          return string.format(
-            " " .. py_icon .. " (%s)",
-            utils.env_cleanup(venv)
-          )
-        end
-      end
-      return ""
-    end,
-    color = { fg = colors.green },
-    cond = conditions.hide_in_width,
   },
   diagnostics = {
     "diagnostics",
@@ -88,20 +65,23 @@ return {
       info = icons.diagnostics.BoldInformation .. " ",
       hint = icons.diagnostics.BoldHint .. " ",
     },
-    -- cond = conditions.hide_in_width,
   },
-  treesitter = {
+  progress = { "progress", separator = " ", padding = { left = 0, right = 1 } },
+  location = { "location", separator = " ", padding = { left = 1, right = 1 } },
+  spaces = {
     function()
-      return icons.ui.Tree
+      local shiftwidth =
+        vim.api.nvim_get_option_value("shiftwidth", { buf = 0 })
+      return icons.ui.Tab .. " " .. shiftwidth
     end,
-    color = function()
-      local buf = vim.api.nvim_get_current_buf()
-      local ts = vim.treesitter.highlighter.active[buf]
-      return {
-        fg = ts and not vim.tbl_isempty(ts) and colors.green or colors.red,
-      }
-    end,
-    cond = conditions.hide_in_width,
+    padding = 1,
+  },
+  filetype = { "filetype", cond = nil, padding = { left = 1, right = 1 } },
+  filetype_icon = {
+    "filetype",
+    icon_only = true,
+    padding = { left = 1, right = 0 },
+    separator = "",
   },
   lsp = {
     function()
@@ -110,91 +90,48 @@ return {
         return "LSP Inactive"
       end
 
-      local buf_ft = vim.bo.filetype
       local buf_client_names = {}
-      local copilot_active = false
 
       -- add client
       for _, client in pairs(buf_clients) do
-        if client.name ~= "null-ls" and client.name ~= "copilot" then
-          table.insert(buf_client_names, client.name)
-        end
-
-        if client.name == "copilot" then
-          copilot_active = true
-        end
+        table.insert(buf_client_names, client.name)
       end
-
-      -- add formatter
-      -- local formatters = require("lvim.lsp.null-ls.formatters")
-      -- local supported_formatters = formatters.list_registered(buf_ft)
-      -- vim.list_extend(buf_client_names, supported_formatters)
-
-      -- add linter
-      -- local linters = require("lvim.lsp.null-ls.linters")
-      -- local supported_linters = linters.list_registered(buf_ft)
-      -- vim.list_extend(buf_client_names, supported_linters)
 
       local unique_client_names = table.concat(buf_client_names, ", ")
-      local language_servers = string.format("[%s]", unique_client_names)
 
-      if copilot_active then
-        language_servers = language_servers
-            .. "%#SLCopilot#"
-            .. " "
-            .. icons.git.Octoface
-            .. "%*"
-      end
-
-      return language_servers
+      return string.format("[%s]", unique_client_names)
     end,
     color = { gui = "bold" },
-    cond = conditions.hide_in_width,
   },
-  location = { "location" },
-  progress = {
-    "progress",
-    fmt = function()
-      return "%P/%L"
-    end,
-    color = {},
-  },
-
-  spaces = {
+  macro = {
     function()
-      local shiftwidth = vim.api.nvim_buf_get_option(0, "shiftwidth")
-      return icons.ui.Tab .. " " .. shiftwidth
+      return vim.fn.reg_recording()
     end,
-    padding = 1,
+    icon = { icons.ui.Circle, color = { fg = colors.red } },
   },
-  encoding = {
-    "o:encoding",
-    fmt = string.upper,
-    color = {},
-    cond = conditions.hide_in_width,
-  },
-  filetype = { "filetype", cond = nil, padding = { left = 1, right = 1 } },
-  scrollbar = {
+  searchcount = {
     function()
-      local current_line = vim.fn.line(".")
-      local total_lines = vim.fn.line("$")
-      local chars = {
-        "__",
-        "▁▁",
-        "▂▂",
-        "▃▃",
-        "▄▄",
-        "▅▅",
-        "▆▆",
-        "▇▇",
-        "██",
-      }
-      local line_ratio = current_line / total_lines
-      local index = math.ceil(line_ratio * #chars)
-      return chars[index]
+      local search = vim.fn.searchcount({ maxcount = 0 })
+      if next(search) ~= nil then
+        if search.current > 0 and vim.v.hlsearch ~= 0 then
+          return search.current .. "/" .. search.total
+        end
+      end
+      return ""
     end,
-    padding = { left = 0, right = 0 },
-    color = "SLProgress",
-    cond = nil,
+    icon = { icons.ui.Search, color = { fg = colors.cyan } },
+  },
+  selectioncount = {
+    function()
+      local starts = vim.fn.line("v")
+      local ends = vim.fn.line(".")
+      local count = starts <= ends and ends - starts + 1 or starts - ends + 1
+      local wc = vim.fn.wordcount()
+      return count .. ":" .. wc["visual_chars"]
+    end,
+    cond = function()
+      return vim.fn.mode():find("[Vv]") ~= nil
+    end,
+    icon = { "󰗅", color = { fg = colors.cyan } },
   },
 }

@@ -113,7 +113,7 @@ return {
     Pencil = "󰏫",
     Plus = "",
     Project = "",
-    Search = "",
+    Search = "󰱽",
     SignIn = "",
     SignOut = "",
     Tab = "󰌒",

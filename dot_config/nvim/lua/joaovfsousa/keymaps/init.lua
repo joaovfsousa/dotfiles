@@ -1,5 +1,6 @@
 require("joaovfsousa.keymaps.ai")
 require("joaovfsousa.keymaps.debug")
+require("joaovfsousa.keymaps.execute")
 require("joaovfsousa.keymaps.find")
 require("joaovfsousa.keymaps.focus")
 require("joaovfsousa.keymaps.git")
