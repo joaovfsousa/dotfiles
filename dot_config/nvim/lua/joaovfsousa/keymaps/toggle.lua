@@ -68,5 +68,13 @@ wk.add({
       end,
       desc = "Toggle Text Wrap",
     },
+    {
+      "<leader>xW",
+      function()
+        ---@diagnostic disable-next-line: undefined-field
+        vim.opt.list = not vim.opt.list:get()
+      end,
+      desc = "Toggle Whitespace visualization",
+    },
   },
 })
