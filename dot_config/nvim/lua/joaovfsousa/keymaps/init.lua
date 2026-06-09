@@ -23,6 +23,11 @@ wk.add({
     desc = "Kill buffer",
   },
   {
+    "<leader>C",
+    "<cmd>bufdo bd<cr>",
+    desc = "Kill all buffers",
+  },
+  {
     "<leader>e",
     "<cmd>NvimTreeToggle<cr>",
     desc = "Toggle NvimTree",
