@@ -58,6 +58,14 @@ keybinds clear-defaults=true {
             } 
         }
 
+        bind "Ctrl b" {
+            MessagePlugin "file:~/.config/zellij/plugins/comp_zellij.wasm" {
+                floating true
+                move_to_focused_tab true
+                name "toggle"
+            }
+        }
+
         bind "Super r" {
             Write 33 33 13;
         }
@@ -125,9 +133,6 @@ keybinds clear-defaults=true {
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
-    }
-    shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
     }
 
     locked {
