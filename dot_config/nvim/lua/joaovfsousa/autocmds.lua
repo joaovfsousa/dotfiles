@@ -19,6 +19,7 @@ local definitions = {
       pattern = {
         "qf",
         "help",
+        "man",
         "spectre_panel",
         "checkhealth",
         "lazy",
@@ -101,11 +102,12 @@ local definitions = {
   {
     "FileType",
     {
-      pattern = "help",
+      pattern = { "help", "man" },
       callback = function()
         vim.keymap.set("n", "gd", "<C-]>", { buffer = true, silent = true })
 
         vim.keymap.set("n", "<C-O>", "<C-T>", { buffer = true, silent = true })
+        vim.keymap.set("n", "<gb>", "<C-T>", { buffer = true, silent = true })
       end,
     },
   },
