@@ -69,6 +69,8 @@
   lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
   lgg = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
   m = merge
+  ma = merge --abort
+  mc = merge --continue
   mb = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
   md = merge --no-commit --no-ff
   outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
