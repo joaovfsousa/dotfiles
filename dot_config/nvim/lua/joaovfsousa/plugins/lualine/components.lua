@@ -84,24 +84,11 @@ return {
     separator = "",
   },
   lsp = {
-    function()
-      local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
-      if #buf_clients == 0 then
-        return "LSP Inactive"
-      end
-
-      local buf_client_names = {}
-
-      -- add client
-      for _, client in pairs(buf_clients) do
-        table.insert(buf_client_names, client.name)
-      end
-
-      local unique_client_names = table.concat(buf_client_names, ", ")
-
-      return string.format("[%s]", unique_client_names)
-    end,
-    color = { gui = "bold" },
+    "lsp_status",
+    icon = icons.ui.Wrench,
+    symbols = {
+      done = "",
+    },
   },
   macro = {
     function()
@@ -133,5 +120,12 @@ return {
       return vim.fn.mode():find("[Vv]") ~= nil
     end,
     icon = { "󰗅", color = { fg = colors.cyan } },
+  },
+  lsp_progress = {
+    "lsp_progress",
+    display_components = { "lsp_client_name", "spinner" },
+    colors = {
+      spinner = colors.green,
+    },
   },
 }
