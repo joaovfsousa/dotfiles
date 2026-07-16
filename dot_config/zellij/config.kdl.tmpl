@@ -201,8 +201,10 @@ keybinds clear-defaults=true {
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
 
         bind "b" { BreakPane; SwitchToMode "Normal"; }
-        bind "h" { BreakPaneLeft; SwitchToMode "Normal"; }
-        bind "l" { BreakPaneRight; SwitchToMode "Normal"; }
+        bind "H" { BreakPaneLeft; SwitchToMode "Normal"; }
+        bind "L" { BreakPaneRight; SwitchToMode "Normal"; }
+        bind "h" { MoveTab "Left"; }
+        bind "l" { MoveTab "Right"; }
 
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "2" { GoToTab 2; SwitchToMode "Normal"; }
