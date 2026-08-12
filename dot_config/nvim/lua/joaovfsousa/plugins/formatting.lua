@@ -16,16 +16,17 @@ return {
         lsp_format = "fallback",
       },
       formatters_by_ft = {
-        lua = { "stylua" },
-        typescript = js_ts_formatters,
-        typescriptreact = js_ts_formatters,
+        bash = sh_formatters,
         javascript = js_ts_formatters,
         javascriptreact = js_ts_formatters,
-        bash = sh_formatters,
-        zsh = sh_formatters,
-        sh = sh_formatters,
+        lua = { "stylua" },
         make = { "bake" },
+        python = { "ruff_organize_imports", "ruff_format" },
+        sh = sh_formatters,
+        typescript = js_ts_formatters,
+        typescriptreact = js_ts_formatters,
         zig = { "zigfmt" },
+        zsh = sh_formatters,
       },
       formatters = {
         beautysh = function()
